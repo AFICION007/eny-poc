@@ -1,0 +1,15 @@
+# Node dependencies
+node_modules
+.yarn
+.pnpm
+*.log
+
+# Git & local files
+.git
+.gitignore
+.vscode
+*.swp
+
+# Build outputs
+dist
+build
