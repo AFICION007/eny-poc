@@ -1,0 +1,92 @@
+.news_card {
+  display: flex;
+  flex-direction: column;
+  flex-shrink: 0;
+  box-sizing: border-box;
+  width: 363px;
+  height: 299px;
+  padding: 20px;
+  background: #fff;
+  border-radius: 6px;
+}
+
+.red {
+  width: 468px;
+  background: #cc1a1f;
+}
+
+.source {
+  margin-bottom: 8px;
+  font-size: 14px;
+  font-family: Poppins;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 28px;
+  color: #7d7d7d;
+}
+
+.red .source {
+  color: #efbaba;
+}
+
+.title {
+  margin-top: 0;
+  margin-bottom: 16px;
+  font-size: 18px;
+  font-family: Poppins;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 24px;
+  color: #000;
+}
+
+.red .title {
+  color: #fff;
+}
+
+.description_container {
+  flex-grow: 1;
+}
+
+.description {
+  margin-top: 0;
+  margin-bottom: 8px;
+  font-size: 14px;
+  font-family: Poppins;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 20px;
+  color: #726668;
+}
+
+.red .description {
+  color: #fff;
+}
+
+.footer_button {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 16px;
+  cursor: pointer;
+}
+
+.button_title {
+  font-size: 14px;
+  font-family: Poppins;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 40px;
+  color: #cc1a1f;
+  text-transform: uppercase;
+}
+
+.red .button_title {
+  color: #fff;
+}
+
+.arrow {
+  flex-shrink: 0;
+  width: 24px;
+  height: 24px;
+}

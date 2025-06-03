@@ -1,0 +1,35 @@
+import React, { useState } from "react";
+import { Outlet } from "react-router-dom";
+
+import WorkspaceContext from "./contexts/workspaceContext";
+import useChat from "./hooks/useChat";
+
+// All the references inside the component are stable
+const Workspace = () => {
+  const [query, setQuery] = useState("");
+  const [selectedDb, setSelectedDb] = useState(null);
+  const [modal, setModal] = useState({ open: false });
+
+  const { messages, appendMessage, updateMessage, setMessages } = useChat();
+
+  return (
+    <WorkspaceContext.Provider
+      value={{
+        query,
+        setQuery,
+        selectedDb,
+        setSelectedDb,
+        modal,
+        setModal,
+        messages,
+        appendMessage,
+        updateMessage,
+        setMessages,
+      }}
+    >
+      <Outlet />
+    </WorkspaceContext.Provider>
+  );
+};
+
+export default Workspace;

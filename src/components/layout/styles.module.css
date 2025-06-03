@@ -1,0 +1,95 @@
+.layout {
+}
+
+.layout_header {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  background-color: black;
+}
+
+.header_top {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 100%;
+  padding: 16px 70px;
+}
+
+.left {
+  display: flex;
+  align-items: center;
+}
+
+.avendus_logo {
+  flex-shrink: 0;
+  width: 160px;
+  height: 60px;
+  margin-right: 42px;
+}
+
+.title {
+  margin-right: 12px;
+  font-size: 12px;
+  font-family: Poppins;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 16px;
+  color: #d7d5d5;
+}
+
+.strong_title {
+  font-weight: 600;
+}
+
+.right {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+}
+
+.upload_button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 12px;
+  flex-shrink: 0;
+  width: 138px;
+  height: 40px;
+  cursor: pointer;
+  border: 1px solid #fafafa;
+  border-radius: 22px;
+}
+
+.upload_text {
+  font-size: 14px;
+  font-family: Inter;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 40px;
+  color: #fff;
+}
+
+.upload_icon {
+  flex-shrink: 0;
+  width: 24px;
+  height: 24px;
+}
+
+.icon_button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-shrink: 0;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+}
+
+.button_icon {
+  aspect-ratio: 1/1;
+  flex-shrink: 0;
+  width: 21px;
+  height: 21px;
+  cursor: pointer;
+}
