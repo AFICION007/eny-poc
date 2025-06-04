@@ -3,12 +3,12 @@ import { useParams, useSearchParams } from "react-router-dom";
 import SimpleBar from "simplebar-react";
 
 import WorkspaceContext from "../contexts/workspaceContext";
-import useMessages from "./hooks/useMessages";
+import useMessages from "../../home/Chatbot/hooks/useMessages";
 
 import BotResponse from "./BotResponse";
 import Chat from "./Chat";
-import ChatInput from "../global/ChatInput";
-import Loader from "../global/Loader";
+import ChatInput from "../../home/global/ChatInput";
+import Loader from "../../home/global/Loader";
 
 import "simplebar-react/dist/simplebar.min.css";
 import styles from "./styles.module.css";
@@ -29,7 +29,7 @@ const chatsMap = {
 
 // All the references inside this component are stable
 const Chatbot = ({ className = "" }) => {
-  //   const { selectedDb, modal, setModal, messages, updateMessage } =
+  //   const { selectedMode, modal, setModal, messages, updateMessage } =
   //     useContext(WorkspaceContext);
 
   //   const { threadId } = useParams();

@@ -1,0 +1,33 @@
+/* Chatbot styles */
+.chatbot {
+  padding-inline: 340px;
+  display: flex;
+  flex-direction: column;
+  flex-shrink: 0;
+  height: calc(100% - 92px);
+}
+
+.container {
+  overflow-x: hidden;
+  overflow-y: scroll;
+  width: calc(100vw - 2 * 340px);
+  max-width: calc(100vw - 2 * 340px);
+  height: calc(100vh - 92px - (4px + 96px + 16px));
+  max-height: calc(100vh - 92px - (4px + 96px + 16px));
+}
+
+.chat_section {
+  padding-block: 8px 4px;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  overflow-y: auto;
+}
+
+.chat_box_container {
+  flex-grow: 1;
+  position: absolute;
+  bottom: 0;
+  box-sizing: border-box;
+  width: calc(100% - 2 * 340px);
+}

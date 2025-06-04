@@ -7,7 +7,7 @@ import useChat from "./hooks/useChat";
 // All the references inside the component are stable
 const Workspace = () => {
   const [query, setQuery] = useState("");
-  const [selectedDb, setSelectedDb] = useState(null);
+  const [selectedMode, setSelectedMode] = useState(null);
   const [modal, setModal] = useState({ open: false });
 
   const { messages, appendMessage, updateMessage, setMessages } = useChat();
@@ -17,8 +17,8 @@ const Workspace = () => {
       value={{
         query,
         setQuery,
-        selectedDb,
-        setSelectedDb,
+        selectedMode,
+        setSelectedMode,
         modal,
         setModal,
         messages,

@@ -1,0 +1,5 @@
+.answer_section {
+  box-sizing: border-box;
+  width: calc(100vw - 2 * 340px);
+  padding-right: 20px;
+}

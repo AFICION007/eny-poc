@@ -1,5 +1,5 @@
 import React from "react";
-import { Outlet } from "react-router-dom";
+import { useNavigate, Outlet } from "react-router-dom";
 
 import styles from "./styles.module.css";
 import avendusLogo from "./assets/avendus-logo.png";
@@ -24,12 +24,21 @@ const Layout = () => {
     },
   ];
 
+  const navigate = useNavigate();
+  const handleClickLogo = () => {
+    navigate("/home");
+  };
+
   return (
     <div className={styles.layout}>
       <div className={styles.layout_header}>
         <div className={styles.header_top}>
           <div className={styles.left}>
-            <img src={avendusLogo} className={styles.avendus_logo} />
+            <img
+              src={avendusLogo}
+              onClick={handleClickLogo}
+              className={styles.avendus_logo}
+            />
             <span className={styles.title}>
               <strong className={styles.strong_title}>Welcome</strong>, Gaurav
               Deepak{" "}

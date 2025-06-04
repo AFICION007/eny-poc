@@ -1,0 +1,56 @@
+/* Asset styles */
+.default_path {
+  fill: #747480;
+}
+
+.active_path {
+  fill: #cc1a1f;
+}
+
+/* Component styles */
+.toggles {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 4px;
+}
+
+.toggle {
+  padding-inline: 10px 12px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  box-sizing: border-box;
+  height: 36px;
+  cursor: pointer;
+  border-radius: 8px;
+}
+
+.toggle:hover {
+  background-color: #e0e0e0;
+}
+
+.active_toggle {
+}
+
+.active_toggle:hover {
+  background-color: #ffe8e8;
+}
+
+.toggle > :first-child {
+  width: 24px;
+  height: 24px;
+}
+
+.label {
+  font-size: 14px;
+  font-family: Poppins;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 24px;
+  color: #747480;
+}
+
+.active_toggle .label {
+  color: #cc1a1f;
+}
