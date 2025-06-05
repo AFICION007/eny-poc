@@ -1,7 +1,8 @@
 import React from "react";
-import { useNavigate, Outlet } from "react-router-dom";
+import { useNavigate, Link, Outlet } from "react-router-dom";
 
 import styles from "./styles.module.css";
+
 import avendusLogo from "./assets/avendus-logo.png";
 import bookmark from "./assets/bookmark.svg";
 import menuIcon from "./assets/menu-icon.svg";
@@ -23,6 +24,17 @@ const Layout = () => {
       icon: menuIcon,
     },
   ];
+
+  const navLinks = [
+    { path: "/home", label: "HOME" },
+    { path: "#", label: "MY DIRECTORY" },
+    { path: "#", label: "MY DOCUMENTS" },
+    { path: "#", label: "COLLATERALS" },
+    { path: "#", label: "COVERAGE UNIVERSE" },
+    { path: "#", label: "TEMPLATES" },
+    { path: "#", label: "VALUATIONS" },
+  ];
+
 
   const navigate = useNavigate();
   const handleClickLogo = () => {
@@ -60,6 +72,13 @@ const Layout = () => {
               </div>
             ))}
           </div>
+        </div>
+        <div className={styles.nav_links}>
+          {navLinks.map(({ path, label }) => (
+            <Link key={path} to={path}>
+              {label}
+            </Link>
+          ))}
         </div>
       </div>
       <Outlet />
