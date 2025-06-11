@@ -1,0 +1,125 @@
+
+.folder_selector {
+  background-color: #ffffff;
+  padding: 20px 40px;
+  /* border-bottom: 1px solid #f0f0f0; */
+}
+
+.selector_header {
+  margin-bottom: 10px;
+}
+
+.selector_title {
+  font-size: 16px;
+  font-weight: 400;
+  color: #8c8c8c;
+  margin: 0;
+  letter-spacing: 0.3px;
+}
+
+.folders_container {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  border: 1px solid #d9d9d9;
+  padding-left: 4px;
+  padding-right: 4px;
+}
+
+.folders_list {
+  display: flex;
+  gap: 12px;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  padding: 4px 0;
+  flex: 1;
+}
+
+.folders_list::-webkit-scrollbar {
+  display: none;
+}
+
+.folders_list {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.folder_item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 16px;
+  
+  /* border-radius: 6px; */
+  background-color: #ffffff;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  white-space: nowrap;
+  min-width: fit-content;
+}
+
+.folder_item:hover {
+  border-color: gray;
+  box-shadow: 0 2px 4px rgba(64, 169, 255, 0.1);
+}
+
+.folder_item_selected {
+  border: 1px solid #d9d9d9;
+}
+
+.folder_name {
+  font-size: 14px;
+  color: #262626;
+  font-weight: 400;
+}
+
+.folder_item_selected .folder_name {
+  color: gray;
+  font-weight: 500;
+}
+
+.folder_count {
+  font-size: 12px;
+  color: #8c8c8c;
+  background-color: #f5f5f5;
+  padding: 4px 4px;
+  border-radius: 50%;
+  min-width: 18px;
+  text-align: center;
+}
+
+.folder_item_selected .folder_count {
+  background-color: white;
+  color: gray;
+  padding: 2px 2px;
+  border-radius: 50%;
+  border: 1px solid #8c8c8c;
+}
+
+.scroll_indicator {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  border: 1px solid #d9d9d9;
+  border-radius: 50%;
+  background-color: #ffffff;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  flex-shrink: 0;
+}
+
+.scroll_indicator:hover {
+  border-color: darkgrey;
+  background-color: #f6f9ff;
+}
+
+.scroll_arrow {
+  color: #8c8c8c;
+  font-size: 14px;
+}
+
+.scroll_indicator:hover .scroll_arrow {
+  color: darkgray;
+}

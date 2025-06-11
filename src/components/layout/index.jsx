@@ -26,14 +26,14 @@ const Layout = () => {
   ];
 
   const navLinks = [
-    { path: "/home", label: "HOME" },
-    { path: "#", label: "MY DIRECTORY" },
-    { path: "#", label: "MY DOCUMENTS" },
-    { path: "#", label: "COLLATERALS" },
-    { path: "#", label: "COVERAGE UNIVERSE" },
-    { path: "#", label: "TEMPLATES" },
-    { path: "#", label: "VALUATIONS" },
-  ];
+  { path: "/home", label: "HOME" },
+  { path: "/my-directory", label: "MY DIRECTORY" },
+  { path: "/my-documents", label: "MY DOCUMENTS" },
+  { path: "/collaterals", label: "COLLATERALS" },
+  { path: "/coverage-universe", label: "COVERAGE UNIVERSE" },
+  { path: "/templates", label: "TEMPLATES" },
+  { path: "/valuations", label: "VALUATIONS" },
+];
 
 
   const navigate = useNavigate();
@@ -74,11 +74,13 @@ const Layout = () => {
           </div>
         </div>
         <div className={styles.nav_links}>
-          {navLinks.map(({ path, label }) => (
-            <Link key={path} to={path}>
-              {label}
-            </Link>
-          ))}
+          <Link to="/home">HOME</Link>
+          <Link to="/my-directory">MY DIRECTORY</Link>
+          <Link to="/my-documents">MY DOCUMENTS</Link>
+          <Link to="/collaterals">COLLATERALS</Link>
+          <Link to="/coverage-universe">COVERAGE UNIVERSE</Link>
+          <Link to="/templates">TEMPLATES</Link>
+          <Link to="/valuations">VALUATIONS</Link>
         </div>
       </div>
       <Outlet />

@@ -25,7 +25,8 @@ const DocumentCard = () => {
 
   const document = {
     title: "Swiggy_RelationshipNotes_2024-11-10.docx",
-    url: "/MINSHU_SHAW_CV_2025.pdf", 
+    // url: "/MINSHU_SHAW_CV_2025.pdf", 
+    url: ""
   };
 
   const { title, url } = document;
@@ -60,7 +61,7 @@ const DocumentCard = () => {
       icon: view,
       label: "View",
       className: "dark",
-      onClick: () => setIsModalOpen(true),
+      onClick: () => {if(url) setIsModalOpen(true)},
     },
   ];
 
