@@ -1,0 +1,113 @@
+.container {
+  padding: 24px;
+}
+
+.header {
+  margin-bottom: 24px;
+}
+
+.title {
+  font-size: 28px;
+  font-weight: 600;
+  margin-bottom: 16px;
+}
+
+.tabs {
+  margin-bottom: 20px;
+}
+
+.filterSection {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-bottom: 24px;
+}
+
+.yearFilter {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  order: 1;
+}
+
+.yearButton {
+  padding: 6px 16px;
+  /* background-color: #f0f0f0; */
+  border: 1px solid #d9d9d9;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.yearButton:hover {
+  /* background-color: #d6e4ff; */
+  border-color: gray;
+}
+
+.yearButtonActive {
+  /* color: #fff; */
+  border-color: gray;
+}
+
+.datePickerContainer {
+  order: 2;
+  margin-left: auto;
+}
+
+.reportsSection {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.reportItem {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px;
+  background: white;
+  border: 1px solid #f0f0f0;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.02);
+  transition: all 0.2s ease;
+}
+
+.reportItem:hover {
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+     border-color: #d9d9d9;
+}
+
+.reportContent {
+    display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.reportIcon {
+  font-size: 20px;
+  /* color: #1890ff; */
+}
+
+.reportName {
+  font-size: 16px;
+}
+
+.downloadIcon {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: #f5f5f5;
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.downloadIcon:hover{
+  background: #e6f7ff;
+  color: #1890ff;
+}

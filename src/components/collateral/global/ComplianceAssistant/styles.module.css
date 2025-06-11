@@ -1,0 +1,30 @@
+.container {
+  max-width: 600px;         /* was 800px */
+  /* margin: 0 auto; */
+  margin-top: 50px;         /* was 50px */
+  /* padding: 30px 20px;       was 40px 20px */
+
+  min-height: 600px;        /* was 100vh — this avoids overly tall layout */
+  background-color: white;
+}
+
+.header {
+  text-align: center;
+  margin-bottom: 20px;     /* was 60px */
+}
+
+.mainTitle {
+  color: #e74c3c !important;
+  font-size: 36px !important;  /* was 48px */
+  font-weight: 400 !important;
+  margin-bottom: 30px !important;
+  line-height: 1.2 !important;
+}
+
+.featuresGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* was 350px */
+  gap: 20px;                /* was 24px */
+  max-width: 600px;         /* was 800px */
+  margin: 0 auto;
+}
