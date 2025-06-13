@@ -1,0 +1,139 @@
+/* Answer source  */
+.answer_source {
+  width: 175px;
+  height: 86px;
+  flex-shrink: 0;
+  border-radius: 8px;
+  background: #f6f6fa;
+  cursor: pointer;
+  padding: 14px;
+
+  display: flex;
+  flex-direction: column;
+}
+
+.answer_source:hover {
+  background: #eaeaed;
+}
+
+.answer_top {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-bottom: 4px;
+}
+
+.answer_icon {
+  width: 24px;
+  height: 24px;
+  flex-shrink: 0;
+  border-radius: 24px;
+}
+
+.answer_title {
+  color: #747480;
+  font-family: Poppins;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 20px;
+}
+
+.answer_heading {
+  color: #2e2e3c;
+  font-family: Poppins;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 20px;
+
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* Source card */
+.source_card {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  padding-block: 16px;
+  cursor: pointer;
+  max-width: 778px;
+  min-width: 778px;
+}
+
+.source_top {
+  display: flex;
+  gap: 10px;
+  max-width: 100%;
+}
+
+.source_icon {
+  width: 44px;
+  height: 44px;
+  flex-shrink: 0;
+  border-radius: 44px;
+}
+
+.source_top_right {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  max-width: calc(100% - 44px - 10px);
+}
+
+.source_title {
+  color: #23232f;
+  font-family: Poppins;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 20px;
+}
+
+.source_subtitle {
+  color: #3a3a4a;
+  font-family: Poppins;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 20px;
+
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: inline-block;
+}
+
+.source_heading {
+  color: #23232f;
+  font-family: Poppins;
+  font-size: 15px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 28px;
+
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: inline-block;
+}
+
+.source_description {
+  color: #3a3a4a;
+  font-family: Poppins;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 25px;
+  margin: 0;
+
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}

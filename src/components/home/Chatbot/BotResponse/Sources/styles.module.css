@@ -1,0 +1,8 @@
+.sources {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 100%;
+  max-height: calc(164px * 6);
+  overflow-y: scroll;
+}

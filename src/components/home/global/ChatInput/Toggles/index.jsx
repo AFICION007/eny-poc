@@ -74,6 +74,7 @@ const Toggles = () => {
 
         return (
           <div
+            key={value}
             onClick={() => onModeClick(value)}
             className={`${styles.toggle}  ${styles[`${className}_toggle`]}`}
           >

@@ -4,9 +4,10 @@ import SimpleBar from "simplebar-react";
 import WorkspaceContext from "../contexts/workspaceContext";
 import useMessages from "./hooks/useMessages";
 
+import BotResponse from "./BotResponse";
 import Chat from "./Chat";
 import ChatInput from "../global/ChatInput";
-import BotResponse from "./BotResponse";
+import Loader from "../global/Loader";
 
 import styles from "./styles.module.css";
 
@@ -49,8 +50,6 @@ const Chatbot = ({ className = "chatbot" }) => {
             messages.map((messageObj) => {
               return chatsMap[messageObj.type](messageObj, className);
             })}
-
-          <BotResponse className={className} />
 
           {fetchingMessage && <Loader />}
           {<div ref={chatRef} />}

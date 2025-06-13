@@ -14,6 +14,10 @@ const WorkspaceContext = createContext({
   appendMessage: () => {},
   updateMessage: () => {},
   setMessages: () => {},
+
+  responseMessage: null,
+  fetchingMessage: false,
+  postChatMessage: () => {},
 });
 
 export default WorkspaceContext;

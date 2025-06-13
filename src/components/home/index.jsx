@@ -3,6 +3,7 @@ import { Outlet } from "react-router-dom";
 
 import WorkspaceContext from "./contexts/workspaceContext";
 import useChat from "./hooks/useChat";
+import usePostChatMessage from "./services/usePostChatMessage";
 
 const Workspace = () => {
   const [query, setQuery] = useState("");
@@ -10,6 +11,9 @@ const Workspace = () => {
   const [modal, setModal] = useState({ open: false });
 
   const { messages, appendMessage, updateMessage, setMessages } = useChat();
+
+  const { responseMessage, fetchingMessage, postChatMessage } =
+    usePostChatMessage();
 
   return (
     <WorkspaceContext.Provider
@@ -24,6 +28,9 @@ const Workspace = () => {
         appendMessage,
         updateMessage,
         setMessages,
+        responseMessage,
+        fetchingMessage,
+        postChatMessage,
       }}
     >
       <Outlet />

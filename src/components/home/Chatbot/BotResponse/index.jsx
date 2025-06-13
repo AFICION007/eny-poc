@@ -2,24 +2,28 @@ import React, { useState } from "react";
 import { Tabs } from "antd";
 
 import AnswerSection from "./AnswerSection";
-import DocumentCard from "./DocumentCard";
+import Sources from "./Sources";
 import NewsCard from "./NewsCard";
 
 import styles from "./styles.module.css";
 
-const getTabs = () => [
+const getTabs = (response, sources) => [
   {
     key: "answer",
     label: "Answer",
-    TabContent: <AnswerSection />,
+    TabContent: <AnswerSection response={response} sources={sources} />,
   },
-  { key: "documents", label: "Documents", TabContent: <DocumentCard /> },
+  {
+    key: "sources",
+    label: `Sources (${sources.length})`,
+    TabContent: <Sources sources={sources} />,
+  },
   // { key: "references", label: "References", TabContent: "References Content" },
-  { key: "news", label: "News", TabContent: <NewsCard /> },
+  // { key: "news", label: "News", TabContent: <NewsCard /> },
 ];
 
-const BotResponse = () => {
-  const tabs = getTabs();
+const BotResponse = ({ response = "", sources = [] }) => {
+  const tabs = getTabs(response, sources);
   const [activeTab, setTab] = useState("answer");
   const handleChangeTab = (key) => {
     setTab(key);

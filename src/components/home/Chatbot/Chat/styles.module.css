@@ -20,7 +20,6 @@
 }
 
 .message {
-  :global(p), ;
   margin: 0;
   font-size: 14px;
   font-family: Poppins;
@@ -53,4 +52,63 @@
 
 .user_chat .message {
   color: white;
+}
+
+/* Table styles */
+
+/* Container for the markdown content */
+.message :global(table) {
+  border-collapse: separate;
+  border-spacing: 0;
+  margin-block: 1rem 1.5rem;
+  margin-inline: 0;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+/* Make first column bold */
+.message :global(td:first-child),
+.message :global(th:first-child) {
+  font-weight: 900;
+}
+
+/* Table cells */
+.message :global(th),
+.message :global(td) {
+  border: 1px solid rgb(217, 225, 229);
+  padding: 8px 16px;
+  text-align: left;
+}
+
+/* Remove double borders */
+.message :global(th:not(:last-child)),
+.message :global(td:not(:last-child)) {
+  border-right: none;
+}
+
+.message :global(tr:not(:last-child) th),
+.message :global(tr:not(:last-child) td) {
+  border-bottom: none;
+}
+
+/* Table header */
+.message :global(th) {
+  font-weight: bold;
+  color: rgb(128, 159, 184);
+}
+
+/* Round the top corners */
+.message :global(tr:first-child th:first-child) {
+  border-top-left-radius: 8px;
+}
+.message :global(tr:first-child th:last-child) {
+  border-top-right-radius: 8px;
+}
+
+/* Round the bottom corners */
+.message :global(tr:last-child td:first-child) {
+  border-bottom-left-radius: 8px;
+}
+.message :global(tr:last-child td:last-child) {
+  border-bottom-right-radius: 8px;
 }
