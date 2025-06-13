@@ -12,34 +12,44 @@
 .custom_tabs :global(.ant-tabs-tab) {
   flex: 1;
   text-align: center;
+  font-family: 'Poppins';
+  font-size: 14px;
+  font-style: normal;
   padding: 16px 0;
   font-size: 16px;
   font-weight: 400;
-  color: #8c8c8c;
+  color: #656579;
   position: relative;
   transition: all 0.3s ease;
-  margin: 0; /* remove default spacing */
+  margin: 0;
 }
 
 .custom_tabs :global(.ant-tabs-tab:hover) {
-  color: #262626;
+  color: #2E2E38 !important;
 }
 
-.custom_tabs :global(.ant-tabs-tab-active) {
-  color: #262626;
-  font-weight: 500;
+.custom_tabs :global(.ant-tabs-tab .ant-tabs-tab-btn) {
+  color: inherit !important;
 }
 
-.custom_tabs :global(.ant-tabs-tab-active::after) {
+.custom_tabs :global(.ant-tabs-tab.ant-tabs-tab-active) {
+  color: #2E2E38 !important;
+  font-weight: 500 !important;
+}
+
+.custom_tabs :global(.ant-tabs-tab.ant-tabs-tab-active .ant-tabs-tab-btn) {
+  color: #2E2E38 !important;
+}
+
+.custom_tabs :global(.ant-tabs-tab.ant-tabs-tab-active::after) {
   content: '';
   position: absolute;
   bottom: 0;
   left: 0;
   width: 100%;
   height: 2px;
-  background-color: #262626;
+  background-color: #2E2E38 !important;
 }
-
 
 .custom_tabs :global(.ant-tabs-ink-bar) {
   display: none;
@@ -52,5 +62,3 @@
 .custom_tabs :global(.ant-tabs-content-holder) {
   display: none;
 }
-
-

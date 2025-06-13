@@ -70,6 +70,7 @@ const ComplianceAssistant = () => {
         <QueryInput 
           onSubmit={handleQuerySubmit}
           placeholder={sampleQueries[0]}
+          className={styles.input_field}
         />
       </div>
 

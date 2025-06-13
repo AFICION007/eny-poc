@@ -116,7 +116,7 @@ const ChatResponsePage = () => {
             onKeyPress={handleKeyPress}
             placeholder={query}
             className={styles.queryInput}
-            autoSize={{ minRows: 1, maxRows: 4 }}
+            // autoSize={{ minRows: 1, maxRows: 4 }}
           />
           <Button
             type="primary"

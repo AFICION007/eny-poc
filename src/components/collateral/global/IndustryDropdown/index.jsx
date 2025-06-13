@@ -25,7 +25,7 @@ const CompanyFilter = ({ onSelectionChange }) => {
         dataSource={INDUSTRY_OPTIONS}
         renderItem={item => (
           <List.Item
-            className={`${styles.list_item} ${selectedOption === item ? styles.selected_item : ''}`}
+            className={styles.list_item}
             onClick={() => handleSelect(item)}
           >
             {item}

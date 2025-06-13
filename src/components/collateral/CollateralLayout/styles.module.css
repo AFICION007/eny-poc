@@ -1,29 +1,29 @@
-
 .directory_page {
   min-height: 100vh;
-  background-color: white;
+  background-color: F6F6FA;
   padding: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
 }
 
 .header {
-  background-color: #f8f8fb;
-  padding: 20px 0;
-  padding-top: 15px;
+  background-color: #F6F6FA;
+  padding: 15px 0 20px;
   margin-bottom: 0;
-  padding-bottom: 20px;
 }
 
 .title {
+  color: #000;
+  font-family: "Poppins";
   font-size: 24px;
-  font-weight: 400;
-  color: #262626;
+  font-style: normal;
+  font-weight: 300;
+  text-transform: uppercase;
   margin: 0;
-  padding-left: 40px;
+  padding-left: 80px;
   letter-spacing: 0.5px;
 }
 
-.top{
+.top {
   display: flex;
   flex-direction: column;
   gap: 0px;
@@ -32,7 +32,7 @@
   margin-bottom: -30px;
 }
 
-.bottom{
+.bottom {
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -41,14 +41,12 @@
 }
 
 .filters_container {
-  background-color: #f8f8fb;
-  padding: 30px 40px;
-  padding-top: 5px;
-  /* border-bottom: 1px solid #e8e8e8; */
+  background-color: #F6F6FA;
+  padding: 5px 80px 30px;
   display: flex;
   align-items: center;
-  gap: 30px;
-  flex-wrap: wrap;
+  gap: 25px;
+  /* flex-wrap: wrap; */
 }
 
 .search_container {
@@ -80,8 +78,6 @@
   font-size: 16px;
 }
 
-
-
 .dropdowns_container {
   display: flex;
   justify-content: space-around;
@@ -97,63 +93,76 @@
 }
 
 .dropdown_label {
-  font-size: 12px;
-  color: #8c8c8c;
-  padding-top: 0px;
-  padding-bottom: 0px;
-  font-weight: 500;
-  text-transform: uppercase;
-  letter-spacing: 0.5px;
+  color: #656579;
+  font-family: 'Poppins', sans-serif;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 300;
+  line-height: 20px;
+  text-transform: none;
+  letter-spacing: normal;
 }
-
 
 .dropdown_button {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 10px 16px;
-  border: 1px solid #d9d9d9;
-  border-radius: 50px;
-  background-color: #ffffff;
+  gap: 8px;
+  height: 44px;
+  padding: 4px 14px;
+  border: 1px solid #C3C3CB;
+  border-radius: 32px;
+  background-color: #FFFFFF;
   cursor: pointer;
-  min-width: 180px;
-  height: 12px;
+  flex: 1 0 0;
   transition: all 0.2s ease;
+  min-width: 180px;
 }
 
-.dropdown_button:hover {
-  border-color: #40a9ff;
-  box-shadow: 0 2px 8px rgba(64, 169, 255, 0.1);
-}
 
 .dropdown_text {
-  font-size: 14px;
-  color: #595959;
-  white-space: nowrap;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 1;
   overflow: hidden;
   text-overflow: ellipsis;
+  color: #656579;
+  font-family: 'Poppins', sans-serif;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 300;
+  line-height: 20px;
   max-width: 140px;
+  white-space: normal;
+  /* allow webkit-line-clamp to work */
 }
 
 .dropdown_arrow {
-  color: #8c8c8c;
-  font-size: 12px;
-  margin-left: 8px;
+  display: flex;
+  padding: 8px;
+  justify-content: center;
+  align-items: center;
+  gap: 6px;
+  border-radius: var(--btn-border-radius, 4px);
 }
 
+.dropdown_button:hover,
+:global(.ant-dropdown-open .dropdown_button) {
+  border-color: #000 !important;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1) !important;
+}
 
-.bottom > div {
-  flex: 1; /* each child takes equal space */
+.bottom>div {
+  flex: 1;
   max-width: 50%;
 }
 
-/* Specific to the empty state message */
 .report_container {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100%; /* fill parent */
-  background-color: #f8f8f8; /* removed solid bg to avoid double color */
+  height: 100%;
+  background-color: #f8f8f8;
   margin-top: 50px;
 }
 
@@ -163,4 +172,3 @@
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   text-align: center;
 }
-

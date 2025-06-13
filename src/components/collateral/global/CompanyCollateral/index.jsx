@@ -22,7 +22,7 @@ const [selectedOption, setSelectedOption] = useState(null);
         dataSource={COLLATERAL_OPTIONS}
         renderItem={item => (
           <List.Item
-            className={`${styles.list_item} ${selectedOption === item ? styles.selected_item : ''}`}
+            className={styles.list_item}
             onClick={() => handleSelect(item)}
           >
             {item}

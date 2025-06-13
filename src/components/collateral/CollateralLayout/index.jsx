@@ -90,8 +90,6 @@ const CollateralLayout = () => {
                 </div>
 
                 <div className={styles.filters_container}>
-
-
                     <div className={styles.dropdowns_container}>
                         <div className={styles.dropdown_wrapper}>
                             <span className={styles.dropdown_label}>Vertical</span>
@@ -101,7 +99,7 @@ const CollateralLayout = () => {
                                 placement="bottomLeft"
                             >
                                 <div className={styles.dropdown_button}>
-                                    <span className={styles.dropdown_text}>{selectedVertical}</span>
+                                    <span className={styles.dropdown_text}>{selectedVertical || "Digital, Technology and Consumer"}</span>
                                     <DownOutlined className={styles.dropdown_arrow} />
                                 </div>
                             </Dropdown>
@@ -115,7 +113,7 @@ const CollateralLayout = () => {
                                 placement="bottomLeft"
                             >
                                 <div className={styles.dropdown_button}>
-                                    <span className={styles.dropdown_text}>{selectedSector}</span>
+                                    <span className={styles.dropdown_text}>{selectedSector || "Content, Media & Gaming"}</span>
                                     <DownOutlined className={styles.dropdown_arrow} />
                                 </div>
                             </Dropdown>
@@ -129,7 +127,7 @@ const CollateralLayout = () => {
                                 placement="bottomLeft"
                             >
                                 <div className={styles.dropdown_button}>
-                                    <span className={styles.dropdown_text}>{selectedIndustry}</span>
+                                    <span className={styles.dropdown_text}>{selectedIndustry || "Industry Report 1"}</span>
                                     <DownOutlined className={styles.dropdown_arrow} />
                                 </div>
                             </Dropdown>
@@ -143,7 +141,7 @@ const CollateralLayout = () => {
                                 placement="bottomLeft"
                             >
                                 <div className={styles.dropdown_button}>
-                                    <span className={styles.dropdown_text}>{selectedCompany}</span>
+                                    <span className={styles.dropdown_text}>{selectedCompany || "Project BlueStar"}</span>
                                     <DownOutlined className={styles.dropdown_arrow} />
                                 </div>
                             </Dropdown>
@@ -157,7 +155,7 @@ const CollateralLayout = () => {
                                 placement="bottomLeft"
                             >
                                 <div className={styles.dropdown_button}>
-                                    <span className={styles.dropdown_text}>{selectedCollateral}</span>
+                                    <span className={styles.dropdown_text}>{selectedCollateral || "Reports and Publications"}</span>
                                     <DownOutlined className={styles.dropdown_arrow} />
                                 </div>
                             </Dropdown>

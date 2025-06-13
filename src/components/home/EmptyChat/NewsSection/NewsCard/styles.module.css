@@ -18,7 +18,7 @@
 .source {
   margin-bottom: 8px;
   font-size: 14px;
-  font-family: Poppins;
+  font-family: "Poppins";
   font-style: normal;
   font-weight: 600;
   line-height: 28px;
@@ -33,7 +33,7 @@
   margin-top: 0;
   margin-bottom: 16px;
   font-size: 18px;
-  font-family: Poppins;
+  font-family: "Poppins";
   font-style: normal;
   font-weight: 600;
   line-height: 24px;
@@ -52,7 +52,7 @@
   margin-top: 0;
   margin-bottom: 8px;
   font-size: 14px;
-  font-family: Poppins;
+  font-family: "Poppins";
   font-style: normal;
   font-weight: 400;
   line-height: 20px;
@@ -73,7 +73,7 @@
 
 .button_title {
   font-size: 14px;
-  font-family: Poppins;
+  font-family: "Poppins";
   font-style: normal;
   font-weight: 600;
   line-height: 40px;

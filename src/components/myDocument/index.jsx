@@ -10,7 +10,7 @@ import ProjectFilter from './global/ProjectFilter';
 import FolderSelector from './global/FolderSelector';
 import TabNavigation from './global/TabNavigation';
 import Documents from './global/Documents';
-
+import CustomSearchIcon from './icons/search-icon';
 
 
 const { Search } = Input;
@@ -27,6 +27,7 @@ const DocumentPage = () => {
 
     const handleSearch = (value) => {
         // logic
+        setSearchValue(value);
     };
 
     const handleFolderSelect = (folderName) => {
@@ -63,18 +64,18 @@ const DocumentPage = () => {
         <div className={styles.directory_page}>
             <div className={styles.top}>
                 <div className={styles.header}>
-                    <h1 className={styles.title}>MY DIRECTORY</h1>
+                    <h1 className={styles.title}>MY DOCUMENTS</h1>
                 </div>
 
                 <div className={styles.filters_container}>
                     <div className={styles.search_container}>
                         <Input
-                            placeholder="Search"
+                            placeholder="Give me NDA for Bluestar"
                             allowClear
                             value={searchValue}
                             onChange={(e) => handleSearch(e.target.value)}
                             className={styles.search_input}
-                            suffix={<SearchOutlined className={styles.search_icon} />}
+                            suffix={<CustomSearchIcon />}
                         />
                     </div>
 
@@ -87,7 +88,7 @@ const DocumentPage = () => {
                                 placement="bottomLeft"
                             >
                                 <div className={styles.dropdown_button}>
-                                    <span className={styles.dropdown_text}>{selectedVertical}</span>
+                                    <span className={styles.dropdown_text}>{selectedVertical || "Digital, Technology and Consumer"}</span>
                                     <DownOutlined className={styles.dropdown_arrow} />
                                 </div>
                             </Dropdown>
@@ -101,7 +102,7 @@ const DocumentPage = () => {
                                 placement="bottomLeft"
                             >
                                 <div className={styles.dropdown_button}>
-                                    <span className={styles.dropdown_text}>{selectedSector}</span>
+                                    <span className={styles.dropdown_text}>{selectedSector || "B2B e-commerce"}</span>
                                     <DownOutlined className={styles.dropdown_arrow} />
                                 </div>
                             </Dropdown>
@@ -114,7 +115,7 @@ const DocumentPage = () => {
                                 placement="bottomLeft"
                             >
                                 <div className={styles.dropdown_button}>
-                                    <span className={styles.dropdown_text}>{selectedProject}</span>
+                                    <span className={styles.dropdown_text}>{selectedProject || "Project BlueStar"}</span>
                                     <DownOutlined className={styles.dropdown_arrow} />
                                 </div>
                             </Dropdown>
@@ -123,14 +124,16 @@ const DocumentPage = () => {
                 </div>
             </div>
 
-            <div>
-                <FolderSelector onFolderSelect={handleFolderSelect} />
-            </div>
-            <div>
-                <TabNavigation />
-            </div>
-            <div>
-                <Documents />
+            <div className={styles.content_wrapper}>
+                <div className={styles.section}>
+                    <FolderSelector onFolderSelect={handleFolderSelect} />
+                </div>
+                <div className={styles.section}>
+                    <TabNavigation />
+                </div>
+                <div className={styles.section}>
+                    <Documents />
+                </div>
             </div>
         </div>
     );

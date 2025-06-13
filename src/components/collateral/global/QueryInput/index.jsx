@@ -33,7 +33,7 @@ const QueryInput = ({ onSubmit, placeholder }) => {
           onKeyPress={handleKeyPress}
           placeholder={placeholder}
           className={styles.queryInput}
-          autoSize={{ minRows: 1, maxRows: 4 }}
+          // autoSize={{ minRows: 1, maxRows: 4 }}
         />
         <Button
           type="primary"

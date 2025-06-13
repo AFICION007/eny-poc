@@ -6,7 +6,7 @@ import VerticalFilter from '../global/VerticalDropdown';
 import SectorFilter from '../global/SectorDropdown';
 import ProfileCard from './global/PersonCard';
 import styles from './styles.module.css';
-
+import CustomSearchIcon from './icons/search-icon';
 
 
 const { Search } = Input;
@@ -85,7 +85,7 @@ const DirectoryPage = () => {
               value={searchValue}
               onChange={(e) => handleSearch(e.target.value)}
               className={styles.search_input}
-              suffix={<SearchOutlined className={styles.search_icon} />}
+              suffix={<CustomSearchIcon />}
             />
           </div>
 
@@ -98,7 +98,7 @@ const DirectoryPage = () => {
                 placement="bottomLeft"
               >
                 <div className={styles.dropdown_button}>
-                  <span className={styles.dropdown_text}>{selectedVertical}</span>
+                  <span className={styles.dropdown_text}>{selectedVertical || "Digital, Technology and Consumer"}</span>
                   <DownOutlined className={styles.dropdown_arrow} />
                 </div>
               </Dropdown>
@@ -113,7 +113,7 @@ const DirectoryPage = () => {
                 className={styles.dropdown}
               >
                 <div className={styles.dropdown_button}>
-                  <span className={styles.dropdown_text}>{selectedSector}</span>
+                  <span className={styles.dropdown_text}>{selectedSector || "B2B e-commerce"}</span>
                   <DownOutlined className={styles.dropdown_arrow} />
                 </div>
               </Dropdown>
@@ -134,12 +134,3 @@ const DirectoryPage = () => {
 export default DirectoryPage;
 
 
-
-
-
-
-{/* <Input
-          placeholder="Search"
-          prefix={<SearchOutlined />}
-          className={styles.directory_search}
-        /> */}

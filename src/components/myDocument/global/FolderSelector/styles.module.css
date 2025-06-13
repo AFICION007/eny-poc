@@ -1,4 +1,3 @@
-
 .folder_selector {
   background-color: #ffffff;
   padding: 20px 40px;
@@ -46,16 +45,11 @@
 
 .folder_item {
   display: flex;
+  padding: 10px 14px;
+  justify-content: center;
   align-items: center;
   gap: 8px;
-  padding: 8px 16px;
-  
-  /* border-radius: 6px; */
-  background-color: #ffffff;
-  cursor: pointer;
-  transition: all 0.2s ease;
-  white-space: nowrap;
-  min-width: fit-content;
+  border-radius: var(--tab-navigation-btn-border-radius, 2px);
 }
 
 .folder_item:hover {
@@ -64,24 +58,35 @@
 }
 
 .folder_item_selected {
-  border: 1px solid #d9d9d9;
+  display: flex;
+  padding: 10px 14px;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  border-radius: var(--tab-navigation-btn-border-radius, 2px);
+  border: var(--border-width-thin, 1px) solid var(--border-colors-selected-default-primary, #C3C3CB);
+  background: var(--tab-navigation-btn-primary-selected-bg-color, #FFF);
 }
 
 .folder_name {
+  color: var(--tab-navigation-btn-primary-selected-color, #2E2E38);
+  font-family: "Poppins";
   font-size: 14px;
-  color: #262626;
+  font-style: normal;
   font-weight: 400;
+  line-height: var(--line-height-24, 23.996px);
+  /* 171.4% */
 }
 
 .folder_item_selected .folder_name {
-  color: gray;
-  font-weight: 500;
+  color: #2E2E38;
+  font-weight: 400;
 }
 
 .folder_count {
   font-size: 12px;
-  color: #8c8c8c;
-  background-color: #f5f5f5;
+  color: #656579;
+  background-color: #E6E6E9;
   padding: 4px 4px;
   border-radius: 50%;
   min-width: 18px;
@@ -89,11 +94,12 @@
 }
 
 .folder_item_selected .folder_count {
-  background-color: white;
-  color: gray;
+  background-color: #FFF;
+  color: #656579;
+  border-color: #D7D7DC;
   padding: 2px 2px;
   border-radius: 50%;
-  border: 1px solid #8c8c8c;
+  border: 1px solid ;
 }
 
 .scroll_indicator {

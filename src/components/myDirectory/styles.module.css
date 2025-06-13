@@ -1,4 +1,3 @@
-
 .directory_page {
   min-height: 100vh;
   background-color: white;
@@ -6,24 +5,23 @@
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
 }
 
+/* Header Section */
 .header {
-  background-color: #f8f8fb;
-  padding: 20px 0;
-  padding-top: 15px;
+  background: var(--Grey-100, #F6F6FA);
+  padding: 20px 0 0 0;
   margin-bottom: 0;
-  padding-bottom: 0px;
 }
 
 .title {
+  padding-left: 80px;
+  color: #000;
+  font-family: "Poppins";
   font-size: 24px;
-  font-weight: 400;
-  color: #262626;
-  margin: 0;
-  padding-left: 40px;
-  letter-spacing: 0.5px;
+  font-style: normal;
+  font-weight: 300;
 }
 
-.top{
+.top {
   display: flex;
   flex-direction: column;
   gap: 0px;
@@ -31,27 +29,47 @@
   border-top: 6px solid #cc1a1f;
 }
 
+/* Filters Section */
 .filters_container {
   background-color: #f8f8fb;
-  padding: 30px 40px;
-  padding-top: 5px;
-  /* border-bottom: 1px solid #e8e8e8; */
+  padding: 5px 40px 30px 80px;
   display: flex;
   align-items: center;
   gap: 30px;
   flex-wrap: wrap;
 }
 
+/* Search Container */
 .search_container {
   flex: 1;
-  max-width: 600px;
+  max-width: 621px;
 }
 
 .search_input {
-  border-radius: 25px;
-  height: 45px;
-  border: 1px solid #d9d9d9;
-  box-shadow: 0 0 8px rgba(0, 0, 0, 0.15);
+  border-radius: 32px;
+  background-color: #ffffff;
+  height: 57px;
+  box-shadow:
+    0px 1px 4px 3px var(--shadow-colors-primary, rgba(35, 35, 47, 0.06)),
+    0px 6px 12px 0px rgba(101, 101, 120, 0.08);
+}
+
+.search_input input::placeholder {
+  color: var(--Grey-400, #747480);
+  font-family: "Poppins";
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 500;
+}
+
+.search_input:hover {
+  border-color: black !important;
+}
+
+.search_input:focus,
+.search_input.ant-input-focused {
+  border-color: black !important;
+  box-shadow: none !important;
 }
 
 .search_input :global(.ant-input) {
@@ -71,8 +89,7 @@
   font-size: 16px;
 }
 
-
-
+/* Dropdowns */
 .dropdowns_container {
   display: flex;
   gap: 20px;
@@ -87,33 +104,63 @@
 }
 
 .dropdown_label {
-  font-size: 12px;
-  color: #8c8c8c;
-  padding-top: 0px;
-  padding-bottom: 0px;
-  font-weight: 500;
-  text-transform: uppercase;
-  letter-spacing: 0.5px;
+  color: #656579;
+  font-family: 'Poppins', sans-serif;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 300;
+  line-height: 20px;
+  text-transform: none;
+  letter-spacing: normal;
 }
-
 
 .dropdown_button {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 10px 16px;
-  border: 1px solid #d9d9d9;
-  border-radius: 50px;
-  background-color: #ffffff;
+  gap: 8px;
+  height: 44px;
+  padding: 4px 14px;
+  border: 1px solid #C3C3CB;
+  border-radius: 32px;
+  background-color: #FFFFFF;
   cursor: pointer;
-  min-width: 180px;
-  height: 12px;
+  flex: 1 0 0;
   transition: all 0.2s ease;
+  min-width: 180px;
 }
 
-.dropdown_button:hover {
-  border-color: #40a9ff;
-  box-shadow: 0 2px 8px rgba(64, 169, 255, 0.1);
+.dropdown_text {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 1;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  color: #656579;
+  font-family: 'Poppins', sans-serif;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 300;
+  line-height: 20px;
+  max-width: 140px;
+  white-space: normal;
+  /* allow webkit-line-clamp to work */
+}
+
+/* Icon */
+.dropdown_arrow {
+  display: flex;
+  padding: 8px;
+  justify-content: center;
+  align-items: center;
+  gap: 6px;
+  border-radius: var(--btn-border-radius, 4px);
+}
+
+.dropdown_button:hover,
+:global(.ant-dropdown-open .dropdown_button) {
+  border-color: #000 !important;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1) !important;
 }
 
 .dropdown_text {
@@ -131,6 +178,7 @@
   margin-left: 8px;
 }
 
+/* Results */
 .results_container {
   padding: 30px 40px;
   display: flex;
@@ -138,14 +186,11 @@
   gap: 20px;
 }
 
-
-
-
-
-
-
-/* .directory_search {
+/* Optional legacy/commented out style */
+/*
+.directory_search {
   border-radius: 2rem;
   width: 400px;
   height: 45px;
-} */
+}
+*/

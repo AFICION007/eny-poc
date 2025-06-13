@@ -14,7 +14,7 @@
 .news_heading {
   margin-bottom: 24px;
   font-size: 19px;
-  font-family: Poppins;
+  font-family: "Poppins";
   font-style: normal;
   font-weight: 600;
   line-height: 40px;
@@ -33,7 +33,7 @@
 
 .view_all {
   font-size: 14px;
-  font-family: Poppins;
+  font-family: "Poppins";
   font-style: normal;
   font-weight: 600;
   line-height: 40px;

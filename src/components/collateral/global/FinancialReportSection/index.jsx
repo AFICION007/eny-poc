@@ -82,7 +82,8 @@ const FinancialReportSection = () => {
           </div>
         </div>
       </div>
-
+      
+      <div className={styles.reportsScrollWrapper}>
       <div className={styles.reportsSection}>
         {getFilteredReports().map(report => (
           <div
@@ -104,6 +105,7 @@ const FinancialReportSection = () => {
           </div>
         )}
       </div>
+        </div>
     </div>
   );
 };
