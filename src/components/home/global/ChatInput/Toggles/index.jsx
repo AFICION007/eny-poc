@@ -30,6 +30,11 @@ const Toggles = () => {
       Icon: (className) => <Knowledge className={className} />,
       label: "Knowledge base",
     },
+    // {
+    //   value: "news_search",
+    //   Icon: (className) => <Knowledge className={className} />,
+    //   label: "News search",
+    // },
     {
       value: "web_search",
       Icon: (className) => <Web className={className} />,

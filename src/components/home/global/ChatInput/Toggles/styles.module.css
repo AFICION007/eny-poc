@@ -23,7 +23,7 @@
   box-sizing: border-box;
   height: 36px;
   cursor: pointer;
-  border-radius: 8px;
+  border-radius: 18px;
 }
 
 .toggle:hover {
@@ -31,6 +31,7 @@
 }
 
 .active_toggle {
+  background-color: #ffe8e8;
 }
 
 .active_toggle:hover {

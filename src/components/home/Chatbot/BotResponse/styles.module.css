@@ -1,7 +1,6 @@
 .bot_tabs {
   padding-block: 20px;
   box-sizing: border-box;
-  min-height: calc(100vh - 54px);
 
   @media (max-width: 1480px) {
     padding-left: calc(20px + var(--sidebar-width));

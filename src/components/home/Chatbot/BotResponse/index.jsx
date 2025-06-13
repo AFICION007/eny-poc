@@ -14,7 +14,7 @@ const getTabs = () => [
     TabContent: <AnswerSection />,
   },
   { key: "documents", label: "Documents", TabContent: <DocumentCard /> },
-  { key: "references", label: "References", TabContent: "References Content" },
+  // { key: "references", label: "References", TabContent: "References Content" },
   { key: "news", label: "News", TabContent: <NewsCard /> },
 ];
 
