@@ -10,18 +10,37 @@ import Web from "./assets/web";
 
 const Toggles = () => {
   const [searchParams, setSearchParams] = useSearchParams();
-  const mode = searchParams.get("mode");
+  const modesParam = searchParams.get("modes");
 
-  const { selectedMode, setSelectedMode } = useContext(WorkspaceContext);
+  const { selectedModes, setSelectedModes } = useContext(WorkspaceContext);
   useEffect(() => {
-    if (mode) {
-      setSelectedMode(mode);
+    if (modesParam) {
+      const modesArray = modesParam.split(",");
+      setSelectedModes(modesArray);
     }
-  }, [mode]);
+  }, [modesParam]);
 
   const onModeClick = (value) => {
-    setSelectedMode(value);
-    setSearchParams({ mode: value });
+    let newModes;
+
+    if (selectedModes.includes(value)) {
+      // Remove mode if already selected
+      newModes = selectedModes.filter((mode) => mode !== value);
+    } else {
+      // Add mode if not selected
+      newModes = [...selectedModes, value];
+    }
+
+    setSelectedModes(newModes);
+
+    // Update URL params - join array into comma-separated string
+    if (newModes.length > 0) {
+      setSearchParams({ modes: newModes.join(",") });
+    } else {
+      // Remove param if no modes selected
+      searchParams.delete("modes");
+      setSearchParams(searchParams);
+    }
   };
 
   const toggles = [
@@ -50,7 +69,8 @@ const Toggles = () => {
   return (
     <div className={styles.toggles}>
       {toggles.map(({ Icon, label, value }) => {
-        const className = selectedMode === value ? "active" : "default";
+        const isActive = selectedModes.includes(value);
+        const className = isActive ? "active" : "default";
 
         return (
           <div

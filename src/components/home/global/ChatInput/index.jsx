@@ -12,14 +12,15 @@ import submitInactive from "./assets/submit-inactive.svg";
 
 // className: empty_state | chatbot
 const ChatInput = ({ handleSubmit = () => {}, className = "" }) => {
-  const { query, setQuery, selectedMode } = useContext(WorkspaceContext);
+  const { query, setQuery, selectedModes } = useContext(WorkspaceContext);
 
   const handleInputChange = (event) => {
     const updatedQuery = event.target.value;
     setQuery(updatedQuery);
   };
 
-  const isSubmitActive = selectedMode !== null && query.length !== 0;
+  const isSubmitActive =
+    selectedModes && selectedModes.length > 0 && query.length !== 0;
 
   const handleKeyDown = (event) => {
     if (event.key === "Enter" && !event.shiftKey && query.length !== 0) {

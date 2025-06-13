@@ -29,7 +29,7 @@ const chatsMap = {
 
 // All the references inside this component are stable
 const Chatbot = ({ className = "" }) => {
-  //   const { selectedMode, modal, setModal, messages, updateMessage } =
+  //   const { selectedModes, modal, setModal, messages, updateMessage } =
   //     useContext(WorkspaceContext);
 
   //   const { threadId } = useParams();

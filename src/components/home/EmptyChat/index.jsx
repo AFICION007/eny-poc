@@ -13,16 +13,16 @@ import searchAnalytics from "./assets/search-analytics.svg";
 import seoAnalysis from "./assets/seo-analysis.svg";
 
 const Home = () => {
-  const { query, setQuery, setMessages, selectedMode } =
+  const { query, setQuery, setMessages, selectedModes } =
     useContext(WorkspaceContext);
 
   const navigate = useNavigate();
   const handleSubmitChat = () => {
-    if (selectedMode) {
+    if (selectedModes.length > 0) {
       setMessages([getUserMessage(query)]);
 
       setQuery("");
-      navigate(`thread/threadId?mode=${selectedMode}`);
+      navigate(`thread/threadId?modes=${selectedModes.join(",")}`);
     }
   };
 

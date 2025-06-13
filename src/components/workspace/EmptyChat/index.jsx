@@ -16,7 +16,7 @@ const EmptyChat = () => {
     setPreviousState,
     query,
     setQuery,
-    selectedMode,
+    selectedModes,
     setMessages,
     refetchThreads,
   } = useContext(WorkspaceContext);
@@ -25,12 +25,12 @@ const EmptyChat = () => {
 
   const handleSubmit = useCallback(
     (query) => {
-      if (selectedMode !== null) {
-        postChatThread(query, selectedMode?.split("/")[0]);
+      if (selectedModes !== null) {
+        postChatThread(query, selectedModes?.split("/")[0]);
         setPreviousState("empty");
       }
     },
-    [selectedMode, postChatThread]
+    [selectedModes, postChatThread]
   );
 
   const navigate = useNavigate();
@@ -40,7 +40,7 @@ const EmptyChat = () => {
       setMessages([getUserMessage(query)]);
 
       setQuery("");
-      navigate(`thread/${threadId}?dbId=${selectedMode}`);
+      navigate(`thread/${threadId}?dbId=${selectedModes}`);
     }
   }, [threadId]);
 

@@ -7,11 +7,12 @@ import { getUserMessage } from "../../utils/message";
 
 // All the references inside this hook are stable
 const useMessages = () => {
-  const { query, setQuery, appendMessage, selectedMode } =
+  const { query, setQuery, appendMessage, selectedModes } =
     useContext(WorkspaceContext);
 
   const handleSubmitChat = () => {
-    if (selectedMode) {
+    // at least one mode is selected
+    if (selectedModes.length > 0) {
       appendMessage(getUserMessage(query));
       setQuery("");
     }

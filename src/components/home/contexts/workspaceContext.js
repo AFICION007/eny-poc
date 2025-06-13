@@ -4,8 +4,8 @@ const WorkspaceContext = createContext({
   query: "",
   setQuery: () => {},
 
-  selectedMode: null,
-  setSelectedMode: () => {},
+  selectedModes: [],
+  setSelectedModes: () => {},
 
   modal: {},
   setModal: () => {},

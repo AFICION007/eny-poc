@@ -6,7 +6,7 @@ import useChat from "./hooks/useChat";
 
 const Workspace = () => {
   const [query, setQuery] = useState("");
-  const [selectedMode, setSelectedMode] = useState(null);
+  const [selectedModes, setSelectedModes] = useState([]);
   const [modal, setModal] = useState({ open: false });
 
   const { messages, appendMessage, updateMessage, setMessages } = useChat();
@@ -16,8 +16,8 @@ const Workspace = () => {
       value={{
         query,
         setQuery,
-        selectedMode,
-        setSelectedMode,
+        selectedModes,
+        setSelectedModes,
         modal,
         setModal,
         messages,
