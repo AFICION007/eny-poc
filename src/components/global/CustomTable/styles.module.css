@@ -17,8 +17,9 @@
 
   :global(thead tr > :first-child) {
     display: flex;
-    padding: 16px 16px !important;
+    padding: 12px 24px !important;
     align-items: center;
+    margin-bottom: 28px;
     gap: 12px;
     flex-shrink: 0;
     border-inline-start: 1px solid #f1f5f7;
@@ -62,6 +63,7 @@
 
   :global(td.ant-table-cell) {
     max-width: 200px;
+    padding: 16px 24px !important;
     font-family: "Poppins";
     font-weight: 400;
     color: #2e2e38;
@@ -73,6 +75,7 @@
   flex-direction: column;
   padding: 20px 24px;
   align-items: flex-start;
+  font-family: 'Poppins';
   align-self: stretch;
   background-color: #2e2e3c;
   border-radius: 6px 6px 0px 0px;
