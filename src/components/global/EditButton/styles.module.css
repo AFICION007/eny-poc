@@ -1,0 +1,27 @@
+.actionButton {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    height: 40px;
+    padding: 0 16px;
+    background-color: white;
+    color: #1c1c1c;
+    border: 1px solid #d0d0d0;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background-color 0.2s ease, border-color 0.2s ease;
+  }
+  
+  .actionButton:hover {
+    background-color: #f4f4f4;
+    border-color: #bdbdbd;
+  }
+  
+  .icon {
+    width: 20px;
+    height: 20px;
+    stroke: #1c1c1c;
+  }
+  

@@ -9,6 +9,7 @@ import DocumentPage from "./myDocument";
 import CollateralPage from "./collateral";
 import CollateralLayout from "./collateral/CollateralLayout";
 import ChatResponsePage from "./collateral/ChatResponsePage";
+import CoverageUniverse from "./coverageUniverse";
 
 const Router = () => {
   return (
@@ -25,6 +26,7 @@ const Router = () => {
             <Route index element={<CollateralPage/>} />
             <Route path="thread/:threadId" element={<ChatResponsePage />} />
           </Route>
+          <Route path="/coverage-universe" element={<CoverageUniverse />}/>
         </Route>
       </Routes>
     </BrowserRouter>

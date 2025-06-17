@@ -1,0 +1,307 @@
+.coverage_page {
+  min-height: 100vh;
+  background-color: white;
+  padding: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+}
+
+/* Header Section */
+.header {
+  background: var(--Grey-100, #F6F6FA);
+  padding: 20px 0 0 0;
+  margin-bottom: 0;
+}
+
+.title {
+  padding-left: 80px;
+  color: #000;
+  font-family: "Poppins";
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 300;
+}
+
+.top {
+  display: flex;
+  flex-direction: column;
+  gap: 0px;
+  justify-content: space-around;
+  border-top: 6px solid #cc1a1f;
+}
+
+/* Filters Section */
+.filters_container {
+  background-color: #f8f8fb;
+  padding: 5px 40px 30px 80px;
+  display: flex;
+  align-items: center;
+  gap: 30px;
+  flex-wrap: wrap;
+}
+
+/* Search Container */
+.search_container {
+  flex: 1;
+  max-width: 621px;
+}
+
+.search_input {
+  border-radius: 32px;
+  background-color: #ffffff;
+  height: 57px;
+  box-shadow:
+    0px 1px 4px 3px var(--shadow-colors-primary, rgba(35, 35, 47, 0.06)),
+    0px 6px 12px 0px rgba(101, 101, 120, 0.08);
+}
+
+.search_input input::placeholder {
+  color: var(--Grey-400, #747480);
+  font-family: "Poppins";
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 500;
+}
+
+.search_input:hover {
+  border-color: black !important;
+}
+
+.search_input:focus,
+.search_input.ant-input-focused {
+  border-color: black !important;
+  box-shadow: none !important;
+}
+
+.search_input :global(.ant-input) {
+  border: none;
+  padding-left: 15px;
+  font-size: 14px;
+}
+
+.search_input :global(.ant-input-search-button) {
+  border: none;
+  background: transparent;
+  color: #ff4d4f;
+}
+
+.search_icon {
+  color: #ff4d4f;
+  font-size: 16px;
+}
+
+/* Dropdowns */
+.dropdowns_container {
+  display: flex;
+  gap: 20px;
+  width: 100%;
+  padding-right: 30px;
+  justify-content: end;
+  margin-top: -280px;
+}
+
+.dropdowns_container_bottom {
+  display: flex;
+  gap: 20px;
+  width: 100%;
+  padding-right: 30px;
+  justify-content: end;
+  margin-top: -20px;
+}
+
+.dropdown_wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.dropdown_label {
+  color: #656579;
+  font-family: 'Poppins', sans-serif;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 300;
+  line-height: 20px;
+  text-transform: none;
+  letter-spacing: normal;
+}
+
+.dropdown_button {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  height: 44px;
+  padding: 4px 14px;
+  border: 1px solid #C3C3CB;
+  border-radius: 32px;
+  background: var(--select-input-hover-bg-color, #F3F3F5);
+  ;
+  cursor: pointer;
+  flex: 1 0 0;
+  box-sizing: border-box;
+}
+
+.dropdown_button_company {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  height: 44px;
+  padding: 4px 14px;
+  border: 1px solid #C3C3CB;
+  border-radius: 32px;
+  background: var(--select-input-hover-bg-color, #fff);
+  ;
+  cursor: pointer;
+  flex: 1 0 0;
+  box-sizing: border-box;
+}
+
+.dropdown_button:hover,
+:global(.ant-dropdown-open .dropdown_button) {
+  border-color: #000 !important;
+  /* box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1) !important; */
+}
+
+.dropdown_text {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 1;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  color: #656579;
+  font-family: 'Poppins', sans-serif;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 300;
+  line-height: 20px;
+  max-width: 140px;
+  white-space: normal;
+  /* allow webkit-line-clamp to work */
+}
+
+/* Icon */
+.dropdown_arrow {
+  display: flex;
+  padding: 8px;
+  justify-content: center;
+  align-items: center;
+  gap: 6px;
+  border-radius: var(--btn-border-radius, 4px);
+}
+
+.dropdown_text {
+  font-size: 14px;
+  color: #595959;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 140px;
+}
+
+.dropdown_arrow {
+  color: #8c8c8c;
+  font-size: 12px;
+  margin-left: 8px;
+}
+
+.select_wrapper {
+  width: 205px;
+  height: 70px;
+}
+
+.select_input :global(.ant-select-selector) {
+  height: 44px !important;
+  padding: 4px 14px !important;
+  border-radius: 32px !important;
+  border-width: 1px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+/* Ensures dropdown arrow aligns properly */
+.select_input :global(.ant-select-arrow) {
+  color: #6b7280;
+}
+
+/* DatePicker styles */
+.datepicker_wrapper {
+  width: 218px;
+  height: 44px;
+  gap: 4px;
+}
+
+.datepicker_input :global(.ant-picker) {
+  width: 100%;
+  height: 44px;
+  border-radius: 32px;
+  padding: 4px 14px;
+  display: flex;
+  align-items: center;
+  border: 1px solid #dcdcdc;
+}
+
+/* Table Section */
+.results_container {
+  padding: 30px 60px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.table_section {
+  margin-bottom: 48px;
+}
+
+.table_header {
+  margin-bottom: 12px;
+}
+
+.table_header h2 {
+  font-size: 20px;
+  font-weight: 600;
+  color: #111827;
+  margin: 0 0 4px 0;
+}
+
+.table_header p {
+  font-size: 14px;
+  color: #6b7280;
+  margin: 0;
+}
+
+/* Button Styling */
+.edit_btn,
+.delete_btn {
+  padding: 4px 10px;
+  font-size: 13px;
+  border-radius: 4px;
+  border: none;
+  cursor: pointer;
+}
+
+.edit_btn {
+  background-color: #2563eb;
+  color: white;
+}
+
+.delete_btn {
+  background-color: #f87171;
+  color: white;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  .filters_container {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .dropdowns_container {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .dropdown_button {
+    width: 100%;
+  }
+}
