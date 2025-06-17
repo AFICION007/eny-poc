@@ -70,9 +70,7 @@ const FolderSelector = ({ onFolderSelect }) => {
 
   return (
     <div className={styles.folder_selector}>
-      <div className={styles.selector_header}>
-        <h3 className={styles.selector_title}>Select Folder Name</h3>
-      </div>
+        <p className={styles.selector_title}>Select Folder Name</p>
       
       <div className={styles.folders_container}>
         {showLeftArrow && (
@@ -91,7 +89,9 @@ const FolderSelector = ({ onFolderSelect }) => {
               onClick={() => handleFolderClick(folder.name)}
             >
               <span className={styles.folder_name}>{folder.name}</span>
-              <span className={styles.folder_count}>{folder.count}</span>
+              <div className={styles.folder_count}>
+                <span className={styles.count}>{folder.count}</span>
+              </div>
             </div>
           ))}
         </div>

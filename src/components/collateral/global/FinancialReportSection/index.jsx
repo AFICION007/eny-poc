@@ -5,6 +5,17 @@ import styles from './styles.module.css';
 
 const { RangePicker } = DatePicker;
 
+const CustomFileIcon = () => (
+  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+    <path fillRule="evenodd" clipRule="evenodd" d="M5.25 6C5.25 5.58579 5.58579 5.25 6 5.25H18C18.4142 5.25 18.75 5.58579 18.75 6C18.75 6.41421 18.4142 6.75 18 6.75H6C5.58579 6.75 5.25 6.41421 5.25 6Z" fill="black"/>
+    <path fillRule="evenodd" clipRule="evenodd" d="M5.25 10C5.25 9.58579 5.58579 9.25 6 9.25H18C18.4142 9.25 18.75 9.58579 18.75 10C18.75 10.4142 18.4142 10.75 18 10.75H6C5.58579 10.75 5.25 10.4142 5.25 10Z" fill="black"/>
+    <path fillRule="evenodd" clipRule="evenodd" d="M12.25 14C12.25 13.5858 12.5858 13.25 13 13.25L18 13.25C18.4142 13.25 18.75 13.5858 18.75 14C18.75 14.4142 18.4142 14.75 18 14.75L13 14.75C12.5858 14.75 12.25 14.4142 12.25 14Z" fill="black"/>
+    <path fillRule="evenodd" clipRule="evenodd" d="M12.25 18C12.25 17.5858 12.5858 17.25 13 17.25H18C18.4142 17.25 18.75 17.5858 18.75 18C18.75 18.4142 18.4142 18.75 18 18.75H13C12.5858 18.75 12.25 18.4142 12.25 18Z" fill="black"/>
+    <path fillRule="evenodd" clipRule="evenodd" d="M2.75 2.75V21.25H21.25V2.75H2.75ZM1.25 2.6C1.25 1.85441 1.85442 1.25 2.6 1.25H21.4C22.1456 1.25 22.75 1.85442 22.75 2.6V21.4C22.75 22.1456 22.1456 22.75 21.4 22.75H2.6C1.85441 22.75 1.25 22.1456 1.25 21.4V2.6Z" fill="black"/>
+    <path fillRule="evenodd" clipRule="evenodd" d="M5.25 14C5.25 13.5858 5.58579 13.25 6 13.25H9C9.41421 13.25 9.75 13.5858 9.75 14V18C9.75 18.4142 9.41421 18.75 9 18.75H6C5.58579 18.75 5.25 18.4142 5.25 18V14ZM6.75 14.75V17.25H8.25V14.75H6.75Z" fill="black"/>
+  </svg>
+);
+
 const FinancialReportSection = () => {
   const [activeYear, setActiveYear] = useState('2025');
   const [activeTab, setActiveTab] = useState('annual-reports');
@@ -92,7 +103,7 @@ const FinancialReportSection = () => {
             onClick={() => handleDownload(report)}
           >
             <div className={styles.reportContent}>
-              <FileTextOutlined className={styles.reportIcon} />
+              <CustomFileIcon className={styles.reportIcon} />
               <span className={styles.reportName}>{report.name}</span>
             </div>
             <ArrowRightOutlined className={styles.downloadIcon} />

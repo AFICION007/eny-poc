@@ -1,9 +1,8 @@
-import React, { useContext, useState } from 'react';
+import React, { useContext } from 'react';
 import { Card, Typography, Space, Button, Input, message } from 'antd';
 import {
   ArrowLeftOutlined,
   EyeOutlined,
-  CopyOutlined,
   PaperClipOutlined,
   SendOutlined,
 } from '@ant-design/icons';
@@ -14,6 +13,13 @@ import collateralContext from '../contexts/collateralContext';
 
 const { Title, Text, Paragraph } = Typography;
 const { TextArea } = Input;
+
+const CopyIcon = () => (
+  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+    <path fillRule="evenodd" clipRule="evenodd" d="M8.25 9.6C8.25 8.85442 8.85442 8.25 9.6 8.25H19.4C20.1456 8.25 20.75 8.85442 20.75 9.6V19.4C20.75 20.1456 20.1456 20.75 19.4 20.75H9.6C8.85442 20.75 8.25 20.1456 8.25 19.4V9.6ZM9.75 9.75V19.25H19.25V9.75H9.75Z" fill="#747480"/>
+    <path fillRule="evenodd" clipRule="evenodd" d="M3.25 4.6C3.25 3.85442 3.85442 3.25 4.6 3.25H14.4C15.1456 3.25 15.75 3.85442 15.75 4.6V9C15.75 9.41421 15.4142 9.75 15 9.75C14.5858 9.75 14.25 9.41421 14.25 9V4.75H4.75V14.25H9C9.41421 14.25 9.75 14.5858 9.75 15C9.75 15.4142 9.41421 15.75 9 15.75H4.6C3.85442 15.75 3.25 15.1456 3.25 14.4V4.6Z" fill="#747480"/>
+  </svg>
+);
 
 const complianceData = [
   {
@@ -62,7 +68,6 @@ const complianceData = [
 const ChatResponsePage = () => {
   const navigate = useNavigate();
   const { query, setQuery } = useContext(collateralContext);
-  // const placeholder = 'Type your question about AIF compliances...';
 
   const handleBack = () => navigate('/collaterals');
 
@@ -70,7 +75,7 @@ const ChatResponsePage = () => {
     if (query.trim()) {
       console.log('Submitted:', query);
       message.success('Query submitted!');
-      setQuery('');
+      navigate('/collaterals/thread/123');
     } else {
       message.warning('Please enter a query.');
     }
@@ -114,9 +119,8 @@ const ChatResponsePage = () => {
             value={query}
             onChange={(e) => setQuery(e.target.value)}
             onKeyPress={handleKeyPress}
-            placeholder={query}
+            placeholder="Type your query here..."
             className={styles.queryInput}
-            // autoSize={{ minRows: 1, maxRows: 4 }}
           />
           <Button
             type="primary"
@@ -167,12 +171,15 @@ const ChatResponsePage = () => {
                 </Button>
               </div>
             )}
-            <Button
-              type="text"
-              icon={<CopyOutlined />}
-              className={styles.copyButton}
-              onClick={() => handleCopyText(item.docName)}
-            />
+            <div className={styles.cardFooter}>
+              <Button
+                type="text"
+                icon={<CopyIcon />}
+                className={styles.copyButton}
+                onClick={() => handleCopyText(item.docName)}
+                aria-label="Copy document name"
+              />
+            </div>
           </Card>
         ))}
       </Space>

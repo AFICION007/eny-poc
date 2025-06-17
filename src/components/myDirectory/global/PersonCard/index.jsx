@@ -7,26 +7,24 @@ import styles from './styles.module.css';
 const ProfileCard = ({ profile }) => {
   return (
     <div className={styles.profile_card}>
-      <div className={styles.avatar_container}>
-        <Avatar 
-          size={64}
-          src={profile.avatar}
-          icon={<UserOutlined />}
-          className={styles.avatar}
-        />
-      </div>
-      
+      <Avatar
+        size={64}
+        src={profile.avatar}
+        icon={<UserOutlined />}
+        className={styles.avatar}
+      />
+
       <div className={styles.profile_info}>
-        <h3 className={styles.profile_name}>{profile.name}</h3>
+        <p className={styles.profile_name}>{profile.name}</p>
         <div className={styles.profile_details}>
           <p className={styles.detail_item}>
-            <span className={styles.detail_label}>Experience:</span> {profile.experience}
+            Experience:{profile.experience}
           </p>
           <p className={styles.detail_item}>
-            <span className={styles.detail_label}>Previously:</span> {profile.previousRole}
+            Previously:{profile.previousRole}
           </p>
           <p className={styles.detail_item}>
-            <span className={styles.detail_label}>Education:</span> {profile.education}
+            Education:{profile.education}
           </p>
         </div>
       </div>

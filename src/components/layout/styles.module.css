@@ -6,6 +6,7 @@
   flex-direction: column;
   width: 100%;
   background-color: black;
+  /* border-bottom: 6px solid #cc1a1f; */
 }
 
 .header_top {
@@ -115,7 +116,7 @@
   border-radius: 8px;
 
   color: #fff;
-  font-family: Poppins;
+  font-family: "Poppins";
   font-size: 14px;
   font-style: normal;
   font-weight: 600;

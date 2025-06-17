@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Table, Checkbox, Button, DatePicker, Select, Space, Modal, Upload, Progress, message } from 'antd';
+import { Table, Checkbox, Button, DatePicker, Select, Space, Modal, Upload, Progress, message, Dropdown } from 'antd';
 import {
     EditOutlined,
     DeleteOutlined,
@@ -9,8 +9,44 @@ import {
     ExclamationCircleOutlined,
 } from '@ant-design/icons';
 import styles from './styles.module.css';
+import DocumentCard from './DocumentCard'
 
 const { RangePicker } = DatePicker;
+
+const DropdownArrow = () => (
+    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
+        <path fill-rule="evenodd" clip-rule="evenodd" d="M4.55806 7.05806C4.80214 6.81398 5.19786 6.81398 5.44194 7.05806L10 11.6161L14.5581 7.05806C14.8021 6.81398 15.1979 6.81398 15.4419 7.05806C15.686 7.30214 15.686 7.69786 15.4419 7.94194L10.4419 12.9419C10.1979 13.186 9.80214 13.186 9.55806 12.9419L4.55806 7.94194C4.31398 7.69786 4.31398 7.30214 4.55806 7.05806Z" fill="#656579" />
+    </svg>
+)
+
+const DOCUMENTS = [
+    {
+        title: "Swiggy_RelationshipNotes_2024-11-10.docx",
+        url: "/MINSHU_SHAW_CV_2025.pdf",
+    },
+    {
+        title: "Flipkart_MeetingNotes_2025-01-15.docx",
+        url: "/flipkart_meeting_notes.docx",
+    },
+    {
+        title: "Zomato_BusinessPlan_2025-03-01.pdf",
+        url: "/zomato_business_plan.pdf",
+    },
+    {
+        title: "Amazon_StrategyDeck_2025-04-12.pptx",
+        url: "/amazon_strategy_deck.pptx",
+    },
+    {
+        title: "Meesho_ClientFeedback_2025-02-20.docx",
+        url: "/meesho_feedback.docx",
+    },
+    {
+        title: "Nykaa_AnnualSummary_2024-12-05.pdf",
+        url: "/nykaa_annual_summary.pdf",
+    },
+];
+
+
 
 const FILE_TYPE_OPTIONS = [
     { label: 'Word files', value: 'word' },
@@ -56,6 +92,7 @@ const INITIAL_DOCUMENTS = [
 
 const Documents = () => {
     const [selectedRowKeys, setSelectedRowKeys] = useState([]);
+    const [fileType, setFileType] = useState('');
     const [selectedFileTypes, setSelectedFileTypes] = useState(['pdf']);
     const [selectAll, setSelectAll] = useState(false);
     const [documents, setDocuments] = useState(INITIAL_DOCUMENTS);
@@ -64,6 +101,11 @@ const Documents = () => {
     const [uploadProgress, setUploadProgress] = useState(0);
     const [uploading, setUploading] = useState(false);
     const [modal, contextHolder] = Modal.useModal();
+
+    const dateFormat = "YYYY/MM/DD"
+    const fileTypeFilterMenu = (
+        <></>
+    );
 
     const handleDelete = () => {
         modal.confirm({
@@ -193,124 +235,143 @@ const Documents = () => {
 
     return (
         <div className={styles.documents_container}>
-            {/* {contextHolder} */}
-            <div className={styles.documents_header}>
-                <h2 className={styles.documents_title}>Documents</h2>
-                <div className={styles.date_range_picker}>
-                    <RangePicker placeholder={['06/01/2024', '13/01/2024']} className={styles.date_picker} />
-                </div>
-            </div>
-
-            <div className={styles.content_wrapper}>
-                <div className={styles.sidebar}>
-                    <div className={styles.file_type_section}>
-                        <h3 className={styles.section_title}>Select File Type</h3>
-                        <div className={styles.select_all_wrapper}>
-                            <Checkbox
-                                checked={selectAll}
-                                onChange={handleSelectAll}
-                                className={styles.select_all_checkbox}
-                            >
-                                Select All
-                            </Checkbox>
+            <h2 className={styles.documents_title}>Documents</h2>
+            <div className={styles.dropdown_wrapper}>
+                <span className={styles.dropdown_label}>File Type</span>
+                <Dropdown
+                    overlay={fileTypeFilterMenu}
+                    trigger={['click']}
+                    placement="bottomLeft"
+                >
+                    <div className={styles.dropdown_button}>
+                        <span className={styles.dropdown_text}>{fileType || "PDF"}</span>
+                        <div className={styles.icon_wrapper}>
+                            <DropdownArrow className={styles.dropdown_arrow} />
                         </div>
-                        <Checkbox.Group
-                            value={selectedFileTypes}
-                            onChange={handleFileTypeChange}
-                            className={styles.checkbox_group}
-                        >
-                            {FILE_TYPE_OPTIONS.map((option) => (
-                                <Checkbox key={option.value} value={option.value} className={styles.file_type_checkbox}>
-                                    {option.label}
-                                </Checkbox>
-                            ))}
-                        </Checkbox.Group>
                     </div>
-                </div>
+                </Dropdown>
+            </div>
 
-                <div className={styles.main_content}>
-                    <div className={styles.actions_toolbar}>
-                        <span className={styles.actions_label}>Actions:</span>
-                        <Space>
-                            <Button className={styles.action_btn} icon={
-                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
-                                    <path fillRule="evenodd" clipRule="evenodd" d="M1.875 17.5C1.875 17.1549 2.15482 16.875 2.5 16.875H17.5C17.8452 16.875 18.125 17.1549 18.125 17.5C18.125 17.8452 17.8452 18.125 17.5 18.125H2.5C2.15482 18.125 1.875 17.8452 1.875 17.5Z" fill="#4D4D5C" />
-                                    <path fillRule="evenodd" clipRule="evenodd" d="M17.1086 7.06673C17.3527 6.82265 17.3527 6.42693 17.1086 6.18285L12.9838 2.05806C12.7397 1.81398 12.344 1.81398 12.0999 2.05806L5.07074 9.08725C4.79725 9.36074 4.64361 9.73167 4.64361 10.1184V13.8981C4.64361 14.2432 4.92343 14.5231 5.26861 14.5231H9.04822C9.43499 14.5231 9.80593 14.3694 10.0794 14.0959L17.1086 7.06673ZM15.7828 6.62479L14.3096 8.09793L11.0687 4.85702L12.5419 3.38388L15.7828 6.62479ZM10.1849 5.74091L13.4258 8.98181L9.19553 13.212C9.15646 13.2511 9.10347 13.2731 9.04822 13.2731H5.89361V10.1184C5.89361 10.0632 5.91556 10.0102 5.95463 9.97113L10.1849 5.74091Z" fill="#4D4D5C" />
-                                </svg>
-                            }>
-                                Edit
-                            </Button>
+            <RangePicker className={styles.date_picker} format={dateFormat} />
 
-                            <Button
-                                className={styles.action_btn}
-                                icon={
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
-                                        <path fillRule="evenodd" clipRule="evenodd" d="M16.7749 6.88379C17.1149 6.94357 17.342 7.26762 17.2822 7.60758L15.6197 17.0628C15.6197 18.1586 14.4753 18.9577 13.3627 18.9577H6.63728C5.52472 18.9577 4.5729 18.1586 4.38024 17.0628L2.71778 7.60758C2.658 7.26762 2.88514 6.94357 3.2251 6.88379C3.56507 6.82402 3.88912 7.05116 3.94889 7.39112L5.61136 16.8464C5.69893 17.3445 6.1316 17.7077 6.63728 17.7077H13.3627C13.8684 17.7077 14.3011 17.3445 14.3886 16.8464L16.0511 7.39112C16.1109 7.05115 16.4349 6.82402 16.7749 6.88379Z" fill="#4D4D5C" />
-                                        <path fillRule="evenodd" clipRule="evenodd" d="M8.85417 2.29102C8.27887 2.29102 7.8125 2.75739 7.8125 3.33268V4.37435H12.1875V3.33268C12.1875 2.75738 11.7211 2.29102 11.1458 2.29102H8.85417ZM6.5625 4.37435V3.33268C6.5625 2.06703 7.58851 1.04102 8.85417 1.04102H11.1458C12.4115 1.04102 13.4375 2.06704 13.4375 3.33268V4.37435H17.5C17.8452 4.37435 18.125 4.65417 18.125 4.99935C18.125 5.34453 17.8452 5.62435 17.5 5.62435H2.5C2.15482 5.62435 1.875 5.34453 1.875 4.99935C1.875 4.65417 2.15482 4.37435 2.5 4.37435H6.5625Z" fill="#4D4D5C" />
-                                    </svg>
-                                }
-                                onClick={handleDelete}
-                                disabled={selectedRowKeys.length === 0}
-                            >
-                                Delete
-                            </Button>
-
-                            <Button
-                                className={styles.action_btn}
-                                icon={
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
-                                        <path fillRule="evenodd" clipRule="evenodd" d="M4.375 15C4.375 14.6548 4.65482 14.375 5 14.375L15 14.375C15.3452 14.375 15.625 14.6548 15.625 15C15.625 15.3452 15.3452 15.625 15 15.625L5 15.625C4.65482 15.625 4.375 15.3452 4.375 15Z" fill="#4D4D5C" />
-                                        <path fillRule="evenodd" clipRule="evenodd" d="M9.55806 12.1086C9.80214 12.3527 10.1979 12.3527 10.4419 12.1086L13.3586 9.19194C13.6027 8.94786 13.6027 8.55214 13.3586 8.30806C13.1145 8.06398 12.7188 8.06398 12.4747 8.30806L10.625 10.1578V5C10.625 4.65482 10.3452 4.375 10 4.375C9.65482 4.375 9.375 4.65482 9.375 5V10.1578L7.52528 8.30806C7.2812 8.06398 6.88547 8.06398 6.64139 8.30806C6.39731 8.55214 6.39731 8.94786 6.64139 9.19194L9.55806 12.1086Z" fill="#4D4D5C" />
-                                        <path fillRule="evenodd" clipRule="evenodd" d="M3.125 3.125V16.875H16.875V3.125H3.125ZM1.875 3C1.875 2.37868 2.37868 1.875 3 1.875H17C17.6213 1.875 18.125 2.37868 18.125 3V17C18.125 17.6213 17.6213 18.125 17 18.125H3C2.37868 18.125 1.875 17.6213 1.875 17V3Z" fill="#4D4D5C" />
-                                    </svg>
-                                }
-                                onClick={handleDownload}
-                                disabled={selectedRowKeys.length === 0}
-                            >
-                                Download
-                            </Button>
-
-                            <Button
-                                className={styles.action_btn}
-                                icon={
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
-                                        <path fillRule="evenodd" clipRule="evenodd" d="M4.375 16.6673C4.375 16.3221 4.65482 16.0423 5 16.0423H15C15.3452 16.0423 15.625 16.3221 15.625 16.6673C15.625 17.0125 15.3452 17.2923 15 17.2923H5C4.65482 17.2923 4.375 17.0125 4.375 16.6673Z" fill="#4D4D5C" />
-                                        <path fillRule="evenodd" clipRule="evenodd" d="M9.55806 2.89204C9.80214 2.64796 10.1979 2.64796 10.4419 2.89204L13.3586 5.80871C13.6027 6.05279 13.6027 6.44851 13.3586 6.69259C13.1145 6.93667 12.7188 6.93667 12.4747 6.69259L10.625 4.84287V13.334C10.625 13.6792 10.3452 13.959 10 13.959C9.65482 13.959 9.375 13.6792 9.375 13.334V4.84287L7.52527 6.69259C7.2812 6.93667 6.88547 6.93667 6.64139 6.69259C6.39731 6.44851 6.39731 6.05279 6.64139 5.80871L9.55806 2.89204Z" fill="#4D4D5C" />
-                                    </svg>
-                                }
-                                onClick={() => setUploadModalVisible(true)}
-                            >
-                                Upload
-                            </Button>
-                        </Space>
-                    </div>
-
-                    <div className={styles.table_wrapper}>
-                        <Table
-                            columns={columns}
-                            dataSource={documents}
-                            rowSelection={{
-                                selectedRowKeys,
-                                onChange: (keys) => setSelectedRowKeys(keys.map((k) => String(k))),
-                            }}
-                            rowClassName={(record) =>
-                                selectedRowKeys.includes(record.key) ? styles.selected_row : ''
-                            }
-                            pagination={{
-                                showSizeChanger: true,
-                                showTotal: (total, range) => `${range[0]}-${range[1]} of ${total}`,
-                                pageSize: 10,
-                                current: 1,
-                                total: documents.length,
-                                className: styles.pagination,
-                                position: ['bottomRight'],
-                            }}
-                            className={styles.documents_table}
-                            rowKey="key"
-                        />
-                    </div>
+            <div className={styles.document_section}>
+                <div className={styles.document_grid}>
+                    {DOCUMENTS.map((doc) => (
+                        <div className={styles.card_wrapper} key={doc.title}>
+                            <DocumentCard title={doc.title} url={doc.url} />
+                        </div>
+                    ))}
                 </div>
             </div>
+
+            {/* <div className={styles.sidebar}>
+                <h3 className={styles.section_title}>Select File Type</h3>
+                <div className={styles.select_all_wrapper}>
+                    <Checkbox
+                        checked={selectAll}
+                        onChange={handleSelectAll}
+                        className={styles.select_all_checkbox}
+                    >
+                        Select All
+                    </Checkbox>
+                </div>
+                <div className={styles.divider}></div>
+
+                <Checkbox.Group
+                    value={selectedFileTypes}
+                    onChange={handleFileTypeChange}
+                    className={styles.checkbox_group}
+                >
+                    {FILE_TYPE_OPTIONS.map((option) => (
+                        <Checkbox key={option.value} value={option.value} className={styles.file_type_checkbox}>
+                            {option.label}
+                        </Checkbox>
+                    ))}
+                </Checkbox.Group>
+            </div> */}
+            {/* <div className={styles.main_content}>
+                <div className={styles.actions_toolbar}>
+                    <span className={styles.actions_label}>Actions:</span>
+                    <div className={styles.action_btn_wrap}>
+                        <Button className={styles.action_btn} icon={
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
+                                <path fillRule="evenodd" clipRule="evenodd" d="M1.875 17.5C1.875 17.1549 2.15482 16.875 2.5 16.875H17.5C17.8452 16.875 18.125 17.1549 18.125 17.5C18.125 17.8452 17.8452 18.125 17.5 18.125H2.5C2.15482 18.125 1.875 17.8452 1.875 17.5Z" fill="#4D4D5C" />
+                                <path fillRule="evenodd" clipRule="evenodd" d="M17.1086 7.06673C17.3527 6.82265 17.3527 6.42693 17.1086 6.18285L12.9838 2.05806C12.7397 1.81398 12.344 1.81398 12.0999 2.05806L5.07074 9.08725C4.79725 9.36074 4.64361 9.73167 4.64361 10.1184V13.8981C4.64361 14.2432 4.92343 14.5231 5.26861 14.5231H9.04822C9.43499 14.5231 9.80593 14.3694 10.0794 14.0959L17.1086 7.06673ZM15.7828 6.62479L14.3096 8.09793L11.0687 4.85702L12.5419 3.38388L15.7828 6.62479ZM10.1849 5.74091L13.4258 8.98181L9.19553 13.212C9.15646 13.2511 9.10347 13.2731 9.04822 13.2731H5.89361V10.1184C5.89361 10.0632 5.91556 10.0102 5.95463 9.97113L10.1849 5.74091Z" fill="#4D4D5C" />
+                            </svg>
+                        }>
+                            Edit
+                        </Button>
+
+                        <Button
+                            className={styles.action_btn}
+                            icon={
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
+                                    <path fillRule="evenodd" clipRule="evenodd" d="M16.7749 6.88379C17.1149 6.94357 17.342 7.26762 17.2822 7.60758L15.6197 17.0628C15.6197 18.1586 14.4753 18.9577 13.3627 18.9577H6.63728C5.52472 18.9577 4.5729 18.1586 4.38024 17.0628L2.71778 7.60758C2.658 7.26762 2.88514 6.94357 3.2251 6.88379C3.56507 6.82402 3.88912 7.05116 3.94889 7.39112L5.61136 16.8464C5.69893 17.3445 6.1316 17.7077 6.63728 17.7077H13.3627C13.8684 17.7077 14.3011 17.3445 14.3886 16.8464L16.0511 7.39112C16.1109 7.05115 16.4349 6.82402 16.7749 6.88379Z" fill="#4D4D5C" />
+                                    <path fillRule="evenodd" clipRule="evenodd" d="M8.85417 2.29102C8.27887 2.29102 7.8125 2.75739 7.8125 3.33268V4.37435H12.1875V3.33268C12.1875 2.75738 11.7211 2.29102 11.1458 2.29102H8.85417ZM6.5625 4.37435V3.33268C6.5625 2.06703 7.58851 1.04102 8.85417 1.04102H11.1458C12.4115 1.04102 13.4375 2.06704 13.4375 3.33268V4.37435H17.5C17.8452 4.37435 18.125 4.65417 18.125 4.99935C18.125 5.34453 17.8452 5.62435 17.5 5.62435H2.5C2.15482 5.62435 1.875 5.34453 1.875 4.99935C1.875 4.65417 2.15482 4.37435 2.5 4.37435H6.5625Z" fill="#4D4D5C" />
+                                </svg>
+                            }
+                            onClick={handleDelete}
+                            disabled={selectedRowKeys.length === 0}
+                        >
+                            Delete
+                        </Button>
+
+                        <Button
+                            className={styles.action_btn}
+                            icon={
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
+                                    <path fillRule="evenodd" clipRule="evenodd" d="M4.375 15C4.375 14.6548 4.65482 14.375 5 14.375L15 14.375C15.3452 14.375 15.625 14.6548 15.625 15C15.625 15.3452 15.3452 15.625 15 15.625L5 15.625C4.65482 15.625 4.375 15.3452 4.375 15Z" fill="#4D4D5C" />
+                                    <path fillRule="evenodd" clipRule="evenodd" d="M9.55806 12.1086C9.80214 12.3527 10.1979 12.3527 10.4419 12.1086L13.3586 9.19194C13.6027 8.94786 13.6027 8.55214 13.3586 8.30806C13.1145 8.06398 12.7188 8.06398 12.4747 8.30806L10.625 10.1578V5C10.625 4.65482 10.3452 4.375 10 4.375C9.65482 4.375 9.375 4.65482 9.375 5V10.1578L7.52528 8.30806C7.2812 8.06398 6.88547 8.06398 6.64139 8.30806C6.39731 8.55214 6.39731 8.94786 6.64139 9.19194L9.55806 12.1086Z" fill="#4D4D5C" />
+                                    <path fillRule="evenodd" clipRule="evenodd" d="M3.125 3.125V16.875H16.875V3.125H3.125ZM1.875 3C1.875 2.37868 2.37868 1.875 3 1.875H17C17.6213 1.875 18.125 2.37868 18.125 3V17C18.125 17.6213 17.6213 18.125 17 18.125H3C2.37868 18.125 1.875 17.6213 1.875 17V3Z" fill="#4D4D5C" />
+                                </svg>
+                            }
+                            onClick={handleDownload}
+                            disabled={selectedRowKeys.length === 0}
+                        >
+                            Download
+                        </Button>
+
+                        <Button
+                            className={styles.action_btn}
+                            icon={
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
+                                    <path fillRule="evenodd" clipRule="evenodd" d="M4.375 16.6673C4.375 16.3221 4.65482 16.0423 5 16.0423H15C15.3452 16.0423 15.625 16.3221 15.625 16.6673C15.625 17.0125 15.3452 17.2923 15 17.2923H5C4.65482 17.2923 4.375 17.0125 4.375 16.6673Z" fill="#4D4D5C" />
+                                    <path fillRule="evenodd" clipRule="evenodd" d="M9.55806 2.89204C9.80214 2.64796 10.1979 2.64796 10.4419 2.89204L13.3586 5.80871C13.6027 6.05279 13.6027 6.44851 13.3586 6.69259C13.1145 6.93667 12.7188 6.93667 12.4747 6.69259L10.625 4.84287V13.334C10.625 13.6792 10.3452 13.959 10 13.959C9.65482 13.959 9.375 13.6792 9.375 13.334V4.84287L7.52527 6.69259C7.2812 6.93667 6.88547 6.93667 6.64139 6.69259C6.39731 6.44851 6.39731 6.05279 6.64139 5.80871L9.55806 2.89204Z" fill="#4D4D5C" />
+                                </svg>
+                            }
+                            onClick={() => setUploadModalVisible(true)}
+                        >
+                            Upload
+                        </Button>
+                    </div>
+                </div>
+
+                <div className={styles.table_wrapper}>
+                    <Table
+                        columns={columns}
+                        dataSource={documents}
+                        rowSelection={{
+                            selectedRowKeys,
+                            onChange: (keys) => setSelectedRowKeys(keys.map((k) => String(k))),
+                        }}
+                        rowClassName={(record) =>
+                            selectedRowKeys.includes(record.key) ? styles.selected_row : ''
+                        }
+                        pagination={{
+                            showSizeChanger: true,
+                            showTotal: (total, range) => `${range[0]}-${range[1]} of ${total}`,
+                            pageSize: 10,
+                            current: 1,
+                            total: documents.length,
+                            className: styles.pagination,
+                            position: ['bottomRight'],
+                        }}
+                        className={styles.documents_table}
+                        rowKey="key"
+                    />
+                </div>
+            </div>
+
 
             <Modal
                 title="Upload Document"
@@ -347,7 +408,7 @@ const Documents = () => {
                         <Progress percent={uploadProgress} status="active" />
                     </>
                 )}
-            </Modal>
+            </Modal> */}
         </div>
     );
 };

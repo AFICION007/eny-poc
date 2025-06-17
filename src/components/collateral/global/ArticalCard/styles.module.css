@@ -85,7 +85,7 @@
 .article_read_time {
     width: 148.649px;
     color: var(--Grey-400, #747480);
-    font-family: Poppins;
+    font-family: "Poppins";
     font-size: 12px;
     font-style: normal;
     font-weight: 400;
@@ -103,7 +103,7 @@
 .article_title {
     width: 350.172px;
     color: var(--Grey-450, #3A3A4A);
-    font-family: Poppins;
+    font-family: "Poppins";
     font-size: 18px;
     font-style: normal;
     font-weight: 600;
@@ -127,7 +127,7 @@
     height: 137px;
     flex-shrink: 0;
     color: var(--Grey-400, #747480);
-    font-family: Poppins;
+    font-family: "Poppins";
     font-size: 14px;
     font-style: normal;
     font-weight: 400;

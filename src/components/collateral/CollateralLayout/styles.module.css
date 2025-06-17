@@ -1,15 +1,12 @@
-.directory_page {
+.collateral_layout_page {
   min-height: 100vh;
-  background-color: F6F6FA;
   padding: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  position: relative;
+  width: 1440px;
+  height: 208px;
+  border-top: 6px solid #cc1a1f;
 }
 
-.header {
-  background-color: #F6F6FA;
-  padding: 15px 0 20px;
-  margin-bottom: 0;
-}
 
 .title {
   color: #000;
@@ -17,20 +14,23 @@
   font-size: 24px;
   font-style: normal;
   font-weight: 300;
+  line-height: 40px;
   text-transform: uppercase;
+  position: absolute;
+  top: 30px;
+  left: 78px;
   margin: 0;
-  padding-left: 80px;
-  letter-spacing: 0.5px;
 }
 
-.top {
+.filter_wrapper {
+  position: absolute;
   display: flex;
-  flex-direction: column;
-  gap: 0px;
-  justify-content: space-around;
-  border-top: 6px solid #cc1a1f;
-  margin-bottom: -30px;
+  flex-direction: row;
+  gap: 12px;
+  left: 1005px;
+  top: 15px;
 }
+
 
 .bottom {
   display: flex;
@@ -50,75 +50,117 @@
 }
 
 .search_container {
-  flex: 1;
-  max-width: 600px;
+  position: absolute;
+  width: 846px;
+  height: 57px;
+  flex-shrink: 0;
+  display: flex;
+  left: 80px;
+  top: 90px;
 }
 
 .search_input {
-  border-radius: 25px;
-  height: 45px;
-  border: 1px solid #d9d9d9;
-  box-shadow: 0 0 8px rgba(0, 0, 0, 0.15);
+  border-radius: 32px;
+  background: #ffffff;
+  flex: 1;
+  box-shadow:
+    0px 1px 4px 3px rgba(35, 35, 47, 0.06),
+    0px 6px 12px 0px rgba(101, 101, 120, 0.08);
 }
 
-.search_input :global(.ant-input) {
-  border: none;
-  padding-left: 15px;
+.search_input::placeholder {
+  color: #322F2F;
+  font-family: 'Poppins', sans-serif;
   font-size: 14px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 40px;
 }
 
-.search_input :global(.ant-input-search-button) {
-  border: none;
-  background: transparent;
-  color: #ff4d4f;
+/* When hovered */
+.search_input:hover {
+  border-color: black !important;
 }
 
-.search_icon {
-  color: #ff4d4f;
-  font-size: 16px;
+/* When focused (keyboard or click) */
+.search_input:focus,
+.search_input.ant-input-focused {
+  border-color: black !important;
+  box-shadow: none !important;
 }
 
-.dropdowns_container {
-  display: flex;
-  justify-content: space-around;
-  gap: 60px;
-  align-items: center;
-  margin-top: -10px;
-}
+
 
 .dropdown_wrapper {
+  width: 180px;
+}
+
+.dropdown_wrapper_company {
   display: flex;
   flex-direction: column;
-  gap: 5px;
+  gap: 6px;
+  position: absolute;
+  width: 166px;
+  top: 77px;
+  left: 947px;
 }
 
 .dropdown_label {
   color: #656579;
+  /* overflow: hidden; */
   font-family: 'Poppins', sans-serif;
-  font-size: 14px;
+  font-size: 10px;
   font-style: normal;
   font-weight: 300;
-  line-height: 20px;
-  text-transform: none;
-  letter-spacing: normal;
+  line-height: 18.004px;
+  /* width: 53px; */
+}
+
+.dropdown_label_company {
+  color: var(--input-label-color, #656579);
+  font-family: "Poppins";
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 300;
+  line-height: var(--line-height-20, 20px);
+  /* 166.667% */
 }
 
 .dropdown_button {
   display: flex;
   align-items: center;
-  justify-content: space-between;
   gap: 8px;
   height: 44px;
   padding: 4px 14px;
   border: 1px solid #C3C3CB;
   border-radius: 32px;
-  background-color: #FFFFFF;
+  background: var(--select-input-hover-bg-color, #F3F3F5);
+  ;
   cursor: pointer;
   flex: 1 0 0;
-  transition: all 0.2s ease;
-  min-width: 180px;
+  box-sizing: border-box;
 }
 
+.dropdown_button_company {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  height: 44px;
+  padding: 4px 14px;
+  border: 1px solid #C3C3CB;
+  border-radius: 32px;
+  background: var(--select-input-hover-bg-color, #fff);
+  ;
+  cursor: pointer;
+  flex: 1 0 0;
+  box-sizing: border-box;
+}
+
+.dropdown_button:hover,
+:global(.ant-dropdown-open .dropdown_button) {
+  border-color: #000 !important;
+  /* box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1) !important; */
+}
 
 .dropdown_text {
   display: -webkit-box;
@@ -126,35 +168,59 @@
   -webkit-line-clamp: 1;
   overflow: hidden;
   text-overflow: ellipsis;
-  color: #656579;
+  color: #595959;
   font-family: 'Poppins', sans-serif;
-  font-size: 14px;
+  font-size: 12px;
   font-style: normal;
-  font-weight: 300;
+  font-weight: 400;
   line-height: 20px;
-  max-width: 140px;
-  white-space: normal;
-  /* allow webkit-line-clamp to work */
+  /* white-space: nowrap; */
 }
 
-.dropdown_arrow {
+.dropdown_text_company {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 1;
+  flex: 1 0 0;
+  overflow: hidden;
+  color: var(--select-input-filled-color, #2E2E38);
+  text-overflow: ellipsis;
+  font-family: "Poppins";
+  font-size: var(--font-size-14, 14px);
+  font-style: normal;
+  font-weight: 400;
+  line-height: var(--line-height-20, 20px);
+  /* 142.857% */
+}
+
+.icon_wrapper {
   display: flex;
   padding: 8px;
   justify-content: center;
   align-items: center;
   gap: 6px;
-  border-radius: var(--btn-border-radius, 4px);
+  border-radius: 4px;
 }
 
-.dropdown_button:hover,
-:global(.ant-dropdown-open .dropdown_button) {
-  border-color: #000 !important;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1) !important;
+.dropdown_arrow {
+  height: 20px;
+  width: 20px;
 }
 
-.bottom>div {
-  flex: 1;
-  max-width: 50%;
+.span_wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+/* Results */
+.results_container {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  top: 45px;
+  left: 541px;
+  gap: 33px;
 }
 
 .report_container {
@@ -171,4 +237,41 @@
   font-size: 18px;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   text-align: center;
+}
+
+.curated_wrapper {
+  margin: 0;
+  padding: 0;
+  position: absolute;
+  left: 1125px;
+  top: 103px;
+}
+
+.curated_button {
+  display: inline-flex;
+  height: 44px;
+  padding: 10px 18px;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  flex-shrink: 0;
+  border-radius: 32px;
+  border: var(--border-width-thin, 1px) solid var(--border-colors-default-secondary, #C3C3CB);
+  box-sizing: border-box;
+}
+
+.file_icon {
+  height: 20px;
+  width: 20px;
+}
+
+.button_text {
+  color: var(--Theme-Neutrals-Light-Theme-900, var(--color-base-neutral-900, #2E2E38));
+  font-family: "Poppins";
+  font-size: 14px;
+  font-style: normal;
+  font-weight: var(--font-weight-regular, 400);
+  line-height: 20px;
+  /* 142.857% */
 }

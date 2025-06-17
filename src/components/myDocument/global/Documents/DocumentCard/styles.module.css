@@ -1,42 +1,64 @@
 .document_card {
-  /* height: 331px; */
-  box-shadow: 0px 1px 4px 3px rgba(35, 35, 47, 0.06),
-    0px 6px 12px 0px rgba(101, 101, 120, 0.08);
-  flex-shrink: 0;
   width: 411px;
-  padding: 30px;
-  background: #fff;
+  height: 331px;
+  flex-shrink: 0;
   border-radius: 6px;
+  background: #FFF;
+  box-shadow: 0px 1px 4px 3px var(--shadow-colors-primary, rgba(35, 35, 47, 0.06)), 0px 6px 12px 0px rgba(101, 101, 120, 0.08);
+  margin: 0;
+  padding: 0;
+  position: relative;
 }
 
 .title {
-  margin-block: 0 15px;
-  font-size: 18px;
+  margin: 0;
+  width: 351px;
+  color: var(--Grey-450, #3A3A4A);
   font-family: "Poppins";
+  font-size: 18px;
   font-style: normal;
   font-weight: 600;
   line-height: 28px;
-  color: #3a3a4a;
+  position: absolute;
+  top: 30px;
+  left: 30px;
+  /* 155.556% */
 }
 
 .subtitle {
-  margin-bottom: 10px;
-}
-
-.text {
-  font-size: 14px;
+  width: 149px;
+  color: var(--Grey-400, #747480);
   font-family: "Poppins";
+  font-size: 14px;
   font-style: normal;
   font-weight: 400;
   line-height: 26px;
-  color: #747480;
+  /* 185.714% */
+  position: absolute;
+  top: 101px;
+  left: 30px;
+}
+
+.text {
+  width: 173px;
+  color: var(--Grey-400, #747480);
+  font-family: "Poppins";
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 26px;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  /* 185.714% */
 }
 
 .informations {
   display: flex;
   flex-direction: column;
-  gap: 12px;
-  margin-bottom: 28px;
+  gap: 11px;
+  position: absolute;
+  top: 137px;
+  left: 30px;
 }
 
 .info {
@@ -46,28 +68,29 @@
 }
 
 .info_icon {
-  flex-shrink: 0;
   width: 24px;
   height: 24px;
+  flex-shrink: 0;
 }
 
 .buttons {
   display: flex;
-  justify-content: flex-end;
   align-items: center;
   gap: 10px;
+  position: absolute;
+  top: 265px;
+  left: 32px;
 }
 
 .button {
-  display: flex;
+  display: inline-flex;
+  padding: 8px 14px;
   flex-direction: row;
   justify-content: center;
   align-items: center;
   gap: 8px;
-  padding: 8px 14px;
-  cursor: pointer;
-  border: 1px solid #c3c3cb;
   border-radius: 32px;
+  border: var(--border-width-thin, 1px) solid var(--border-colors-default-secondary, #C3C3CB);
 }
 
 .dark {
@@ -80,17 +103,15 @@
 }
 
 .label {
-  font-size: 14px;
+  color: var(--button-secondary-text-color, #2E2E38);
   font-family: "Poppins";
+  font-size: var(--font-size-14, 14px);
   font-style: normal;
-  font-weight: 400;
-  line-height: 20px;
-  color: #2e2e38;
+  font-weight: var(--font-weight-regular, 400);
+  line-height: var(--line-height-20, 20px);
 }
+
 
 .dark .label {
   color: white;
 }
-
-
-

@@ -5,11 +5,12 @@ import { SendOutlined, PaperClipOutlined } from '@ant-design/icons';
 import styles from './styles.module.css';
 import collateralContext from '../../contexts/collateralContext';
 
+
 const QueryInput = ({ onSubmit, placeholder }) => {
   // const [query, setQuery] = useState('');
-  const {query, setQuery} = useContext(collateralContext);
+  const { query, setQuery } = useContext(collateralContext);
   console.log(query);
-  
+
   const handleSubmit = () => {
     if (query.trim()) {
       onSubmit(query);
@@ -33,7 +34,7 @@ const QueryInput = ({ onSubmit, placeholder }) => {
           onKeyPress={handleKeyPress}
           placeholder={placeholder}
           className={styles.queryInput}
-          // autoSize={{ minRows: 1, maxRows: 4 }}
+        // autoSize={{ minRows: 1, maxRows: 4 }}
         />
         <Button
           type="primary"

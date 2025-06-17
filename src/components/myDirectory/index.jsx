@@ -11,6 +11,12 @@ import CustomSearchIcon from './icons/search-icon';
 
 const { Search } = Input;
 
+const DropdownArrow = () => (
+  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
+    <path fill-rule="evenodd" clip-rule="evenodd" d="M4.55806 7.05806C4.80214 6.81398 5.19786 6.81398 5.44194 7.05806L10 11.6161L14.5581 7.05806C14.8021 6.81398 15.1979 6.81398 15.4419 7.05806C15.686 7.30214 15.686 7.69786 15.4419 7.94194L10.4419 12.9419C10.1979 13.186 9.80214 13.186 9.55806 12.9419L4.55806 7.94194C4.31398 7.69786 4.31398 7.30214 4.55806 7.05806Z" fill="#656579" />
+  </svg>
+)
+
 const DUMMY_PROFILES = [
   {
     id: 1,
@@ -72,60 +78,60 @@ const DirectoryPage = () => {
 
   return (
     <div className={styles.directory_page}>
-      <div className={styles.top}>
-        <div className={styles.header}>
-          <h1 className={styles.title}>MY DIRECTORY</h1>
+      <div className={styles.header}>
+        <h1 className={styles.title}>MY DIRECTORY</h1>
+        <div className={styles.search_container}>
+          <Input
+            placeholder="Search"
+            allowClear
+            value={searchValue}
+            onChange={(e) => handleSearch(e.target.value)}
+            className={styles.search_input}
+            suffix={<CustomSearchIcon className={styles.search_icon} />}
+          />
         </div>
-
-        <div className={styles.filters_container}>
-          <div className={styles.search_container}>
-            <Input
-              placeholder="Search"
-              allowClear
-              value={searchValue}
-              onChange={(e) => handleSearch(e.target.value)}
-              className={styles.search_input}
-              suffix={<CustomSearchIcon />}
-            />
+        <div className={styles.filter_wrapper}>
+          <div className={styles.dropdown_wrapper}>
+            <span className={styles.dropdown_label}>Vertical</span>
+            <Dropdown
+              overlay={verticalFilterMenu}
+              trigger={['click']}
+              placement="bottomLeft"
+            >
+              <div className={styles.dropdown_button}>
+                <span className={styles.dropdown_text}>{selectedVertical || "Digital, Technology and Consumer"}</span>
+                <div className={styles.icon_wrapper}>
+                  <DropdownArrow className={styles.dropdown_arrow} />
+                </div>
+              </div>
+            </Dropdown>
           </div>
 
-          <div className={styles.dropdowns_container}>
-            <div className={styles.dropdown_wrapper}>
-              <span className={styles.dropdown_label}>Vertical</span>
-              <Dropdown
-                overlay={verticalFilterMenu}
-                trigger={['click']}
-                placement="bottomLeft"
-              >
-                <div className={styles.dropdown_button}>
-                  <span className={styles.dropdown_text}>{selectedVertical || "Digital, Technology and Consumer"}</span>
-                  <DownOutlined className={styles.dropdown_arrow} />
+          <div className={styles.dropdown_wrapper}>
+            <span className={styles.dropdown_label}>Sector</span>
+            <Dropdown
+              overlay={sectorFilterMenu}
+              trigger={['click']}
+              placement="bottomLeft"
+              className={styles.dropdown}
+            >
+              <div className={styles.dropdown_button}>
+                <span className={styles.dropdown_text}>{selectedSector || "B2B e-commerce"}</span>
+                <div className={styles.icon_wrapper}>
+                  <DropdownArrow className={styles.dropdown_arrow} />
                 </div>
-              </Dropdown>
-            </div>
-
-            <div className={styles.dropdown_wrapper}>
-              <span className={styles.dropdown_label}>Sector</span>
-              <Dropdown
-                overlay={sectorFilterMenu}
-                trigger={['click']}
-                placement="bottomLeft"
-                className={styles.dropdown}
-              >
-                <div className={styles.dropdown_button}>
-                  <span className={styles.dropdown_text}>{selectedSector || "B2B e-commerce"}</span>
-                  <DownOutlined className={styles.dropdown_arrow} />
-                </div>
-              </Dropdown>
-            </div>
+              </div>
+            </Dropdown>
           </div>
         </div>
       </div>
 
-      <div className={styles.results_container}>
-        {filteredProfiles.map(profile => (
-          <ProfileCard key={profile.id} profile={profile} />
-        ))}
+      <div className={styles.content}>
+        <div className={styles.results_container}>
+          {filteredProfiles.map(profile => (
+            <ProfileCard key={profile.id} profile={profile} />
+          ))}
+        </div>
       </div>
     </div>
   );

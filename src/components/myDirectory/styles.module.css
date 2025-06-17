@@ -1,54 +1,54 @@
 .directory_page {
-  min-height: 100vh;
+  height: 100vh;
   background-color: white;
   padding: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  border-top: 6px solid #cc1a1f;
 }
 
 /* Header Section */
-.header {
-  background: var(--Grey-100, #F6F6FA);
-  padding: 20px 0 0 0;
-  margin-bottom: 0;
-}
 
 .title {
-  padding-left: 80px;
+  position: absolute;
+  background-color: transparent;
+  width: 167px;
+  line-height: 40px;
+  left: 78px;
+  top: 30px;
   color: #000;
+  margin: 0;
   font-family: "Poppins";
   font-size: 24px;
   font-style: normal;
   font-weight: 300;
+  text-transform: uppercase;
+  white-space: nowrap;
 }
 
-.top {
-  display: flex;
-  flex-direction: column;
-  gap: 0px;
-  justify-content: space-around;
-  border-top: 6px solid #cc1a1f;
+
+.header {
+  position: relative;
+  height: 188px;
+  width: 1440px;
+  background: var(--Grey-100, #F6F6FA);
 }
 
-/* Filters Section */
-.filters_container {
-  background-color: #f8f8fb;
-  padding: 5px 40px 30px 80px;
-  display: flex;
-  align-items: center;
-  gap: 30px;
-  flex-wrap: wrap;
-}
+
 
 /* Search Container */
 .search_container {
-  flex: 1;
-  max-width: 621px;
+  position: absolute;
+  left: 80px;
+  top: 85px;
+  display: flex;
+  flex-shrink: 0;
+  width: 621px;
+  height: 57px;
 }
 
 .search_input {
+  flex: 1;
   border-radius: 32px;
   background-color: #ffffff;
-  height: 57px;
   box-shadow:
     0px 1px 4px 3px var(--shadow-colors-primary, rgba(35, 35, 47, 0.06)),
     0px 6px 12px 0px rgba(101, 101, 120, 0.08);
@@ -60,6 +60,8 @@
   font-size: 14px;
   font-style: normal;
   font-weight: 500;
+  width: 50px;
+  line-height: 40px;
 }
 
 .search_input:hover {
@@ -85,39 +87,40 @@
 }
 
 .search_icon {
-  color: #ff4d4f;
-  font-size: 16px;
+  width: 24px;
+  height: 24px;
+  flex-shrink: 0;
 }
 
 /* Dropdowns */
-.dropdowns_container {
-  display: flex;
-  gap: 20px;
-  align-items: center;
-  margin-top: -10px;
+
+.content {
+  position: relative;
+  width: 1440px;
+  height: calc(100vh - 188px);
 }
 
 .dropdown_wrapper {
   display: flex;
   flex-direction: column;
-  gap: 5px;
+  gap: 6px;
+  width: 194px;
 }
 
 .dropdown_label {
   color: #656579;
+  overflow: hidden;
   font-family: 'Poppins', sans-serif;
   font-size: 14px;
   font-style: normal;
   font-weight: 300;
   line-height: 20px;
-  text-transform: none;
-  letter-spacing: normal;
+  width: 53px;
 }
 
 .dropdown_button {
   display: flex;
   align-items: center;
-  justify-content: space-between;
   gap: 8px;
   height: 44px;
   padding: 4px 14px;
@@ -126,8 +129,13 @@
   background-color: #FFFFFF;
   cursor: pointer;
   flex: 1 0 0;
-  transition: all 0.2s ease;
-  min-width: 180px;
+  box-sizing: border-box;
+}
+
+.dropdown_button:hover,
+:global(.ant-dropdown-open .dropdown_button) {
+  border-color: #000 !important;
+  /* box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1) !important; */
 }
 
 .dropdown_text {
@@ -136,54 +144,46 @@
   -webkit-line-clamp: 1;
   overflow: hidden;
   text-overflow: ellipsis;
-  color: #656579;
+  color: #595959;
   font-family: 'Poppins', sans-serif;
   font-size: 14px;
   font-style: normal;
   font-weight: 300;
   line-height: 20px;
-  max-width: 140px;
-  white-space: normal;
-  /* allow webkit-line-clamp to work */
+  /* white-space: nowrap; */
 }
 
-/* Icon */
-.dropdown_arrow {
+.icon_wrapper {
   display: flex;
   padding: 8px;
   justify-content: center;
   align-items: center;
   gap: 6px;
-  border-radius: var(--btn-border-radius, 4px);
-}
-
-.dropdown_button:hover,
-:global(.ant-dropdown-open .dropdown_button) {
-  border-color: #000 !important;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1) !important;
-}
-
-.dropdown_text {
-  font-size: 14px;
-  color: #595959;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  max-width: 140px;
+  border-radius: 4px;
 }
 
 .dropdown_arrow {
-  color: #8c8c8c;
-  font-size: 12px;
-  margin-left: 8px;
+  height: 20px;
+  width: 20px;
 }
 
 /* Results */
 .results_container {
-  padding: 30px 40px;
+  position: absolute;
   display: flex;
   flex-direction: column;
-  gap: 20px;
+  top: 45px;
+  left: 541px;
+  gap: 33px;
+}
+
+.filter_wrapper {
+  position: absolute;
+  left: 732px;
+  top: 72px;
+  display: flex;
+  gap: 24px;
+  flex-direction: row;
 }
 
 /* Optional legacy/commented out style */

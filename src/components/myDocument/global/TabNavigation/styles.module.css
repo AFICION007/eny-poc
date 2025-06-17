@@ -1,27 +1,39 @@
 .tab_navigation {
   background-color: #ffffff;
-  padding: 0 40px;
+  display: flex;
+  width: 1280px;
+  height: 42px;
+  align-items: center;
+  flex-shrink: 0;
 }
+
 
 .custom_tabs :global(.ant-tabs-nav) {
-  margin-bottom: 0;
-  display: flex;
-  justify-content: space-between;
+  margin: 0 !important;
 }
 
+.custom_tabs :global(.ant-tabs-nav::before) {
+  border-bottom: 0 !important;
+}
+
+
+.custom_tabs :global(.ant-tabs-nav-list) {
+  display: flex !important;
+  align-items: flex-start !important;
+  padding-right: 806px !important;
+  height: 42px !important;
+  gap: 16px !important;
+}
+
+
 .custom_tabs :global(.ant-tabs-tab) {
-  flex: 1;
-  text-align: center;
-  font-family: 'Poppins';
-  font-size: 14px;
-  font-style: normal;
-  padding: 16px 0;
-  font-size: 16px;
-  font-weight: 400;
-  color: #656579;
-  position: relative;
-  transition: all 0.3s ease;
-  margin: 0;
+  margin-left: 0 !important;
+  display: flex !important;
+  padding: 8px 4px 10px 4px !important;
+  justify-content: center !important;
+  align-items: center !important;
+  gap: 8px !important;
+  border-radius: var(--tab-navigation-btn-border-radius, 2px) var(--tab-navigation-btn-border-radius, 2px) 0px 0px !important;
 }
 
 .custom_tabs :global(.ant-tabs-tab:hover) {
@@ -29,12 +41,18 @@
 }
 
 .custom_tabs :global(.ant-tabs-tab .ant-tabs-tab-btn) {
-  color: inherit !important;
+  padding: 0 !important;
+  margin: 0 !important;
+  font-style: normal;
+  font-family: 'Poppins';
+  font-size: 14px;
+  font-weight: 400;
+  color: #656579 !important;
 }
 
 .custom_tabs :global(.ant-tabs-tab.ant-tabs-tab-active) {
   color: #2E2E38 !important;
-  font-weight: 500 !important;
+  font-weight: 400 !important;
 }
 
 .custom_tabs :global(.ant-tabs-tab.ant-tabs-tab-active .ant-tabs-tab-btn) {
@@ -47,16 +65,12 @@
   bottom: 0;
   left: 0;
   width: 100%;
-  height: 2px;
   background-color: #2E2E38 !important;
+  height: 2px;
 }
 
 .custom_tabs :global(.ant-tabs-ink-bar) {
   display: none;
-}
-
-.custom_tabs :global(.ant-tabs-nav-wrap) {
-  border-bottom: none;
 }
 
 .custom_tabs :global(.ant-tabs-content-holder) {

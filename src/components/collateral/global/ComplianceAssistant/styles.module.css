@@ -1,10 +1,8 @@
 .container {
   max-width: 600px;
-  /* was 800px */
   margin-top: 50px;
-  /* was 50px */
+
   min-height: 600px;
-  /* was 100vh — this avoids overly tall layout */
   background-color: white;
   margin-left: auto;
   margin-right: auto;
@@ -18,10 +16,11 @@
 
 .mainTitle {
   color: #CC1A1F !important;
-  font-family: "Poppins";
-  font-size: 28px;
-  font-style: normal;
-  font-weight: 300;
+  font-family: "Poppins" !important;
+  font-size: 28px !important;
+  font-style: normal !important;
+  font-weight: 300 !important;
+  padding-bottom: 20px !important;
 }
 
 .input_field {

@@ -24,27 +24,30 @@
   align-items: center;
 }
 
-/* .backButton:hover {
-  color: #1890ff;
-} */
+.backButton:hover {
+  background-color: transparent;
+}
 
 .mainTitle {
-  color: #ff6b6b !important;
+  color: #CC1A1F !important;
+  font-family: "Poppins" !important;
   font-size: 28px !important;
-  font-weight: 600 !important;
+  font-style: normal !important;
+  font-weight: 300 !important;
   margin: 0 !important;
 }
+
 .queryContainer {
   max-width: 800px;
   margin: 0 auto;
-  background: white;
-  border-radius: 24px;
-  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
-  border: 1px solid #e8e8e8;
+  background: #fff;
+  border-radius: 18px;
+  box-shadow: 0px 1px 4px 3px var(--shadow-colors-primary, rgba(35, 35, 47, 0.06)), 0px 6px 12px 0px rgba(101, 101, 120, 0.08);
   overflow: hidden;
   margin-bottom: 50px;
   margin-left: 0;
 }
+
 .inputWrapper {
   display: flex;
   align-items: flex-end;
@@ -117,9 +120,12 @@
 
 .infoCard {
   border: 1px solid #f0f0f0;
-  border-radius: 8px;
+  border-radius: 18px;
   background-color: #fafafa;
   position: relative;
+  text-align: left !important;
+  font-family: "Poppins", sans-serif !important;
+  font-size: 14px !important;
 }
 
 .sectionNumber {
@@ -128,20 +134,46 @@
   margin-bottom: 12px !important;
 }
 
+/* Common text styling */
 .sectionDescription,
 .limitText,
 .bulletPoints,
 .encumbranceText {
   font-size: 14px;
-  color: #262626;
   line-height: 1.6;
   text-align: left;
 }
 
+/* Type-specific styles */
+.infoCard.section .sectionNumber {
+  color: #2E2E38 !important;
+}
+
+.infoCard.section .sectionDescription {
+  color: #747480 !important;
+}
+
+.infoCard.info .sectionDescription {
+  color: #2E2E38 !important;
+}
+
+.infoCard.info .sourceText {
+  color: #747480 !important;
+}
+
+.infoCard.bullet .bulletPoints {
+  color: #2E2E38 !important;
+}
+
+.infoCard.bullet .sourceText {
+  color: #747480 !important;
+}
+
+/* Source and buttons */
 .sourceInfo {
   display: flex;
-  align-items: center;
-  justify-content: flex-start;
+  flex-direction: column;
+  align-items: flex-start;
   gap: 8px;
   border-top: 1px solid #f0f0f0;
   padding-top: 12px;
@@ -151,34 +183,44 @@
 
 .sourceText {
   font-size: 12px !important;
-  color: #8c8c8c !important;
   flex: 1;
 }
 
 .viewDocButton {
   padding: 0;
   height: auto;
-  font-size: 12px;
-  color: #666;
+  color: var(--text-link-color, #2E2E38) !important;
+  font-family: "Poppins" !important;
+  font-size: var(--font-size-14, 14px) !important;
+  font-style: normal !important;
+  font-weight: var(--font-weight-regular, 400) !important;
 }
 
 .viewDocButton:hover {
-  color: gray;
+  color: gray !important;
 }
 
 .copyButton {
-  padding: 4px;
-  height: auto;
-  width: auto;
-  color: #8c8c8c;
   position: absolute;
-  top: 12px;
-  right: 12px;
+  bottom: 12px !important;
+  left: 16px !important;
+  padding: 4px !important;
+  width: 24px !important;
+  height: 24px !important;
+  color: #747480 !important;
+  background: none;
+  border: none;
 }
 
 .copyButton:hover {
-  color: #1890ff;
   background-color: #f5f5f5;
+}
+
+.cardFooter {
+  display: flex;
+  justify-content: flex-start;
+  padding: 12px;
+  padding-top: 0;
 }
 
 @media (max-width: 768px) {

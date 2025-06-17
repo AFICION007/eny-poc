@@ -1,36 +1,55 @@
 .folder_selector {
   background-color: #ffffff;
-  padding: 20px 40px;
-  /* border-bottom: 1px solid #f0f0f0; */
+  width: 1280px;
+  height: 90px;
+  position: relative;
 }
 
-.selector_header {
-  margin-bottom: 10px;
-}
+
 
 .selector_title {
-  font-size: 16px;
-  font-weight: 400;
-  color: #8c8c8c;
+  position: absolute;
   margin: 0;
-  letter-spacing: 0.3px;
+  display: flex;
+  width: 137px;
+  height: 34px;
+  flex-direction: column;
+  justify-content: center;
+  flex-shrink: 0;
+  color: #656579;
+  font-family: "Poppins";
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 40px;
+  top: 0;
+  left: 0;
 }
 
 .folders_container {
+  position: absolute;
   display: flex;
+  width: 1280px;
+  height: 56px;
+  padding: 6px;
   align-items: center;
-  gap: 16px;
-  border: 1px solid #d9d9d9;
-  padding-left: 4px;
-  padding-right: 4px;
+  gap: 8px;
+  border-radius: var(--tab-navigation-horizontal-secondary-alt-border-radius, 2px);
+  border: var(--border-width-thin, 1px) solid var(--border-colors-default-primary, #E6E6E9);
+  background: var(--tab-navigation-horizontal-secondary-alt-bg-color, #FFF);
+  left: 0;
+  top: 34px;
+  box-sizing: border-box;
+  border-radius: 32px;
 }
 
 .folders_list {
   display: flex;
-  gap: 12px;
+  gap: 8px;
   overflow-x: auto;
   scroll-behavior: smooth;
-  padding: 4px 0;
+  padding: 0;
+  height: 44px;
   flex: 1;
 }
 
@@ -50,6 +69,7 @@
   align-items: center;
   gap: 8px;
   border-radius: var(--tab-navigation-btn-border-radius, 2px);
+  cursor: pointer;
 }
 
 .folder_item:hover {
@@ -66,10 +86,12 @@
   border-radius: var(--tab-navigation-btn-border-radius, 2px);
   border: var(--border-width-thin, 1px) solid var(--border-colors-selected-default-primary, #C3C3CB);
   background: var(--tab-navigation-btn-primary-selected-bg-color, #FFF);
+  box-sizing: border-box;
+  border-radius: 32px;
 }
 
 .folder_name {
-  color: var(--tab-navigation-btn-primary-selected-color, #2E2E38);
+  color: #656579;
   font-family: "Poppins";
   font-size: 14px;
   font-style: normal;
@@ -80,50 +102,76 @@
 
 .folder_item_selected .folder_name {
   color: #2E2E38;
+  font-family: "Poppins";
+  font-size: 14px;
+  font-style: normal;
   font-weight: 400;
+  line-height: var(--line-height-24, 23.996px);
 }
 
 .folder_count {
-  font-size: 12px;
-  color: #656579;
-  background-color: #E6E6E9;
-  padding: 4px 4px;
-  border-radius: 50%;
-  min-width: 18px;
-  text-align: center;
+  display: flex;
+  padding: 2px 7px;
+  align-items: flex-start;
+  gap: 6px;
+  border-radius: 200px;
+  background: var(--badge-alt-bg-color, #E6E6E9);
+
 }
 
 .folder_item_selected .folder_count {
-  background-color: #FFF;
-  color: #656579;
-  border-color: #D7D7DC;
-  padding: 2px 2px;
-  border-radius: 50%;
-  border: 1px solid ;
+  display: flex;
+  padding: 2px 7px;
+  align-items: flex-start;
+  gap: 6px;
+  border-radius: 200px;
+  border: var(--border-width-thin, 1px) solid var(--border-colors-default-extra-B, #D7D7DC);
+  background: var(--badge-bg-color, #FFF);
+}
+
+.count {
+  flex: 1 0 0;
+  color: var(--badge-alt-color, #656579);
+  text-align: center;
+  font-family: "Poppins";
+  font-size: var(--font-size-14, 14px);
+  font-style: normal;
+  font-weight: 400;
+  line-height: var(--line-height-20, 20px);
+  /* 142.857% */
+}
+
+.folder_item_selected .count {
+  flex: 1 0 0;
+  color: var(--badge-alt-color, #656579);
+  text-align: center;
+  font-family: "Poppins";
+  font-size: var(--font-size-14, 14px);
+  font-style: normal;
+  font-weight: 400;
+  line-height: var(--line-height-20, 20px);
 }
 
 .scroll_indicator {
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 32px;
-  height: 32px;
-  border: 1px solid #d9d9d9;
-  border-radius: 50%;
-  background-color: #ffffff;
+  width: 44px;
+  height: 44px;
+  border-radius: 4px;
+  background-color: transparent;
   cursor: pointer;
-  transition: all 0.2s ease;
-  flex-shrink: 0;
+  gap: 8px;
 }
 
 .scroll_indicator:hover {
-  border-color: darkgrey;
-  background-color: #f6f9ff;
+  background-color: transparent;
 }
 
 .scroll_arrow {
   color: #8c8c8c;
-  font-size: 14px;
+  height: 20px;
+  width: 20px;
 }
 
 .scroll_indicator:hover .scroll_arrow {

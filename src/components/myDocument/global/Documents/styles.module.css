@@ -1,17 +1,16 @@
 .documents_container {
-  padding: 24px 42px;
   background-color: #ffffff;
   min-height: 100vh;
+  position: relative;
+  width: 1280px;
 }
 
-.documents_header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-bottom: 24px;
-}
-
+/* Titles */
 .documents_title {
+  position: absolute;
+  top: 0;
+  left: 0;
+  margin: 0;
   width: 250px;
   height: 34px;
   color: #2E2E38;
@@ -19,16 +18,43 @@
   font-size: 21px;
   font-style: normal;
   font-weight: 500;
-  margin: 0;
-}
-
-.date_range_picker {
+  line-height: 40px;
   display: flex;
-  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  flex-shrink: 0;
 }
 
+.section_title {
+  position: absolute;
+  top: 23px;
+  left: 25px;
+  width: 125px;
+  height: 34px;
+  margin: 0;
+  color: #656579;
+  font-family: "Poppins";
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+/* Date Picker */
 .date_picker {
-  width: 280px;
+  position: absolute;
+  top: -5px;
+  left: 1060px;
+  width: 216px;
+  height: 44px;
+  padding: 4px 14px;
+  display: flex;
+  border-radius: 32px;
+  border: var(--border-width-thin, 1px) solid var(--border-colors-default-secondary, #C3C3CB);
 }
 
 .date_picker :global(input::placeholder) {
@@ -72,6 +98,7 @@
   background-color: #d9d9d9 !important;
 }
 
+/* Layout */
 .content_wrapper {
   display: flex;
   gap: 24px;
@@ -79,115 +106,156 @@
 }
 
 .sidebar {
-  width: 280px;
-  flex-shrink: 0;
-  display: flex;
-  flex-direction: column;
-  height: 560px;
-}
-
-.file_type_section {
+  position: absolute;
+  top: 53px;
+  left: -2px;
+  width: 194px;
+  height: 481px;
   background-color: #F6F6FA;
-  padding: 20px;
-  height: 560px;
+  flex-shrink: 0;
 }
 
-.section_title {
-  color: #656579;
-  font-family: "Poppins";
-  font-size: 14px;
-  font-style: normal;
-  font-weight: 500;
+.main_content {
+  position: absolute;
+  width: 1066px;
+  height: 481px;
+  left: 217px;
+  top: 53px;
+  background-color: #F6F6FA;
+  flex-shrink: 0;
 }
 
+/* Select All */
 .select_all_wrapper {
-  margin-bottom: 16px;
-  padding-bottom: 12px;
-  border-bottom: 1px solid #E6E6E9;
+  position: absolute;
+  margin: 0;
+  padding: 0;
+  width: 147px;
+  top: 70px;
+  left: 24px;
 }
 
 .select_all_checkbox {
+  display: flex;
+  flex: 1 0 0;
   color: #2E2E38;
   font-family: "Poppins";
+  padding: 0;
   font-size: 14px;
   font-style: normal;
   font-weight: 400;
   gap: 12px;
+  line-height: 24px;
+  padding: 0;
+  align-items: center;
+  white-space: nowrap;
 }
 
+.select_all_checkbox :global(.ant-checkbox-inner) {
+  width: 20px;
+  height: 20px;
+  border-radius: 2px;
+  border: var(--border-width-thin, 1px) solid var(--border-colors-default-tertiary, #7F7F91);
+  background: var(--checkbox-bg-color, #FFF);
+}
+
+.divider {
+  position: absolute;
+  width: 147px;
+  height: 1px;
+  background: var(--color-base-neutral-75, #E6E6E9);
+  top: 114px;
+  left: 24px;
+}
+
+
+/* Checkbox Group */
 .checkbox_group {
+  position: absolute;
+  top: 130px;
+  left: 24px;
+  width: 147px;
   display: flex;
   flex-direction: column;
-  gap: 12px;
-  width: 100%;
+  gap: 16px;
+  /* consistent spacing */
+  padding: 0;
+  margin: 0;
 }
 
 .file_type_checkbox {
+  display: flex;
+  align-items: center;
+  /* vertical align */
+  gap: 12px;
   color: #2E2E38;
   font-family: "Poppins";
   font-size: 14px;
-  font-style: normal;
   font-weight: 400;
+  white-space: nowrap;
+  /* prevent text wrapping */
+  line-height: 24px;
+  padding: 0;
 }
 
-.file_type_checkbox :global(.ant-checkbox) {
-  margin-right: 12px;
-}
-
-:global(.ant-checkbox-checked .ant-checkbox-inner) {
-  background-color: #FFF !important;
-  border-color: #7F7F91 !important;
-}
-
-:global(.ant-checkbox-checked .ant-checkbox-inner::after) {
-  border-color: #656579 !important;
-  border-width: 1px;
+.file_type_checkbox :global(.ant-checkbox-inner) {
+  width: 20px;
+  height: 20px;
+  border-radius: 2px;
+  border: 1px solid #7F7F91;
+  background: #FFF;
 }
 
 
-.main_content {
-  flex: 1;
-  background-color: #F6F6FA;
-  display: flex;
-  flex-direction: column;
-  height: 560px;
-}
 
+/* Actions Toolbar */
 .actions_toolbar {
+  position: absolute;
+  width: 1026px;
+  height: 50px;
+  border-radius: 6px;
+  background-color: #FFF;
+  top: 23px;
+  left: 20px;
   display: flex;
   align-items: center;
-  gap: 16px;
-  margin: 20px;
-  padding: 16px 20px;
-  background-color: white;
-  border-radius: 6px;
 }
 
 .actions_label {
+  position: absolute;
+  left: 14px;
+  top: 15px;
+  width: 62px;
+  color: var(--Theme-Neutrals-Light-Theme-900, var(--color-base-neutral-900, #2E2E38));
   text-align: center;
   font-family: "Poppins";
   font-size: 14px;
   font-style: normal;
   font-weight: 300;
+  line-height: 20px;
+  /* 142.857% */
+}
+
+.action_btn_wrap {
+  position: absolute;
+  left: 103px;
+  display: flex;
+  flex-direction: row;
+  gap: 15px;
+  margin: 0;
+  padding: 0;
+  align-items: flex-start;
 }
 
 .action_btn {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  padding: 8px 16px;
-  background-color: transparent !important;
-  border-left: 1px solid #D7D7DC !important;
-  border-right: none !important;
-  border-top: none !important;
-  border-bottom: none !important;
+  /* width: 34px;
   color: var(--Theme-Neutrals-Light-Theme-800, var(--color-base-neutral-750, #4D4D5C));
   font-family: "Poppins";
   font-size: 12px;
   font-style: normal;
   font-weight: 400;
-  border-radius: 0;
-  box-shadow: none !important;
+  line-height: 18px; */
+  /* 150% */
 }
 
 .action_btn:hover {
@@ -206,7 +274,7 @@
   background: var(--color-base-neutral-750, #4D4D5C);
 }
 
-
+/* Table */
 .table_wrapper {
   background-color: #ffffff;
   border-radius: 8px;
@@ -242,11 +310,14 @@
   vertical-align: middle;
 }
 
+.documents_table :global(.ant-table-tbody > tr.ant-table-row-selected) {
+  background-color: transparent !important;
+}
+
 .selected_row {
   background-color: gray !important;
   transition: background-color 0.3s;
 }
-
 
 .document_name_column {
   color: var(--Theme-Neutrals-Light-Theme-900, var(--color-base-neutral-900, #2E2E38));
@@ -256,13 +327,7 @@
   font-weight: var(--font-weight-regular, 400);
 }
 
-/* Override Ant Design's default selected row background */
-.documents_table :global(.ant-table-tbody > tr.ant-table-row-selected) {
-  background-color: transparent !important; /* Or your custom background */
-}
-
-
-
+/* Shared By Section */
 .shared_by {
   display: flex;
   flex-direction: row;
@@ -273,10 +338,10 @@
 
 .user_icon {
   font-size: 12px;
-  /* opacity: 0.6; */
   color: #2E2E38;
 }
 
+/* Action Button */
 .action_button {
   color: #2E2E38 !important;
   font-weight: 400;
@@ -295,6 +360,7 @@
   background-color: #f0f0f0 !important;
 }
 
+/* Pagination */
 .pagination {
   margin-top: 16px;
   padding-right: 20px;
@@ -321,4 +387,91 @@
 
 .pagination :global(.ant-pagination-item-active:hover) {
   border-color: #000000 !important;
+}
+
+
+.dropdown_wrapper {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  width: 166px;
+  align-items: flex-start;
+  left: 886px;
+  top: -31px;
+}
+
+.dropdown_label {
+  color: #656579;
+  overflow: hidden;
+  font-family: 'Poppins', sans-serif;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 300;
+  line-height: 20px;
+}
+
+.dropdown_button {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  height: 44px;
+  width: 166px;
+  padding: 4px 14px;
+  border: 1px solid #C3C3CB;
+  border-radius: 32px;
+  background-color: #FFFFFF;
+  cursor: pointer;
+  flex: 1 0 0;
+  box-sizing: border-box;
+}
+
+.dropdown_text {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 1;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  color: #595959;
+  font-family: 'Poppins', sans-serif;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 20px;
+}
+
+.icon_wrapper {
+  display: flex;
+  padding: 8px;
+  justify-content: center;
+  align-items: center;
+  gap: 6px;
+  border-radius: 4px;
+}
+
+.dropdown_arrow {
+  height: 20px;
+  width: 20px;
+}
+
+.document_section{
+  margin: 0;
+  padding: 0;
+  position: absolute;
+  display: flex;
+  flex-direction: row;
+  gap: 24px;
+  top: 68px;
+  left: -1px;
+  width: 1440px;
+  height: 100vh;
+}
+.card_wrapper {
+  flex: 0 0 auto;
+}
+
+.document_grid{
+  display: flex;
+  flex-wrap: wrap;
+  gap: 24px;
 }

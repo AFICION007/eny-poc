@@ -1,38 +1,42 @@
-
-.directory_page {
-  min-height: 100vh;
-  background-color: white;
+.collateral_page {
   padding: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  margin: 0;
+  position: relative;
 }
 
-.header {
-  background-color: #f8f8fb;
-  padding: 20px 0;
-  padding-top: 15px;
-  margin-bottom: 0;
-  padding-bottom: 20px;
-}
+
 
 .title {
+  position: absolute;
+  display: flex;
+  width: 250px;
+  height: 34px;
+  flex-direction: column;
+  justify-content: center;
+  flex-shrink: 0;
+  color: #000;
+  font-family: "Poppins";
   font-size: 24px;
-  font-weight: 400;
-  color: #262626;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 40px;
+  /* 166.667% */
+  text-transform: capitalize;
   margin: 0;
-  padding-left: 40px;
-  letter-spacing: 0.5px;
+  padding: 0;
+  top: 208px;
+  left: 79px;
 }
 
-.top{
+.top {
   display: flex;
   flex-direction: column;
   gap: 0px;
   justify-content: space-around;
-  border-top: 6px solid #cc1a1f;
   margin-bottom: -30px;
 }
 
-.bottom{
+.bottom {
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -122,7 +126,7 @@
 }
 
 .dropdown_button:hover {
-  border-color: #40a9ff;
+  /* border-color: #40a9ff; */
   box-shadow: 0 2px 8px rgba(64, 169, 255, 0.1);
 }
 
@@ -142,8 +146,9 @@
 }
 
 
-.bottom > div {
-  flex: 1; /* each child takes equal space */
+.bottom>div {
+  flex: 1;
+  /* each child takes equal space */
   max-width: 50%;
 }
 
@@ -152,8 +157,10 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100%; /* fill parent */
-  background-color: #FAFAFC; /* removed solid bg to avoid double color */
+  height: 100%;
+  /* fill parent */
+  background-color: #FAFAFC;
+  /* removed solid bg to avoid double color */
   margin-left: 80px;
   margin-top: 50px;
 }
@@ -165,3 +172,88 @@
   text-align: center;
 }
 
+
+
+.date_picker {
+  position: absolute;
+  top: 198px;
+  left: 1143px;
+  width: 216px;
+  height: 44px;
+  padding: 4px 14px;
+  display: flex;
+  border-radius: 32px;
+  border: var(--border-width-thin, 1px) solid var(--border-colors-default-secondary, #C3C3CB);
+}
+
+.date_picker :global(input::placeholder) {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 1;
+  flex: 1 0 0;
+  overflow: hidden;
+  color: var(--input-color, #2E2E38);
+  text-overflow: ellipsis;
+  font-family: "Poppins";
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: var(--line-height-20, 20px);
+  /* 166.667% */
+}
+
+:global(.ant-picker) {
+  border-color: #C3C3CB !important;
+}
+
+:global(.ant-picker:hover),
+:global(.ant-picker-focused) {
+  border-color: #C3C3CB !important;
+  box-shadow: none !important;
+}
+
+:global(.ant-picker-cell-in-range)::before {
+  background-color: #f0f0f0 !important;
+}
+
+:global(.ant-picker-cell-range-start)::before,
+:global(.ant-picker-cell-range-end)::before {
+  background-color: #d9d9d9 !important;
+}
+
+:global(.ant-picker-cell-range-start .ant-picker-cell-inner),
+:global(.ant-picker-cell-range-end .ant-picker-cell-inner) {
+  color: #2E2E38 !important;
+  font-weight: 300;
+  font-size: 10px;
+}
+
+:global(.ant-picker-cell-range-start .ant-picker-cell-inner::after),
+:global(.ant-picker-cell-range-end .ant-picker-cell-inner::after),
+:global(.ant-picker-cell-range-start.ant-picker-cell-range-end .ant-picker-cell-inner::after) {
+  background-color: #d9d9d9 !important;
+}
+
+
+.article_section {
+  position: absolute;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: row;
+  gap: 24px;
+  top: 258px;
+  left: 80px;
+  width: 1440px;
+  height: 100vh;
+}
+
+.article_grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 24px;
+}
+
+.article_card_wrapper {
+  flex: 0 0 auto;
+}
