@@ -10,7 +10,7 @@ const INDUSTRY_OPTIONS = [
   "Industry Report 5"
 ];
 
-const CompanyFilter = ({ onSelectionChange }) => {
+const IndustryFilter = ({ onSelectionChange }) => {
   const [selectedOption, setSelectedOption] = useState(null);
 
   const handleSelect = (option) => {
@@ -36,4 +36,4 @@ const CompanyFilter = ({ onSelectionChange }) => {
   );
 };
 
-export default CompanyFilter;
+export default IndustryFilter;

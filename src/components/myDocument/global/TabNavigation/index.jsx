@@ -3,27 +3,10 @@ import React, { useState } from 'react';
 import { Tabs } from 'antd';
 import styles from './styles.module.css';
 
-const TAB_ITEMS = [
-  {
-    key: 'relationship-notes',
-    label: 'Relationship Notes',
-  },
-  {
-    key: 'target-lists',
-    label: 'Target Lists',
-  },
-  {
-    key: 'market-screens',
-    label: 'Market Screens',
-  },
-  {
-    key: 'pitchbooks',
-    label: 'Pitchbooks',
-  },
-];
 
-const TabNavigation = ({ onTabChange, defaultActiveKey = 'relationship-notes' }) => {
-  const [activeKey, setActiveKey] = useState(defaultActiveKey);
+
+const TabNavigation = ({ onTabChange, defaultActiveKey ,TAB_ITEMS }) => {
+  const [activeKey, setActiveKey] = useState(defaultActiveKey || TAB_ITEMS[0]?.key);
 
   const handleTabChange = (key) => {
     setActiveKey(key);

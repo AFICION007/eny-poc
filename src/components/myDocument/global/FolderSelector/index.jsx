@@ -17,7 +17,7 @@ const FOLDER_DATA = [
   { name: 'Closing4', count: 9 },
 ];
 
-const FolderSelector = ({ onFolderSelect }) => {
+const FolderSelector = ({ onFolderSelect}) => {
   const [selectedFolder, setSelectedFolder] = useState('');
   const [showLeftArrow, setShowLeftArrow] = useState(false);
   const [showRightArrow, setShowRightArrow] = useState(true);

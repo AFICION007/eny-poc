@@ -257,3 +257,9 @@
 .article_card_wrapper {
   flex: 0 0 auto;
 }
+
+
+.company_wise_div{
+  position: absolute;
+  top: 1344px;
+}

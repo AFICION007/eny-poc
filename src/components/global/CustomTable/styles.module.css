@@ -1,6 +1,6 @@
 .tableContainer {
   display: flex;
-  width: 1282px;
+  max-width: 1440px;
   flex-direction: column;
   align-items: flex-start;
   border: var(--border-width-thin, 1px) solid var(--border-colors-default-extra-B, #C3C3CB);
@@ -34,6 +34,10 @@
 
   :global(.ant-table-row-selected > .ant-table-cell) {
     background-color: #edf9ff !important;
+  }
+
+  :global(.ant-table-row) {
+    cursor: pointer;
   }
 
   :global(th.ant-table-cell::before) {

@@ -9,7 +9,10 @@ import DocumentPage from "./myDocument";
 import CollateralPage from "./collateral";
 import CollateralLayout from "./collateral/CollateralLayout";
 import ChatResponsePage from "./collateral/ChatResponsePage";
-import CoverageUniverse from "./coverageUniverse";
+import CoverageUniversePage from "./coverageUniverse";
+import CoverageLayout from './coverageUniverse/CoverageLayout'
+import CoverageDetailView from "./coverageUniverse/CoverageDetailView";
+import CompanyWiseCollateralPage from "./collateral/global/CompanyWiseCollateral";
 
 const Router = () => {
   return (
@@ -24,9 +27,15 @@ const Router = () => {
           <Route path="/my-documents" element={<DocumentPage />}/>
           <Route path="/collaterals" element= {<CollateralLayout />}>
             <Route index element={<CollateralPage/>} />
-            <Route path="thread/:threadId" element={<ChatResponsePage />} />
+            {/* <Route path="thread/:threadId" element={<ChatResponsePage />} /> */}
           </Route>
-          <Route path="/coverage-universe" element={<CoverageUniverse />}/>
+          <Route path="coverage-universe" element={<CoverageLayout/>}>
+            <Route index element={<CoverageUniversePage/>}/>
+            <Route path="detail" element={<CoverageDetailView/>}/>
+          </Route>
+
+          {/* <Route path ='company-wise' element={<CompanyWiseCollateralPage />}/> */}
+
         </Route>
       </Routes>
     </BrowserRouter>

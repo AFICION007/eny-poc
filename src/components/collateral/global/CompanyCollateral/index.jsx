@@ -1,36 +1,11 @@
-import React, { useState } from 'react';
-import { List } from 'antd';
-import styles from './styles.module.css';
-
-const COLLATERAL_OPTIONS = [
-  'Financial Results',
-  'Reports and Publications',
-];
-
-const CollateralFilter = ({ onSelectionChange }) => {
-const [selectedOption, setSelectedOption] = useState(null);
-
-  const handleSelect = (option) => {
-    const newSelection = option === selectedOption ? null : option;
-    setSelectedOption(newSelection);
-    onSelectionChange(newSelection ? [newSelection] : []);
-  };
-
+import React from 'react'
+import styles from './styles.module.css'
+const CompanyCollateral = () => {
   return (
-    <div className={styles.vertical_filter}>
-      <List
-        dataSource={COLLATERAL_OPTIONS}
-        renderItem={item => (
-          <List.Item
-            className={styles.list_item}
-            onClick={() => handleSelect(item)}
-          >
-            {item}
-          </List.Item>
-        )}
-      />
+    <div className={styles.page}>
+      <h1 className={styles.title}>Company collaterals</h1>
     </div>
-  );
-};
+  )
+}
 
-export default CollateralFilter;
+export default CompanyCollateral

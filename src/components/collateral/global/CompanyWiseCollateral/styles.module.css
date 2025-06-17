@@ -1,14 +1,25 @@
-.coverage_page{
-  min-height: 100vh;
-  background-color: white;
-  padding: 0;
-  border-top: 6px solid #cc1a1f;
+.page {
+    width: 1440px;
+    height: 400px;
+    flex-shrink: 0;
+    background: #F5F5F5;
+    position: relative;
 }
 
-.content{
-  position: relative;
-  width: 1440px;
+.title {
+    margin: 0;
+    position: absolute;
+    color: #000;
+    font-family: Poppins;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 40px;
+    /* 166.667% */
+    text-transform: capitalize;
+    left: 78px;
 }
+
 
 
 .dropdown_wrapper_company {
@@ -16,9 +27,9 @@
   flex-direction: column;
   gap: 6px;
   position: absolute;
-  width: 205px;
-  top: 177px;
-  left: 925px;
+  width: 200px;
+  top: 56px;
+  left: 78px;
 }
 .dropdown_label_company {
   color: var(--input-label-color, #656579);
@@ -29,6 +40,7 @@
   line-height: var(--line-height-20, 20px);
   /* 166.667% */
 }
+
 .dropdown_button_company {
   display: flex;
   align-items: center;
@@ -43,6 +55,11 @@
   flex: 1 0 0;
   box-sizing: border-box;
 }
+.dropdown_button:hover,
+:global(.ant-dropdown-open .dropdown_button) {
+  border-color: #000 !important;
+  /* box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1) !important; */
+}
 .dropdown_text_company {
   display: -webkit-box;
   -webkit-box-orient: vertical;
@@ -51,7 +68,7 @@
   overflow: hidden;
   color: var(--select-input-filled-color, #2E2E38);
   text-overflow: ellipsis;
-  font-family: "Poppins";
+  font-family: Poppins;
   font-size: var(--font-size-14, 14px);
   font-style: normal;
   font-weight: 400;
@@ -71,16 +88,12 @@
   height: 20px;
   width: 20px;
 }
-.dropdown_button:hover,
-:global(.ant-dropdown-open .dropdown_button) {
-  border-color: #000 !important;
-  /* box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1) !important; */
-}
+
 
 
 .date_picker {
   position: absolute;
-  top: 203px;
+  top: 84px;
   left: 1144px;
   width: 218px;
   height: 44px;
@@ -131,14 +144,25 @@
   background-color: #d9d9d9 !important;
 }
 
-.results_container {
+.report_section {
   position: absolute;
-  top: 500px;
-  left: 80px;
-  margin-right: 80px;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: row;
+  gap: 23px;
+  top: 148px;
+  left: 78px;
   width: 1440px;
   height: 100vh;
+}
+
+.report_grid {
   display: flex;
-  flex-direction: column;
-  gap: 40px;
+  flex-wrap: wrap;
+  gap: 27px;
+}
+
+.report_card_wrapper {
+  flex: 0 0 auto;
 }

@@ -10,6 +10,7 @@ import ReportAndPublicationSection from './global/ReportAndPublications';
 import FinancialReportSection from './global/FinancialReportSection';
 import { DatePicker } from 'antd';
 import ArticleCard from './global/ArticalCard';
+import CompanyWiseCollateralPage from './global/CompanyWiseCollateral';
 
 const { RangePicker } = DatePicker;
 
@@ -79,7 +80,7 @@ const CollateralPage = () => {
     return (
         <div className={styles.collateral_page}>
             <h3 className={styles.title}>Industry Reports</h3>
-            <RangePicker className={styles.date_picker} format={dateFormat}/>
+            <RangePicker className={styles.date_picker} format={dateFormat} />
 
             <div className={styles.article_section}>
                 <div className={styles.article_grid}>
@@ -90,6 +91,10 @@ const CollateralPage = () => {
                     ))}
                 </div>
             </div>
+            <div className={styles.company_wise_div}>
+                <CompanyWiseCollateralPage />
+            </div>
+
 
             {/* <div className={styles.bottom}>
                 <div>

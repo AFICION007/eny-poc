@@ -10,6 +10,7 @@ import {
 } from '@ant-design/icons';
 import styles from './styles.module.css';
 import DocumentCard from './DocumentCard'
+import FileFilter from "../FileFilter"
 
 const { RangePicker } = DatePicker;
 
@@ -23,28 +24,35 @@ const DOCUMENTS = [
     {
         title: "Swiggy_RelationshipNotes_2024-11-10.docx",
         url: "/MINSHU_SHAW_CV_2025.pdf",
+        format: "DOCX",
     },
     {
         title: "Flipkart_MeetingNotes_2025-01-15.docx",
         url: "/flipkart_meeting_notes.docx",
+        format: "DOCX",
     },
     {
         title: "Zomato_BusinessPlan_2025-03-01.pdf",
         url: "/zomato_business_plan.pdf",
+        format: "PDF",
     },
     {
         title: "Amazon_StrategyDeck_2025-04-12.pptx",
         url: "/amazon_strategy_deck.pptx",
+        format: "PPTX",
     },
     {
         title: "Meesho_ClientFeedback_2025-02-20.docx",
         url: "/meesho_feedback.docx",
+        format: "DOCX",
     },
     {
         title: "Nykaa_AnnualSummary_2024-12-05.pdf",
         url: "/nykaa_annual_summary.pdf",
+        format: "PDF",
     },
 ];
+
 
 
 
@@ -92,8 +100,8 @@ const INITIAL_DOCUMENTS = [
 
 const Documents = () => {
     const [selectedRowKeys, setSelectedRowKeys] = useState([]);
-    const [fileType, setFileType] = useState('');
-    const [selectedFileTypes, setSelectedFileTypes] = useState(['pdf']);
+    // const [fileType, setFileType] = useState('');
+    const [selectedFileTypes, setSelectedFileTypes] = useState('PDF');
     const [selectAll, setSelectAll] = useState(false);
     const [documents, setDocuments] = useState(INITIAL_DOCUMENTS);
     const [uploadModalVisible, setUploadModalVisible] = useState(false);
@@ -104,7 +112,11 @@ const Documents = () => {
 
     const dateFormat = "YYYY/MM/DD"
     const fileTypeFilterMenu = (
-        <></>
+        <FileFilter
+            onSelectionChange={(selected) => {
+                setSelectedFileTypes(selected.length > 0 ? selected.join(', ') : 'PDF');
+            }}
+        />
     );
 
     const handleDelete = () => {
@@ -244,7 +256,7 @@ const Documents = () => {
                     placement="bottomLeft"
                 >
                     <div className={styles.dropdown_button}>
-                        <span className={styles.dropdown_text}>{fileType || "PDF"}</span>
+                        <span className={styles.dropdown_text}>{selectedFileTypes || "PDF"}</span>
                         <div className={styles.icon_wrapper}>
                             <DropdownArrow className={styles.dropdown_arrow} />
                         </div>
@@ -256,7 +268,7 @@ const Documents = () => {
 
             <div className={styles.document_section}>
                 <div className={styles.document_grid}>
-                    {DOCUMENTS.map((doc) => (
+                    {DOCUMENTS.filter((doc) => doc.format === selectedFileTypes).map((doc) => (
                         <div className={styles.card_wrapper} key={doc.title}>
                             <DocumentCard title={doc.title} url={doc.url} />
                         </div>

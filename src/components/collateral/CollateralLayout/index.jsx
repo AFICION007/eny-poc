@@ -162,7 +162,7 @@ const CollateralLayout = () => {
             <div className={styles.dropdown_wrapper_company}>
                 <span className={styles.dropdown_label_company}>Company</span>
                 <Dropdown
-                    overlay={sectorFilterMenu}
+                    overlay={companyFilterMenu}
                     trigger={['click']}
                     placement="bottomLeft"
                     className={styles.dropdown}
