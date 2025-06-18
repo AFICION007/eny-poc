@@ -1,0 +1,143 @@
+.tableContainer {
+  display: flex;
+  width: 100%;
+  max-width: 1440px;
+  flex-direction: column;
+  align-items: flex-start;
+  border: var(--border-width-thin, 1px) solid var(--border-colors-default-extra-B, #C3C3CB);
+  border-radius: var(--table-border-radius, 8px);
+  background: var(--table-bg-color, #fff);
+}
+
+.table {
+  width: 100%;
+
+  :global(thead tr) {
+    border-radius: 10px !important;
+  }
+
+  :global(thead tr > :first-child) {
+    display: flex;
+    padding: 12px 24px !important;
+    align-items: center;
+    height: 56px;
+    gap: 12px;
+    flex-shrink: 0;
+    border-inline-start: 1px solid #f1f5f7;
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+  }
+
+  :global(thead tr > :last-child) {
+    border-inline-end: 1px solid #f1f5f7;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+  }
+
+  :global(.ant-table-row-selected > .ant-table-cell) {
+    background-color: #edf9ff !important;
+  }
+
+  :global(.ant-table-row) {
+    cursor: pointer;
+  }
+
+  :global(th.ant-table-cell::before) {
+    content: none !important;
+  }
+
+  :global(th.ant-table-cell) {
+    border-block: 1px solid #f1f5f7 !important;
+    background-color: #fff !important;
+    font-family: "Poppins";
+    font-weight: 600;
+    color: #17181a;
+  }
+
+  :global(.ant-table-column-sorter) {
+    color: black !important;
+  }
+
+  :global(.ant-table-cell-row-hover) {
+    background: var(--table-cell-hover-bg-color, #f3f3f5) !important;
+  }
+
+  :global(td.ant-table-cell) {
+    max-width: 200px;
+    padding: 16px 16px !important;
+    font-family: "Poppins";
+    font-weight: 400;
+    color: #2e2e38;
+  }
+}
+
+.tableHeader {
+  display: flex;
+  flex-direction: column;
+  padding: 20px 24px;
+  align-items: flex-start;
+  font-family: 'Poppins';
+  align-self: stretch;
+  background-color: #2e2e3c;
+  border-radius: 6px 6px 0px 0px;
+  border-bottom: var(--border-width-thin, 1px) solid
+    var(--border-colors-default-extra-B, #d7d7dc);
+  background: var(--Grey-550, #2e2e3c);
+}
+
+.table_title {
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 4px;
+  color: #ffffff;
+}
+
+.table_subtitle {
+  font-size: 14px;
+  color: #ffffff;
+  margin-bottom: 16px;
+}
+
+.clickable_table {
+  :global(td.ant-table-cell) {
+    cursor: pointer;
+  }
+}
+
+.pagination {
+  align-items: center;
+
+  :global(.ant-pagination-simple-pager) {
+    font-family: "Poppins";
+    color: #809fb8 !important;
+  }
+
+  :global(.ant-pagination-simple-pager) > input {
+    border: 1px solid #f1f5f7 !important;
+    font-family: "Poppins";
+    color: #17181a !important;
+  }
+
+  :global(.ant-pagination-item-link) {
+    color: #707070 !important;
+  }
+
+  :global(.ant-select) {
+    height: 28px !important;
+  }
+
+  :global(.ant-select-selector) {
+    padding-inline: 8px !important;
+    border: 1px solid #f1f5f7 !important;
+  }
+
+  :global(.ant-select-selection-item) {
+    font-size: 13px !important;
+    font-family: "Poppins";
+    color: #809fb8 !important;
+  }
+
+  :global(.ant-select-suffix) {
+    content: url("../../assets/select-caret.svg") !important;
+  }
+}

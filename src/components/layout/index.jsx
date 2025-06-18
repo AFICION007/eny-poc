@@ -1,7 +1,8 @@
 import React from "react";
-import { useNavigate, Outlet } from "react-router-dom";
+import { useNavigate, Link, Outlet } from "react-router-dom";
 
 import styles from "./styles.module.css";
+
 import avendusLogo from "./assets/avendus-logo.png";
 import bookmark from "./assets/bookmark.svg";
 import menuIcon from "./assets/menu-icon.svg";
@@ -22,6 +23,16 @@ const Layout = () => {
       backgroundColor: "#000",
       icon: menuIcon,
     },
+  ];
+
+  const navLinks = [
+    { path: "/home", label: "HOME" },
+    { path: "/my-directory", label: "MY DIRECTORY" },
+    { path: "/my-documents", label: "MY DOCUMENTS" },
+    { path: "/collaterals", label: "COLLATERALS" },
+    { path: "/coverage-universe", label: "COVERAGE UNIVERSE" },
+    // { path: "/templates", label: "TEMPLATES" },
+    // { path: "/valuations", label: "VALUATIONS" },
   ];
 
   const navigate = useNavigate();
@@ -60,6 +71,15 @@ const Layout = () => {
               </div>
             ))}
           </div>
+        </div>
+        <div className={styles.nav_links}>
+          <Link to="/home">HOME</Link>
+          <Link to="/my-directory">MY DIRECTORY</Link>
+          <Link to="/my-documents">MY DOCUMENTS</Link>
+          <Link to="/collaterals">COLLATERALS</Link>
+          <Link to="/coverage-universe">COVERAGE UNIVERSE</Link>
+          {/* <Link to="/templates">TEMPLATES</Link>
+          <Link to="/valuations">VALUATIONS</Link> */}
         </div>
       </div>
       <Outlet />

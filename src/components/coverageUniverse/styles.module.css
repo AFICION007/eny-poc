@@ -1,0 +1,165 @@
+.coverage_page {
+  min-height: 100vh;
+  background-color: white;
+  padding: 0;
+  border-top: 6px solid #cc1a1f;
+}
+
+.content {
+  position: relative;
+  width: 1440px;
+}
+
+.dropdown_wrapper_company {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  position: absolute;
+  width: 205px;
+  top: 177px;
+  left: 925px;
+}
+
+.dropdown_label_company {
+  color: var(--input-label-color, #656579);
+  font-family: "Poppins";
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 300;
+  line-height: var(--line-height-20, 20px);
+}
+
+.dropdown_button_company {
+  display: flex;
+  align-items: center;
+  gap: 0;
+  height: 44px;
+  padding: 4px 14px;
+  border: 1px solid #C3C3CB;
+  border-radius: 32px;
+  background: var(--select-input-hover-bg-color, #fff);
+  cursor: pointer;
+  flex: 1 0 0;
+  box-sizing: border-box;
+}
+
+.dropdown_text_company {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 1;
+  flex: 1 0 0;
+  overflow: hidden;
+  color: var(--select-input-filled-color, #2E2E38);
+  text-overflow: ellipsis;
+  font-family: "Poppins";
+  font-size: var(--font-size-14, 14px);
+  font-style: normal;
+  font-weight: 400;
+  line-height: var(--line-height-20, 20px);
+  width: 149px;
+}
+
+.icon_wrapper {
+  display: flex;
+  padding: 8px;
+  justify-content: center;
+  align-items: center;
+  gap: 6px;
+  border-radius: 4px;
+}
+
+.dropdown_arrow {
+  height: 20px;
+  width: 20px;
+}
+
+/* Fixed hover styles */
+.dropdown_button_company:hover,
+:global(.ant-dropdown-open .dropdown_button) {
+  border-color: #E5E5E8 !important;
+  background-color: #E5E5E8 !important;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1) !important;
+}
+
+.dropdown_button:hover,
+:global(.ant-dropdown-open .dropdown_button) {
+  border-color: #000 !important;
+}
+
+/* Date Picker Styles */
+.date_picker {
+  position: absolute;
+  top: 203px;
+  left: 1144px;
+  width: 218px;
+  height: 44px;
+  padding: 4px 14px;
+  display: flex;
+  border-radius: 4px;
+  border: var(--border-width-thin, 1px) solid var(--border-colors-default-secondary, #C3C3CB);
+}
+
+.date_picker :global(input::placeholder) {
+  overflow: hidden;
+  color: var(--input-color, #2E2E38);
+  text-overflow: ellipsis;
+  font-family: "Poppins";
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 500;
+}
+
+.date_picker:hover {
+  background-color: #E5E5E8 !important;
+}
+
+
+:global(.ant-picker) {
+  border-color: #C3C3CB !important;
+}
+
+:global(.ant-picker:hover),
+:global(.ant-picker-focused) {
+  border-color: #C3C3CB !important;
+  box-shadow: none !important;
+}
+
+:global(.ant-picker-cell-in-range)::before {
+  background-color: #f0f0f0 !important;
+}
+
+:global(.ant-picker-cell-range-start),
+:global(.ant-picker-cell-range-end) {
+  background-color: transparent !important;
+  padding: 0 !important;
+}
+
+
+:global(.ant-picker-cell-range-start .ant-picker-cell-inner),
+:global(.ant-picker-cell-range-end .ant-picker-cell-inner),
+:global(.ant-picker-cell-range-start.ant-picker-cell-range-end .ant-picker-cell-inner) {
+  background-color: #d9d9d9 !important;
+}
+
+:global(.ant-picker-cell-today .ant-picker-cell-inner)::before {
+  border-color: #000 !important;
+}
+:global(.ant-picker-range-separator){
+  padding-left: 0 !important;
+  padding-right: 2px !important;
+}
+:global(.ant-picker-active-bar){
+  background-color: #000 !important;
+}
+
+
+.results_container {
+  position: absolute;
+  top: 267px;
+  left: 79px;
+  width: 1282px;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  gap: 46px;
+}

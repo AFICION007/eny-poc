@@ -1,0 +1,136 @@
+.page {
+  position: relative;
+  width: 1440px;
+  /* height: 100vh; */
+}
+
+.tab_navigator {
+  position: absolute;
+  left: 82px;
+  top: 82px;
+}
+
+.year_container {
+  position: absolute;
+  left: 79px;
+  top: 148px;
+  display: flex;
+  flex-direction: row;
+  gap: 11px;
+  align-items: flex-start;
+}
+
+.year_button {
+  display: flex;
+  padding: 8px 14px;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  border-radius: 4px;
+  border: 1px solid var(--Neutrals-Light-theme-300, #C3C3CB);
+}
+
+.year_button:hover {
+  background-color: #E5E5E8 !important;
+  border-color: #C3C3CB !important;
+}
+
+
+.selected_year {
+  border: #2E2E38 !important;
+  background-color: #E5E5E8 !important;
+  border: 1px solid var(--Neutrals-Light-theme-300, #C3C3CB) !important;
+}
+
+
+.year_text {
+  color: var(--Neutrals-Light-theme-900, #2E2E38);
+  font-family: "Poppins";
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 20px;
+  /* 142.857% */
+}
+
+
+.date_picker {
+  position: absolute;
+  top: 140px;
+  left: 1144px;
+  width: 218px;
+  height: 44px;
+  padding: 4px 14px;
+  display: flex;
+  border-radius: 32px;
+  border: var(--border-width-thin, 1px) solid var(--border-colors-default-secondary, #C3C3CB);
+}
+
+.date_picker :global(input::placeholder) {
+  overflow: hidden;
+  color: var(--input-color, #2E2E38);
+  text-overflow: ellipsis;
+  font-family: "Poppins";
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 500;
+}
+
+.date_picker:hover {
+  background-color: #E5E5E8 !important;
+}
+
+:global(.ant-picker) {
+  border-color: #C3C3CB !important;
+}
+
+:global(.ant-picker:hover),
+:global(.ant-picker-focused) {
+  border-color: #C3C3CB !important;
+  box-shadow: none !important;
+}
+
+:global(.ant-picker-cell-in-range)::before {
+  background-color: #f0f0f0 !important;
+}
+
+:global(.ant-picker-cell-range-start)::before,
+:global(.ant-picker-cell-range-end)::before {
+  background-color: #d9d9d9 !important;
+}
+
+:global(.ant-picker-cell-range-start .ant-picker-cell-inner),
+:global(.ant-picker-cell-range-end .ant-picker-cell-inner) {
+  color: #2E2E38 !important;
+  font-weight: 500;
+}
+
+:global(.ant-picker-cell-range-start .ant-picker-cell-inner::after),
+:global(.ant-picker-cell-range-end .ant-picker-cell-inner::after),
+:global(.ant-picker-cell-range-start.ant-picker-cell-range-end .ant-picker-cell-inner::after) {
+  background-color: #d9d9d9 !important;
+}
+
+.report_section {
+  position: absolute;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: row;
+  gap: 27px;
+  top: 203px;
+  left: 78px;
+  width: 1440px;
+  padding-bottom: 20px;
+  /* height: 100vh; */
+}
+
+.report_grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 27px;
+}
+
+.report_card_wrapper {
+  flex: 0 0 auto;
+}

@@ -1,0 +1,188 @@
+.container {
+  padding: 24px;
+  padding-left: 80px;
+}
+
+.header {
+  margin-bottom: 24px;
+}
+
+.reportsScrollWrapper {
+  overflow-x: auto;
+  padding-bottom: 10px;
+  margin-bottom: 20px;
+  height: 310px;
+}
+
+.title {
+  color: var(--Grey-500, #2E2E38);
+  font-family: "Poppins";
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 400;
+  margin-bottom: 12px;
+}
+
+.tabs {
+  margin-bottom: 20px;
+}
+
+.tabs :global(.ant-tabs-nav) {
+  display: flex;
+  justify-content: space-between;
+}
+
+.tabs :global(.ant-tabs-tab) {
+  flex: 1;
+  text-align: center;
+  padding: 16px 0;
+  font-family: 'Poppins', sans-serif;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  color: var(--Theme-Neutrals-Light-Theme-900, var(--color-base-neutral-900, #2E2E38));
+  position: relative;
+  margin: 0;
+  transition: color 0.3s ease;
+}
+
+.tabs :global(.ant-tabs-tab:hover),
+.tabs :global(.ant-tabs-tab .ant-tabs-tab-btn:hover) {
+  color: #000;
+}
+
+.tabs :global(.ant-tabs-tab .ant-tabs-tab-btn) {
+  color: inherit;
+  font-family: inherit;
+  font-size: inherit;
+  font-weight: inherit;
+}
+
+.tabs :global(.ant-tabs-tab.ant-tabs-tab-active),
+.tabs :global(.ant-tabs-tab.ant-tabs-tab-active .ant-tabs-tab-btn) {
+  color: var(--Theme-Neutrals-Light-Theme-900, var(--color-base-neutral-900, #2E2E38));
+}
+
+.tabs :global(.ant-tabs-tab.ant-tabs-tab-active::after) {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background-color: var(--Theme-Neutrals-Light-Theme-900, var(--color-base-neutral-900, #2E2E38));
+}
+
+.tabs :global(.ant-tabs-ink-bar),
+.tabs :global(.ant-tabs-content-holder),
+.tabs :global(.ant-tabs-nav-wrap) {
+  display: none;
+}
+
+
+.filterSection {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-bottom: 24px;
+}
+
+.yearFilter {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  order: 1;
+}
+
+.yearButton {
+  padding: 6px 16px;
+  background-color: white;
+  border: 1px solid #d9d9d9;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.yearButton:hover {
+  /* background-color: #d6e4ff; */
+  border-color: gray;
+}
+
+.yearButtonActive {
+  /* color: #fff; */
+  border-color: gray;
+}
+
+.datePickerContainer {
+  order: 2;
+  margin-left: auto;
+}
+
+.reportsSection {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  height: 75px;
+  width: 576px;
+  /* border-radius: 18px; */
+  /* background-color: #fff; */
+  /* box-shadow: 0px 1px 4px 3px var(--shadow-colors-primary, rgba(35, 35, 47, 0.06)), 0px 6px 12px 0px rgba(101, 101, 120, 0.08); */
+}
+
+.reportItem {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px;
+  background: white;
+  border: 1px solid #f0f0f0;
+  border-radius: 18px;
+  box-shadow: 0px 1px 4px 3px var(--shadow-colors-primary, rgba(35, 35, 47, 0.06)), 0px 6px 12px 0px rgba(101, 101, 120, 0.08);
+  transition: all 0.2s ease;
+}
+
+.reportItem:hover {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  border-color: #d9d9d9;
+}
+
+.reportContent {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.reportIcon {
+  width: 24px;
+  height: 24px;
+  display: flex;
+  align-items: center;
+}
+
+.reportName {
+    color: var(--Grey-450, #3A3A4A);
+  font-family: "Poppins";
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 600;
+}
+
+.downloadIcon {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: #D9D9D9;
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.downloadIcon:hover {
+  background: rgb(223, 223, 223);
+  color: gray;
+}

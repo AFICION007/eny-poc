@@ -1,0 +1,227 @@
+/* ========= PAGE BASE STYLES ========= */
+.document_page {
+  min-height: 100vh;
+  background-color: white;
+  padding: 0;
+  border-top: 6px solid #cc1a1f;
+}
+
+
+.title {
+  position: absolute;
+  font-family: 'Poppins', sans-serif;
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 300;
+  line-height: 40px;
+  color: #000000;
+  margin: 0;
+  text-transform: uppercase;
+  left: 78px;
+  top: 30px;
+}
+
+
+.content {
+  position: relative;
+  width: 1440px;
+  height: 1019px;
+}
+
+/* ========= FILTERS ========= */
+.filters_container {
+  position: absolute;
+  display: flex;
+  flex-direction: row;
+  gap: 24px;
+  left: 732px;
+  top: 72px;
+}
+
+.search_container {
+  position: absolute;
+  width: 621px;
+  height: 57px;
+  flex-shrink: 0;
+  display: flex;
+  left: 80px;
+  top: 85px;
+}
+
+.search_input {
+  border-radius: 32px;
+  background: #ffffff;
+  flex: 1;
+  box-shadow:
+    0px 1px 4px 3px rgba(35, 35, 47, 0.06),
+    0px 6px 12px 0px rgba(101, 101, 120, 0.08);
+}
+
+.search_input input::placeholder {
+  color: #322F2F;
+  font-family: 'Poppins', sans-serif;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 40px;
+  position: absolute;
+  left: 10px;
+}
+.search_input :global(.ant-input-suffix) {
+  position: absolute;
+  left: 550px;
+  top: 16px;
+}
+
+
+/* .search_input {
+  border-radius: 25px;
+  height: 45px;
+  border: 1px solid #d9d9d9;
+  border-radius: 4px;
+} */
+
+/* When hovered */
+.search_input:hover {
+  border-color: black !important;
+}
+
+/* When focused (keyboard or click) */
+.search_input:focus,
+.search_input.ant-input-focused {
+  border-color: black !important;
+  box-shadow: none !important;
+}
+
+.search_icon {
+  color: #000;
+  font-size: 16px;
+}
+
+
+
+.dropdown_wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  width: 194px;
+}
+
+/* Label */
+.dropdown_label {
+  color: #656579;
+  overflow: hidden;
+  font-family: 'Poppins', sans-serif;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 300;
+  line-height: 20px;
+  width: 53px;
+}
+
+/* Dropdown Button */
+.dropdown_button {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  height: 44px;
+  padding: 4px 14px;
+  border: 1px solid #C3C3CB;
+  border-radius: 32px;
+  background-color: #FFFFFF;
+  cursor: pointer;
+  flex: 1 0 0;
+  box-sizing: border-box;
+}
+
+/* Placeholder / Selected Text */
+.dropdown_text {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 1;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  color: #595959;
+  font-family: 'Poppins', sans-serif;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 20px;
+  width: 124px;
+}
+
+/* Icon */
+.icon_wrapper {
+  display: flex;
+  padding: 8px;
+  justify-content: center;
+  align-items: center;
+  gap: 6px;
+  border-radius: 4px;
+}
+
+.dropdown_arrow {
+  height: 20px;
+  width: 20px;
+}
+
+
+
+.dropdown_button:hover,
+:global(.ant-dropdown-open .dropdown_button) {
+  border-color: #E5E5E8 !important;
+  background-color: #E5E5E8 !important;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1) !important;
+}
+
+
+/* ========= CHECKBOXES ========= */
+:global(.ant-checkbox-inner) {
+  border-color: #d9d9d9;
+  background-color: #fff;
+  transition: all 0.3s ease;
+}
+
+:global(.ant-checkbox-wrapper:hover .ant-checkbox-inner),
+:global(.ant-checkbox:hover .ant-checkbox-inner) {
+  border-color: #000 !important;
+}
+
+:global(.ant-checkbox-checked .ant-checkbox-inner) {
+  background-color: gainsboro !important;
+  border-color: #000 !important;
+}
+
+:global(.ant-checkbox-checked .ant-checkbox-inner::after) {
+  border-color: #000 !important;
+  /* black checkmark */
+}
+
+:global(.ant-checkbox-input:focus + .ant-checkbox-inner) {
+  border-color: #000 !important;
+}
+
+
+
+
+
+.folder_name{
+  position: absolute;
+  top: 158px;
+  left: 80px;
+}
+
+.tab_navigator{
+  position: absolute;
+  top: 260px;
+  left: 80px
+}
+
+.document{
+  position: absolute;
+  top: 342px;
+  left: 80px;
+}
+
+
+

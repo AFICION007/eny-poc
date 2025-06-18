@@ -1,0 +1,123 @@
+.document_card {
+  width: 411px;
+  height: 331px;
+  flex-shrink: 0;
+  border-radius: 6px;
+  background: #FFF;
+  box-shadow: 0px 1px 4px 3px var(--shadow-colors-primary, rgba(35, 35, 47, 0.06)), 0px 6px 12px 0px rgba(101, 101, 120, 0.08);
+  margin: 0;
+  padding: 0;
+  position: relative;
+}
+
+.title {
+  margin: 0;
+  width: 351px;
+  color: var(--Grey-450, #3A3A4A);
+  font-family: "Poppins";
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 28px;
+  position: absolute;
+  top: 30px;
+  left: 30px;
+  /* 155.556% */
+}
+
+.subtitle {
+  width: 149px;
+  color: var(--Grey-400, #747480);
+  font-family: "Poppins";
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 26px;
+  /* 185.714% */
+  position: absolute;
+  top: 101px;
+  left: 30px;
+}
+
+.text {
+  width: 173px;
+  color: var(--Grey-400, #747480);
+  font-family: "Poppins";
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 26px;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  /* 185.714% */
+}
+
+.informations {
+  display: flex;
+  flex-direction: column;
+  gap: 11px;
+  position: absolute;
+  top: 137px;
+  left: 30px;
+}
+
+.info {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.info_icon {
+  width: 24px;
+  height: 24px;
+  flex-shrink: 0;
+}
+
+.buttons {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  position: absolute;
+  top: 265px;
+  left: 32px;
+}
+
+.button {
+  display: inline-flex;
+  padding: 8px 14px;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  border-radius: 32px;
+  border: var(--border-width-thin, 1px) solid var(--border-colors-default-secondary, #C3C3CB);
+}
+
+.dark {
+  background-color: #2e2e38;
+}
+
+.icon {
+  width: 20px;
+  height: 20px;
+}
+
+.label {
+  color: var(--button-secondary-text-color, #2E2E38);
+  font-family: "Poppins";
+  font-size: var(--font-size-14, 14px);
+  font-style: normal;
+  font-weight: var(--font-weight-regular, 400);
+  line-height: var(--line-height-20, 20px);
+}
+
+
+.dark .label {
+  color: white;
+}
+
+
+.modal{
+  width: 1280px !important;
+  height: 80vh !important;
+}
