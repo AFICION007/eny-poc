@@ -6,6 +6,7 @@ import WorkspaceContext from "../../../contexts/workspaceContext";
 import styles from "./styles.module.css";
 import Knowledge from "./assets/knowledge";
 import Research from "./assets/research";
+import Subscriptions from "./assets/subscriptions";
 import Web from "./assets/web";
 
 const Toggles = () => {
@@ -49,11 +50,6 @@ const Toggles = () => {
       Icon: (className) => <Knowledge className={className} />,
       label: "Knowledge base",
     },
-    // {
-    //   value: "news_search",
-    //   Icon: (className) => <Knowledge className={className} />,
-    //   label: "News search",
-    // },
     {
       value: "web_search",
       Icon: (className) => <Web className={className} />,
@@ -63,6 +59,11 @@ const Toggles = () => {
       value: "deep_research",
       Icon: (className) => <Research className={className} />,
       label: "Deep research",
+    },
+    {
+      value: "subscriptions",
+      Icon: (className) => <Subscriptions className={className} />,
+      label: "Subscriptions",
     },
   ];
 

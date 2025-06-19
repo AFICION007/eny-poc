@@ -65,7 +65,6 @@
   max-width: 778px;
   min-width: 778px;
   position: relative;
-  min-height: 132px;
 }
 
 .source_top {
@@ -84,6 +83,7 @@
 .source_top_right {
   display: flex;
   flex-direction: column;
+  justify-content: center;
   gap: 2px;
   max-width: calc(100% - 44px - 10px);
 }

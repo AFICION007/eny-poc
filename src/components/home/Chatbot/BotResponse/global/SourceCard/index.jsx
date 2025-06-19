@@ -36,6 +36,17 @@ const SourceCard = ({
         description: source.description,
       };
     }
+
+    //
+    else if (sourceType === "api") {
+      return {
+        icon: swiggy,
+        title: source.company,
+        subtitle: "",
+        heading: `[Endpoints]: ${source.endpoint.join(", ")}`,
+        description: "",
+      };
+    }
   };
 
   const sourceConfig = getConfigFromSource(source);
@@ -45,8 +56,8 @@ const SourceCard = ({
       window.open(source.url, "_blank");
     }
 
-    // sourceType === "internal"
-    else {
+    //
+    else if (sourceType === "internal") {
       fetchPdf(sourceConfig.filename);
     }
   };

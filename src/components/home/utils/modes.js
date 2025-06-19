@@ -9,6 +9,7 @@ export const getAgentFromSelectedModes = (selectedModes) => {
     //
     deep_research: "deep-research",
     deep_research_knowledge_base_web_search: "deep-research",
+    subscriptions: "private-circle-api",
   };
 
   const mode = selectedModes.sort().join("_");
@@ -20,12 +21,12 @@ export const getSourcesFromAgent = (mode, data) => {
     return data.sources.map((source) => ({ sourceType: mode, ...source }));
   } else if (mode === "deep-research") {
     return [
-      ...data.internal_sources.flat().map((source) => ({
+      ...data.sources.internal_sources.flat().map((source) => ({
         sourceType: "internal",
         ...source,
       })),
 
-      ...data.web_sources.flat().map((source) => ({
+      ...data.sources.web_sources.flat().map((source) => ({
         sourceType: "web",
         ...source,
       })),
@@ -40,6 +41,11 @@ export const getSourcesFromAgent = (mode, data) => {
       sourceType: "web",
       ...source,
       title: source.title || source.description,
+    }));
+  } else if (mode === "private-circle-api") {
+    return data.sources.map((source) => ({
+      sourceType: "api",
+      ...source,
     }));
   }
 };
