@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-import PdfViewer from "./PdfViewer";
+import PdfViewer from "../../../../../global/PdfViewer";
 
 import styles from "./styles.module.css";
 import calendar from "./assets/calendar.svg";

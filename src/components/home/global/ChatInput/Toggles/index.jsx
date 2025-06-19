@@ -44,15 +44,10 @@ const Toggles = () => {
   };
 
   const toggles = [
-    // {
-    //   value: "knowledge_base",
-    //   Icon: (className) => <Knowledge className={className} />,
-    //   label: "Knowledge base",
-    // },
     {
-      value: "news_search",
+      value: "knowledge_base",
       Icon: (className) => <Knowledge className={className} />,
-      label: "News search",
+      label: "Knowledge base",
     },
     // {
     //   value: "news_search",

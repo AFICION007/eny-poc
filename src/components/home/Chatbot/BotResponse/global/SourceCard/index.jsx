@@ -1,6 +1,8 @@
-import React from "react";
+import React, { useState } from "react";
 
 import { getDomainFromUrl, getNormalizedString } from "./utils/main";
+
+import PdfViewer from "../../../../../global/PdfViewer";
 
 import styles from "./styles.module.css";
 import swiggy from "./assets/swiggy.svg";
@@ -15,6 +17,7 @@ const SourceCard = ({ type = "", source = {} }) => {
         subtitle: "",
         heading: `[PDF] ${getNormalizedString(source.filename)}`,
         description: source.summary,
+        filename: source.filename,
       };
     }
 
@@ -31,9 +34,16 @@ const SourceCard = ({ type = "", source = {} }) => {
   };
 
   const sourceConfig = getConfigFromSource(source);
+
+  const [isModalOpen, setModalOpen] = useState(false);
   const onClickSource = () => {
     if (source.sourceType === "web") {
       window.open(source.url, "_blank");
+    }
+
+    // sourceType === "internal"
+    else {
+      setModalOpen(true);
     }
   };
 
@@ -79,7 +89,18 @@ const SourceCard = ({ type = "", source = {} }) => {
     ),
   };
 
-  return sourcesMap[type];
+  return (
+    <>
+      {sourcesMap[type]}
+      {source.sourceType === "internal" && (
+        <PdfViewer
+          isModalOpen={isModalOpen}
+          setIsModalOpen={setModalOpen}
+          documentName={sourceConfig?.filename}
+        />
+      )}
+    </>
+  );
 };
 
 export default SourceCard;

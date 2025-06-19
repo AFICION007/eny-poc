@@ -12,8 +12,8 @@
   overflow-y: scroll;
   width: calc(100vw - 2 * 340px);
   max-width: calc(100vw - 2 * 340px);
-  height: calc(100vh - 92px - (4px + 96px + 16px));
-  max-height: calc(100vh - 92px - (4px + 96px + 16px));
+  height: calc(100vh - 50px - 92px - (4px + 96px + 16px));
+  max-height: calc(100vh - 50px - 92px - (4px + 96px + 16px));
 }
 
 .chat_section {
