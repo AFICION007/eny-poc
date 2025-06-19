@@ -57,7 +57,7 @@ const SourceCard = ({
     }
 
     //
-    else if (sourceType === "internal") {
+    else if (source.sourceType === "internal") {
       fetchPdf(sourceConfig.filename);
     }
   };

@@ -3,8 +3,6 @@ import SimpleBar from "simplebar-react";
 
 import WorkspaceContext from "../contexts/workspaceContext";
 import useMessages from "./hooks/useMessages";
-import { transformMessage } from "../utils/message";
-import { deep_internal_web } from "./response";
 
 import BotResponse from "./BotResponse";
 import Chat from "./Chat";
@@ -37,10 +35,6 @@ const Chatbot = ({ className = "chatbot" }) => {
       chatRef.current.scrollIntoView({ behavior: "smooth" });
     }
   }, [messages]);
-
-  useEffect(() => {
-    appendMessage(transformMessage({ ...deep_internal_web, sender: "friday" }));
-  }, []);
 
   return (
     <div className={styles.chatbot}>
