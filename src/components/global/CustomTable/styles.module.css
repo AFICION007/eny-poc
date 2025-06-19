@@ -104,7 +104,7 @@
   }
 }
 
-.pagination {
+/* .pagination {
   align-items: center;
 
   :global(.ant-pagination-simple-pager) {
@@ -140,4 +140,105 @@
   :global(.ant-select-suffix) {
     content: url("../../assets/select-caret.svg") !important;
   }
+} */
+
+.pagination {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px 16px;
+
+  :global(.ant-pagination-simple-pager) {
+    font-family: "Poppins";
+    font-size: 14px;
+    color: #2E2E38 !important;
+  }
+
+  :global(.ant-pagination-item){
+    border: none;
+    color: #2E2E38;
+  }
+
+  :global(.ant-pagination-item-active){
+    color: #2E2E38;
+  }
+
+  :global(.ant-pagination-simple-pager) > input {
+    border: none !important;
+    background-color: transparent;
+    width: 30px;
+    text-align: center;
+    font-family: "Poppins";
+    font-size: 14px;
+    color: #2E2E38 !important;
+  }
+
+  :global(.ant-pagination-item-link) {
+    color: #2E2E38 !important;
+    font-size: 16px;
+    border: none;
+  }
+
+  :global(.ant-pagination-options) {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    font-family: "Poppins";
+    font-size: 14px;
+    color: #2E2E38 !important;
+  }
+  
+  :global(.ant-select) {
+    height: auto !important;
+    display: inline-flex !important;
+    align-items: center !important;
+  }
+  
+  :global(.ant-select-selector) {
+    padding: 0 !important;
+    border: none !important;
+    position: absolute;
+    right: 200px;
+    background: transparent !important;
+    box-shadow: none !important;
+    display: inline-flex !important;
+    align-items: center !important;
+  }
+
+  :global(.ant-select-selection-item) {
+    font-size: 14px !important;
+    font-family: "Poppins";
+    color: #17181a !important;
+    padding-right: 4px;
+    font-weight: 500;
+  }
+
+  :global(.ant-select-arrow) {
+    position: absolute;
+    right: 400px;
+    font-size: 10px;
+    margin-left: 20px;
+  }
+
+  :global(.ant-select-suffix) {
+    background-image: url("../../assets/select-caret.svg") !important;
+    background-repeat: no-repeat;
+    background-position: center;
+    width: 12px;
+    height: 12px;
+    content: "" !important;
+    display: inline-block;
+  }
+
+  :global(.ant-pagination-options-size-changer)::before {
+    content: "Show ";
+    position: absolute;
+    right: 300px;
+    margin-bottom: 2px;
+    font-weight: 500;
+    color: #2E2E38 !important;
+    display: inline-block;
+    align-items: center;
+  }
+  
 }

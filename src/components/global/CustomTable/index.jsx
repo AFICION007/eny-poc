@@ -43,11 +43,17 @@ const CustomTable = ({
               })}                
             scroll={{ x: "max-content", ...scroll }}
             pagination={{
+                simple: true,
                 prevIcon: <Left />,
                 nextIcon: <Right />,
                 hideOnSinglePage: false,
+                showSizeChanger: true,
+                showQuickJumper: false,
+                defaultPageSize: 10,
+                total: pagination.total,
+                current: pagination.current,
+                onChange: pagination.onChange,
                 rootClassName: styles.pagination,
-                simple: true,
                 size: "small",
                 ...pagination,
             }}
