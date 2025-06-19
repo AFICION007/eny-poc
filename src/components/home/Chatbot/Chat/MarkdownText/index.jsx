@@ -5,7 +5,7 @@ import rehypeHighlight from "rehype-highlight";
 
 import styles from "../styles.module.css";
 
-const MarkdownText = ({ content }) => {
+const MarkdownText = ({ content = "" }) => {
   return (
     <div className={styles.message}>
       <ReactMarkdown

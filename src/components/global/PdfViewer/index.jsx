@@ -3,20 +3,17 @@ import { Modal } from "antd";
 import { Viewer, Worker } from "@react-pdf-viewer/core";
 import { defaultLayoutPlugin } from "@react-pdf-viewer/default-layout";
 
-import useGetDocument from "./services/useGetDocument";
-
 import "@react-pdf-viewer/core/lib/styles/index.css";
 import "@react-pdf-viewer/default-layout/lib/styles/index.css";
 import styles from "./styles.module.css";
 
 const PdfViewer = ({
   documentName = "",
+  pdfUrl,
   isModalOpen = false,
   setIsModalOpen = () => {},
 }) => {
   const defaultPluginInstance = defaultLayoutPlugin();
-
-  const { pdfUrl } = useGetDocument(documentName);
 
   return (
     <Modal
