@@ -1,9 +1,10 @@
 import React, { useContext } from "react";
-import { Input } from "antd";
 
 import WorkspaceContext from "../../contexts/workspaceContext";
+import { cachedResponses } from "./utils/cachedResponses";
 
 import IconButton from "../IconButton";
+import InputTextarea from "./InputTextarea";
 import Toggles from "./Toggles";
 
 import styles from "./styles.module.css";
@@ -42,16 +43,35 @@ const ChatInput = ({ handleSubmit = () => {}, className = "" }) => {
     />
   );
 
+  // Added options
+  const options = [
+    {
+      key: "0",
+      type: "group",
+      label: "Suggested Questions",
+      children: Object.entries(cachedResponses).map(([key, value]) => ({
+        key,
+        label: key,
+      })),
+    },
+  ];
+
+  const onClickOption = (event) => {
+    setQuery(event.key);
+  };
+
   return (
     <div className={`${styles.chat_input_container} ${styles[className]}`}>
-      <Input.TextArea
-        autoSize={{ minRows: className === "chatbot" ? 1 : 2, maxRows: 20 }}
-        placeholder="Enter a Keyword or a Sentence to find People, Industry, Case Studies, etc."
+      <InputTextarea
+        minRows={className === "chatbot" ? 1 : 2}
+        maxRows={20}
         value={query}
         onChange={handleInputChange}
         onKeyDown={handleKeyDown}
-        className={`${styles.chat_box} ${styles.chat_textarea}`}
+        options={options}
+        onClickOption={onClickOption}
       />
+
       <div className={styles.bottom_container}>
         <Toggles />
         {submitButton(submitActive)}

@@ -3,6 +3,8 @@ import { useNavigate } from "react-router-dom";
 
 import WorkspaceContext from "../contexts/workspaceContext";
 import { getUserMessage } from "../utils/message";
+import { getCachedResponse } from "../global/ChatInput/utils/cachedResponses";
+import { transformMessage } from "../utils/message";
 
 import NewsSection from "./NewsSection";
 import ChatInput from "../global/ChatInput";
@@ -13,18 +15,32 @@ import searchAnalytics from "./assets/search-analytics.svg";
 import seoAnalysis from "./assets/seo-analysis.svg";
 
 const Home = () => {
-  const { query, setQuery, setMessages, selectedModes, postChatMessage } =
-    useContext(WorkspaceContext);
+  const {
+    query,
+    setQuery,
+    setMessages,
+    appendMessage,
+    selectedModes,
+    postChatMessage,
+  } = useContext(WorkspaceContext);
 
   const navigate = useNavigate();
-  const handleSubmitChat = () => {
-    if (selectedModes.length > 0) {
+  const handleSubmitChat = async () => {
+    const cached = await getCachedResponse(query);
+    if (cached && selectedModes[0] === "deep_research") {
       setMessages([getUserMessage(query)]);
-      postChatMessage(selectedModes, query);
-
       setQuery("");
-      navigate(`thread/threadId?modes=${selectedModes.join(",")}`);
+      appendMessage(transformMessage({ ...cached, sender: "friday" }));
+    } else {
+      if (selectedModes.length > 0) {
+        setMessages([getUserMessage(query)]);
+        postChatMessage(selectedModes, query);
+
+        setQuery("");
+      }
     }
+
+    navigate(`thread/threadId?modes=${selectedModes.join(",")}`);
   };
 
   const filters = [

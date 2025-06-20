@@ -1,8 +1,8 @@
 import { useEffect, useContext } from "react";
 
 import WorkspaceContext from "../../contexts/workspaceContext";
-import usePostChatMessage from "../../services/usePostChatMessage";
-import { getUserMessage } from "../../utils/message";
+import { getCachedResponse } from "../../global/ChatInput/utils/cachedResponses";
+import { getUserMessage, transformMessage } from "../../utils/message";
 
 // All the references inside this hook are stable
 const useMessages = () => {
@@ -16,12 +16,19 @@ const useMessages = () => {
     fetchingMessage,
   } = useContext(WorkspaceContext);
 
-  const handleSubmitChat = () => {
-    // at least one mode is selected
-    if (selectedModes.length > 0) {
+  const handleSubmitChat = async () => {
+    const cached = await getCachedResponse(query);
+    if (cached && selectedModes[0] === "deep_research") {
       appendMessage(getUserMessage(query));
-      postChatMessage(selectedModes, query);
       setQuery("");
+      appendMessage(transformMessage({ ...cached, sender: "friday" }));
+    } else {
+      // at least one mode is selected
+      if (selectedModes.length > 0) {
+        appendMessage(getUserMessage(query));
+        postChatMessage(selectedModes, query);
+        setQuery("");
+      }
     }
   };
 
