@@ -27,7 +27,11 @@ const Home = () => {
   const navigate = useNavigate();
   const handleSubmitChat = async () => {
     const cached = await getCachedResponse(query);
-    if (cached && selectedModes[0] === "deep_research") {
+    if (
+      cached &&
+      selectedModes.length === 1 &&
+      selectedModes[0] === "deep_research"
+    ) {
       setMessages([getUserMessage(query)]);
       setQuery("");
       appendMessage(transformMessage({ ...cached, sender: "friday" }));
