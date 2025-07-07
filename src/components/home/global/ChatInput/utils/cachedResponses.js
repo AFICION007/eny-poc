@@ -30,9 +30,7 @@ export async function getCachedResponse(question) {
   if (!fileName) return null;
 
   // Assuming cachedJsons is in the public folder
-  const response = await fetch(
-    `/src/components/home/global/ChatInput/utils/cachedJsons/${fileName}`
-  );
+  const response = await fetch(`/cachedJsons/${fileName}`);
 
   if (!response.ok) return null;
 
