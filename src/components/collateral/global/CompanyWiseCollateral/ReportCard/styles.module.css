@@ -17,7 +17,7 @@
   margin: 0;
   width: 173px;
   color: var(--Grey-450, #3a3a4a);
-  font-family: Poppins;
+  font-family: var(--primary-font-family);
   font-size: 18px;
   font-style: normal;
   font-weight: 600;

@@ -144,7 +144,7 @@
   overflow: hidden;
   color: var(--select-input-filled-color, #2e2e38);
   text-overflow: ellipsis;
-  font-family: Poppins;
+  font-family: var(--primary-font-family);
   font-size: var(--font-size-14, 14px);
   font-style: normal;
   font-weight: 400;

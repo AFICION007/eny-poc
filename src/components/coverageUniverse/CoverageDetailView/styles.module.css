@@ -63,7 +63,7 @@
   height: 251px;
   flex-shrink: 0;
   color: var(--Grey-450, #3a3a4a);
-  font-family: Poppins;
+  font-family: var(--primary-font-family);
   font-size: 14px;
   font-style: normal;
   font-weight: 400;
