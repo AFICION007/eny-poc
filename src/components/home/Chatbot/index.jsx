@@ -39,12 +39,6 @@ const Chatbot = ({ className = "chatbot" }) => {
   return (
     <div className={styles.chatbot}>
       <div className={styles.container}>
-        {/* <SimpleBar
-          style={{
-            maxWidth: "calc(100vw - 2*340px)",
-            maxHeight: "calc(100vh - 92px - (4px + 96px + 16px))",
-          }}
-        > */}
         <div className={styles.chat_section}>
           {messages &&
             messages.map((messageObj) => {
@@ -54,7 +48,6 @@ const Chatbot = ({ className = "chatbot" }) => {
           {fetchingMessage && <Loader />}
           {<div ref={chatRef} />}
         </div>
-        {/* </SimpleBar> */}
 
         <div className={styles.chat_box_container}>
           <ChatInput handleSubmit={handleSubmitChat} className={className} />

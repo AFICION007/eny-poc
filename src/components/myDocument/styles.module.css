@@ -3,13 +3,12 @@
   min-height: 100vh;
   background-color: white;
   padding: 0;
-  border-top: 6px solid #cc1a1f;
+  border-top: 6px solid var(--primary-color);
 }
-
 
 .title {
   position: absolute;
-  font-family: 'Poppins', sans-serif;
+  font-family: "Poppins", sans-serif;
   font-size: 24px;
   font-style: normal;
   font-weight: 300;
@@ -20,7 +19,6 @@
   left: 78px;
   top: 30px;
 }
-
 
 .content {
   position: relative;
@@ -52,14 +50,13 @@
   border-radius: 32px;
   background: #ffffff;
   flex: 1;
-  box-shadow:
-    0px 1px 4px 3px rgba(35, 35, 47, 0.06),
+  box-shadow: 0px 1px 4px 3px rgba(35, 35, 47, 0.06),
     0px 6px 12px 0px rgba(101, 101, 120, 0.08);
 }
 
 .search_input input::placeholder {
-  color: #322F2F;
-  font-family: 'Poppins', sans-serif;
+  color: #322f2f;
+  font-family: "Poppins", sans-serif;
   font-size: 14px;
   font-style: normal;
   font-weight: 500;
@@ -72,7 +69,6 @@
   left: 550px;
   top: 16px;
 }
-
 
 /* .search_input {
   border-radius: 25px;
@@ -98,8 +94,6 @@
   font-size: 16px;
 }
 
-
-
 .dropdown_wrapper {
   display: flex;
   flex-direction: column;
@@ -111,7 +105,7 @@
 .dropdown_label {
   color: #656579;
   overflow: hidden;
-  font-family: 'Poppins', sans-serif;
+  font-family: "Poppins", sans-serif;
   font-size: 14px;
   font-style: normal;
   font-weight: 300;
@@ -126,9 +120,9 @@
   gap: 8px;
   height: 44px;
   padding: 4px 14px;
-  border: 1px solid #C3C3CB;
+  border: 1px solid #c3c3cb;
   border-radius: 32px;
-  background-color: #FFFFFF;
+  background-color: #ffffff;
   cursor: pointer;
   flex: 1 0 0;
   box-sizing: border-box;
@@ -142,7 +136,7 @@
   overflow: hidden;
   text-overflow: ellipsis;
   color: #595959;
-  font-family: 'Poppins', sans-serif;
+  font-family: "Poppins", sans-serif;
   font-size: 12px;
   font-style: normal;
   font-weight: 400;
@@ -165,15 +159,12 @@
   width: 20px;
 }
 
-
-
 .dropdown_button:hover,
 :global(.ant-dropdown-open .dropdown_button) {
-  border-color: #E5E5E8 !important;
-  background-color: #E5E5E8 !important;
+  border-color: #e5e5e8 !important;
+  background-color: #e5e5e8 !important;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1) !important;
 }
-
 
 /* ========= CHECKBOXES ========= */
 :global(.ant-checkbox-inner) {
@@ -201,27 +192,20 @@
   border-color: #000 !important;
 }
 
-
-
-
-
-.folder_name{
+.folder_name {
   position: absolute;
   top: 158px;
   left: 80px;
 }
 
-.tab_navigator{
+.tab_navigator {
   position: absolute;
   top: 260px;
-  left: 80px
+  left: 80px;
 }
 
-.document{
+.document {
   position: absolute;
   top: 342px;
   left: 80px;
 }
-
-
-

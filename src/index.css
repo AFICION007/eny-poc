@@ -1,3 +1,35 @@
+:root {
+  --primary-color: #cc1a1f;
+  --primary-color-dark: #a60f14;
+  --primary-color-light: #ffe8e8;
+  --secondary-color: #000;
+  --background-color: #fff;
+  --footer-background-color: #000;
+  --border-color: #cc1a1f;
+  --toggle-color: #cc1a1f;
+  --toggle-bg-color: #ffe8e8;
+  --font-color: black;
+  --font-color-hover: grey;
+  --card-title: black;
+  --primary-font-family: "Poppins";
+}
+
+:root {
+  --primary-color: #8c71f9;
+  --primary-color-dark: #6b47ff;
+  --primary-color-light: #bdb4ee;
+  --secondary-color: #fff;
+  --background-color: #f8fbfc;
+  --footer-background-color: rgb(63, 64, 64);
+  --border-color: rgba(102, 112, 133, 0.15);
+  --toggle-color: #957bf9;
+  --toggle-bg-color: #f1f7ff;
+  --font-color: rgb(128, 159, 184);
+  --font-color-hover: rgb(83, 125, 160);
+  --card-title: rgb(128, 159, 184);
+  --primary-font-family: "Proxima Nova";
+}
+
 body {
   margin: 0;
 }

@@ -8,7 +8,7 @@ import whiteArrow from "./assets/white-arrow.svg";
 const NewsSection = () => {
   const news = [
     {
-      heading: "avendus  updates",
+      heading: "internal  updates",
       source: "MINT",
       title:
         "Can Zomato and Swiggy overcome profitability challenges amidst strong competition?",

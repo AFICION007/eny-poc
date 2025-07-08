@@ -3,16 +3,18 @@ import { useNavigate, Link, Outlet } from "react-router-dom";
 
 import styles from "./styles.module.css";
 
-import avendusLogo from "./assets/avendus-logo.png";
+import brandLogo from "./assets/brand-logo.png";
 import bookmark from "./assets/bookmark.svg";
 import menuIcon from "./assets/menu-icon.svg";
 import notifications from "./assets/notifications.svg";
 import upload from "./assets/upload.svg";
 
+const PRIMARY_COLOR = "#8c71f9";
+
 const Layout = () => {
   const iconButtons = [
     {
-      backgroundColor: "#CC1A1F",
+      backgroundColor: PRIMARY_COLOR,
       icon: bookmark,
     },
     {
@@ -20,7 +22,7 @@ const Layout = () => {
       icon: notifications,
     },
     {
-      backgroundColor: "#000",
+      backgroundColor: "#3f4040",
       icon: menuIcon,
     },
   ];
@@ -46,18 +48,18 @@ const Layout = () => {
         <div className={styles.header_top}>
           <div className={styles.left}>
             <img
-              src={avendusLogo}
+              src={brandLogo}
               onClick={handleClickLogo}
               className={styles.avendus_logo}
             />
-            <span className={styles.title}>
+            {/* <span className={styles.title}>
               <strong className={styles.strong_title}>Welcome</strong>, Gaurav
               Deepak{" "}
             </span>
             <span className={styles.title}>
               Vertical: Digitial, Technology and Consumer | Sector: B2B
               E-Commerce
-            </span>
+            </span> */}
           </div>
           <div className={styles.right}>
             <div className={styles.upload_button}>

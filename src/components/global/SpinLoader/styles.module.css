@@ -7,7 +7,7 @@
 
   :global(.ant-spin-dot) {
     font-size: 54px;
-    color: rgb(204, 26, 31);
+    color: var(--primary-color);
   }
 }
 

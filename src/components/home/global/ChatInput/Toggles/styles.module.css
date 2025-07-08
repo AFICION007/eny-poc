@@ -4,7 +4,7 @@
 }
 
 .active_path {
-  fill: #cc1a1f;
+  fill: var(--toggle-color);
 }
 
 /* Component styles */
@@ -31,11 +31,11 @@
 }
 
 .active_toggle {
-  background-color: #ffe8e8;
+  background-color: var(--toggle-bg-color);
 }
 
 .active_toggle:hover {
-  background-color: #ffe8e8;
+  background-color: var(--toggle-bg-color);
 }
 
 .toggle > :first-child {
@@ -45,7 +45,7 @@
 
 .label {
   font-size: 14px;
-  font-family: "Poppins";
+  font-family: var(--primary-font-family);
   font-style: normal;
   font-weight: 500;
   line-height: 24px;
@@ -53,5 +53,5 @@
 }
 
 .active_toggle .label {
-  color: #cc1a1f;
+  color: var(--toggle-color);
 }

@@ -5,8 +5,6 @@
   position: relative;
 }
 
-
-
 .selector_title {
   position: absolute;
   margin: 0;
@@ -17,7 +15,7 @@
   justify-content: center;
   flex-shrink: 0;
   color: #656579;
-  font-family: "Poppins";
+  font-family: var(--primary-font-family);
   font-size: 14px;
   font-style: normal;
   font-weight: 500;
@@ -34,9 +32,13 @@
   padding: 6px;
   align-items: center;
   gap: 8px;
-  border-radius: var(--tab-navigation-horizontal-secondary-alt-border-radius, 2px);
-  border: var(--border-width-thin, 1px) solid var(--border-colors-default-primary, #E6E6E9);
-  background: var(--tab-navigation-horizontal-secondary-alt-bg-color, #FFF);
+  border-radius: var(
+    --tab-navigation-horizontal-secondary-alt-border-radius,
+    2px
+  );
+  border: var(--border-width-thin, 1px) solid
+    var(--border-colors-default-primary, #e6e6e9);
+  background: var(--tab-navigation-horizontal-secondary-alt-bg-color, #fff);
   left: 0;
   top: 34px;
   box-sizing: border-box;
@@ -74,7 +76,7 @@
 
 .folder_item:hover {
   border-color: gray;
-  background-color: #E5E5E8;
+  background-color: #e5e5e8;
   border-radius: 32px;
   box-shadow: 0 2px 4px rgba(64, 169, 255, 0.1);
 }
@@ -86,15 +88,16 @@
   align-items: center;
   gap: 8px;
   border-radius: var(--tab-navigation-btn-border-radius, 2px);
-  border: var(--border-width-thin, 1px) solid var(--border-colors-selected-default-primary, #C3C3CB);
-  background: var(--tab-navigation-btn-primary-selected-bg-color, #FFF);
+  border: var(--border-width-thin, 1px) solid
+    var(--border-colors-selected-default-primary, #c3c3cb);
+  background: var(--tab-navigation-btn-primary-selected-bg-color, #fff);
   box-sizing: border-box;
   border-radius: 32px;
 }
 
 .folder_name {
   color: #656579;
-  font-family: "Poppins";
+  font-family: var(--primary-font-family);
   font-size: 14px;
   font-style: normal;
   font-weight: 400;
@@ -103,8 +106,8 @@
 }
 
 .folder_item_selected .folder_name {
-  color: #2E2E38;
-  font-family: "Poppins";
+  color: #2e2e38;
+  font-family: var(--primary-font-family);
   font-size: 14px;
   font-style: normal;
   font-weight: 400;
@@ -117,8 +120,7 @@
   align-items: flex-start;
   gap: 6px;
   border-radius: 200px;
-  background: var(--badge-alt-bg-color, #E6E6E9);
-
+  background: var(--badge-alt-bg-color, #e6e6e9);
 }
 
 .folder_item_selected .folder_count {
@@ -127,15 +129,16 @@
   align-items: flex-start;
   gap: 6px;
   border-radius: 200px;
-  border: var(--border-width-thin, 1px) solid var(--border-colors-default-extra-B, #D7D7DC);
-  background: var(--badge-bg-color, #FFF);
+  border: var(--border-width-thin, 1px) solid
+    var(--border-colors-default-extra-B, #d7d7dc);
+  background: var(--badge-bg-color, #fff);
 }
 
 .count {
   flex: 1 0 0;
   color: var(--badge-alt-color, #656579);
   text-align: center;
-  font-family: "Poppins";
+  font-family: var(--primary-font-family);
   font-size: var(--font-size-14, 14px);
   font-style: normal;
   font-weight: 400;
@@ -147,7 +150,7 @@
   flex: 1 0 0;
   color: var(--badge-alt-color, #656579);
   text-align: center;
-  font-family: "Poppins";
+  font-family: var(--primary-font-family);
   font-size: var(--font-size-14, 14px);
   font-style: normal;
   font-weight: 400;

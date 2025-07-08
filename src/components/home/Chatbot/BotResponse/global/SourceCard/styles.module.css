@@ -33,7 +33,7 @@
 
 .answer_title {
   color: #747480;
-  font-family: Poppins;
+  font-family: var(--primary-font-family);
   font-size: 12px;
   font-style: normal;
   font-weight: 400;
@@ -42,7 +42,7 @@
 
 .answer_heading {
   color: #2e2e3c;
-  font-family: Poppins;
+  font-family: var(--primary-font-family);
   font-size: 12px;
   font-style: normal;
   font-weight: 400;
@@ -90,7 +90,7 @@
 
 .source_title {
   color: #23232f;
-  font-family: Poppins;
+  font-family: var(--primary-font-family);
   font-size: 12px;
   font-style: normal;
   font-weight: 500;
@@ -99,7 +99,7 @@
 
 .source_subtitle {
   color: #3a3a4a;
-  font-family: Poppins;
+  font-family: var(--primary-font-family);
   font-size: 12px;
   font-style: normal;
   font-weight: 400;
@@ -113,7 +113,7 @@
 
 .source_heading {
   color: #23232f;
-  font-family: Poppins;
+  font-family: var(--primary-font-family);
   font-size: 15px;
   font-style: normal;
   font-weight: 500;
@@ -127,7 +127,7 @@
 
 .source_description {
   color: #3a3a4a;
-  font-family: Poppins;
+  font-family: var(--primary-font-family);
   font-size: 14px;
   font-style: normal;
   font-weight: 400;

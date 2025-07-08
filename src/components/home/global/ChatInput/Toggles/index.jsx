@@ -60,11 +60,11 @@ const Toggles = () => {
       Icon: (className) => <Research className={className} />,
       label: "Deep research",
     },
-    {
-      value: "subscriptions",
-      Icon: (className) => <Subscriptions className={className} />,
-      label: "Subscriptions",
-    },
+    // {
+    //   value: "subscriptions",
+    //   Icon: (className) => <Subscriptions className={className} />,
+    //   label: "Subscriptions",
+    // },
   ];
 
   return (

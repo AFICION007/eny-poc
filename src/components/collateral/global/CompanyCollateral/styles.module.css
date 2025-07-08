@@ -1,98 +1,100 @@
-
 .page {
-    width: 1440px;
-    flex-shrink: 0px;
-    position: relative;
+  width: 1440px;
+  flex-shrink: 0px;
+  position: relative;
 }
 
 .title {
-    position: absolute;
-    left: 78px;
-    top: 0;
-    margin: 0;
-    color: #000;
-    font-family: "Poppins";
-    font-size: 24px;
-    font-style: normal;
-    font-weight: 500;
-    line-height: 40px;
-    /* 166.667% */
-    text-transform: capitalize;
+  position: absolute;
+  left: 78px;
+  top: 0;
+  margin: 0;
+  color: #000;
+  font-family: var(--primary-font-family);
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 40px;
+  /* 166.667% */
+  text-transform: capitalize;
 }
 
 .financial_button_wrapper {
-    margin: 0;
-    padding: 0;
-    position: absolute;
-    left: 78px;
-    top: 152px;
+  margin: 0;
+  padding: 0;
+  position: absolute;
+  left: 78px;
+  top: 152px;
 }
 
 .report_button_wrapper {
-    margin: 0;
-    padding: 0;
-    position: absolute;
-    left: 277px;
-    top: 152px;
+  margin: 0;
+  padding: 0;
+  position: absolute;
+  left: 277px;
+  top: 152px;
 }
 
 .curated_button {
-    display: inline-flex;
-    height: 44px;
-    padding: 10px 18px;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    gap: 8px;
-    flex-shrink: 0;
-    border-radius: 32px;
-    border: var(--border-width-thin, 1px) solid var(--border-colors-default-secondary, #C3C3CB);
-    box-sizing: border-box;
+  display: inline-flex;
+  height: 44px;
+  padding: 10px 18px;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  flex-shrink: 0;
+  border-radius: 32px;
+  border: var(--border-width-thin, 1px) solid
+    var(--border-colors-default-secondary, #c3c3cb);
+  box-sizing: border-box;
 }
 .curated_button:hover {
-  border-color: #E5E5E8 !important;
-  background-color: #E5E5E8 !important;
+  border-color: #e5e5e8 !important;
+  background-color: #e5e5e8 !important;
 }
 
-
 .file_icon {
-    height: 20px;
-    width: 20px;
-    color: #23232F;
+  height: 20px;
+  width: 20px;
+  color: #23232f;
 }
 
 .financial_icon {
-    width: 20px;
-    height: 20px;
-    color: #23232F;
+  width: 20px;
+  height: 20px;
+  color: #23232f;
 }
 
-.active_icon{
-    color: #CC1A1F;
+.active_icon {
+  color: var(--primary-color);
 }
 
 .button_text {
-    color: var(--Theme-Neutrals-Light-Theme-900, var(--color-base-neutral-900, #2E2E38));
-    font-family: "Poppins";
-    font-size: 14px;
-    font-style: normal;
-    font-weight: var(--font-weight-regular, 400);
-    line-height: 20px;
-    /* 142.857% */
+  color: var(
+    --Theme-Neutrals-Light-Theme-900,
+    var(--color-base-neutral-900, #2e2e38)
+  );
+  font-family: var(--primary-font-family);
+  font-size: 14px;
+  font-style: normal;
+  font-weight: var(--font-weight-regular, 400);
+  line-height: 20px;
+  /* 142.857% */
 }
 
-.active_text{
-    color: #CC1A1F;
+.active_text {
+  color: var(--primary-color);
 }
 
 .active_button {
-  border-color: #CC1A1F;
+  border-color: var(--primary-color);
 }
 
-.content{
-    position: absolute;
-    /* left: 82px; */
-    top: 125px;
+.content {
+  position: absolute;
+  /* left: 82px; */
+  top: 125px;
 }
 
 .dropdown_wrapper_company {
@@ -107,7 +109,7 @@
 
 .dropdown_label_company {
   color: var(--input-label-color, #656579);
-  font-family: "Poppins";
+  font-family: var(--primary-font-family);
   font-size: 12px;
   font-style: normal;
   font-weight: 300;
@@ -120,18 +122,17 @@
   gap: 8px;
   height: 44px;
   padding: 4px 14px;
-  border: 1px solid #C3C3CB;
+  border: 1px solid #c3c3cb;
   border-radius: 32px;
   background: var(--select-input-hover-bg-color, #fff);
-  ;
   cursor: pointer;
   flex: 1 0 0;
   box-sizing: border-box;
 }
 .dropdown_button_company:hover,
 :global(.ant-dropdown-open .dropdown_button) {
-  border-color: #E5E5E8 !important;
-  background-color: #E5E5E8 !important;
+  border-color: #e5e5e8 !important;
+  background-color: #e5e5e8 !important;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1) !important;
 }
 
@@ -141,7 +142,7 @@
   -webkit-line-clamp: 1;
   flex: 1 0 0;
   overflow: hidden;
-  color: var(--select-input-filled-color, #2E2E38);
+  color: var(--select-input-filled-color, #2e2e38);
   text-overflow: ellipsis;
   font-family: Poppins;
   font-size: var(--font-size-14, 14px);

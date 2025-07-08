@@ -188,11 +188,11 @@ const coverageColumns = [
   { title: "Designation", dataIndex: "designation", key: "designation" },
   { title: "Department", dataIndex: "department", key: "department" },
   {
-    title: "Avendus Relationship",
+    title: "Friday Relationship",
     dataIndex: "relationship",
     key: "relationship",
   },
-  { title: "Avendus Lead", dataIndex: "avendusLead", key: "avendusLead" },
+  { title: "Friday Lead", dataIndex: "avendusLead", key: "avendusLead" },
   { title: "Coverage Level", dataIndex: "coverageLevel", key: "coverageLevel" },
   {
     title: "Last Interaction Date",
@@ -202,9 +202,7 @@ const coverageColumns = [
   {
     title: "Action",
     key: "action",
-    render: () => (
-      <CustomButton text={"View Details"} onClick={()=>{}}/>
-    ),
+    render: () => <CustomButton text={"View Details"} onClick={() => {}} />,
   },
 ];
 

@@ -4,7 +4,8 @@
   max-width: 1440px;
   flex-direction: column;
   align-items: flex-start;
-  border: var(--border-width-thin, 1px) solid var(--border-colors-default-extra-B, #C3C3CB);
+  border: var(--border-width-thin, 1px) solid
+    var(--border-colors-default-extra-B, #c3c3cb);
   border-radius: var(--table-border-radius, 8px);
   background: var(--table-bg-color, #fff);
 }
@@ -49,7 +50,7 @@
   :global(th.ant-table-cell) {
     border-block: 1px solid #f1f5f7 !important;
     background-color: #fff !important;
-    font-family: "Poppins";
+    font-family: var(--primary-font-family);
     font-weight: 600;
     color: #17181a;
   }
@@ -65,7 +66,7 @@
   :global(td.ant-table-cell) {
     max-width: 200px;
     padding: 16px 16px !important;
-    font-family: "Poppins";
+    font-family: var(--primary-font-family);
     font-weight: 400;
     color: #2e2e38;
   }
@@ -76,7 +77,7 @@
   flex-direction: column;
   padding: 20px 24px;
   align-items: flex-start;
-  font-family: 'Poppins';
+  font-family: "Poppins";
   align-self: stretch;
   background-color: #2e2e3c;
   border-radius: 6px 6px 0px 0px;
@@ -108,13 +109,13 @@
   align-items: center;
 
   :global(.ant-pagination-simple-pager) {
-    font-family: "Poppins";
+    font-family: var(--primary-font-family);
     color: #809fb8 !important;
   }
 
   :global(.ant-pagination-simple-pager) > input {
     border: 1px solid #f1f5f7 !important;
-    font-family: "Poppins";
+    font-family: var(--primary-font-family);
     color: #17181a !important;
   }
 
@@ -133,7 +134,7 @@
 
   :global(.ant-select-selection-item) {
     font-size: 13px !important;
-    font-family: "Poppins";
+    font-family: var(--primary-font-family);
     color: #809fb8 !important;
   }
 

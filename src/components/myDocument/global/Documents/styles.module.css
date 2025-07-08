@@ -13,8 +13,8 @@
   margin: 0;
   width: 250px;
   height: 34px;
-  color: #2E2E38;
-  font-family: "Poppins";
+  color: #2e2e38;
+  font-family: var(--primary-font-family);
   font-size: 21px;
   font-style: normal;
   font-weight: 500;
@@ -33,7 +33,7 @@
   height: 34px;
   margin: 0;
   color: #656579;
-  font-family: "Poppins";
+  font-family: var(--primary-font-family);
   font-size: 14px;
   font-style: normal;
   font-weight: 500;
@@ -54,29 +54,30 @@
   padding: 4px 14px;
   display: flex;
   border-radius: 32px;
-  border: var(--border-width-thin, 1px) solid var(--border-colors-default-secondary, #C3C3CB);
+  border: var(--border-width-thin, 1px) solid
+    var(--border-colors-default-secondary, #c3c3cb);
 }
 
 .date_picker :global(input::placeholder) {
   overflow: hidden;
-  color: var(--input-color, #2E2E38);
+  color: var(--input-color, #2e2e38);
   text-overflow: ellipsis;
-  font-family: "Poppins";
+  font-family: var(--primary-font-family);
   font-size: 12px;
   font-style: normal;
   font-weight: 500;
 }
-.date_picker:hover{
-  background-color: #E5E5E8;
+.date_picker:hover {
+  background-color: #e5e5e8;
 }
 
 :global(.ant-picker) {
-  border-color: #C3C3CB !important;
+  border-color: #c3c3cb !important;
 }
 
 :global(.ant-picker:hover),
 :global(.ant-picker-focused) {
-  border-color: #C3C3CB !important;
+  border-color: #c3c3cb !important;
   box-shadow: none !important;
 }
 
@@ -91,13 +92,16 @@
 
 :global(.ant-picker-cell-range-start .ant-picker-cell-inner),
 :global(.ant-picker-cell-range-end .ant-picker-cell-inner) {
-  color: #2E2E38 !important;
+  color: #2e2e38 !important;
   font-weight: 500;
 }
 
 :global(.ant-picker-cell-range-start .ant-picker-cell-inner::after),
 :global(.ant-picker-cell-range-end .ant-picker-cell-inner::after),
-:global(.ant-picker-cell-range-start.ant-picker-cell-range-end .ant-picker-cell-inner::after) {
+:global(
+    .ant-picker-cell-range-start.ant-picker-cell-range-end
+      .ant-picker-cell-inner::after
+  ) {
   background-color: #d9d9d9 !important;
 }
 
@@ -114,7 +118,7 @@
   left: -2px;
   width: 194px;
   height: 481px;
-  background-color: #F6F6FA;
+  background-color: #f6f6fa;
   flex-shrink: 0;
 }
 
@@ -124,7 +128,7 @@
   height: 481px;
   left: 217px;
   top: 53px;
-  background-color: #F6F6FA;
+  background-color: #f6f6fa;
   flex-shrink: 0;
 }
 
@@ -141,8 +145,8 @@
 .select_all_checkbox {
   display: flex;
   flex: 1 0 0;
-  color: #2E2E38;
-  font-family: "Poppins";
+  color: #2e2e38;
+  font-family: var(--primary-font-family);
   padding: 0;
   font-size: 14px;
   font-style: normal;
@@ -158,19 +162,19 @@
   width: 20px;
   height: 20px;
   border-radius: 2px;
-  border: var(--border-width-thin, 1px) solid var(--border-colors-default-tertiary, #7F7F91);
-  background: var(--checkbox-bg-color, #FFF);
+  border: var(--border-width-thin, 1px) solid
+    var(--border-colors-default-tertiary, #7f7f91);
+  background: var(--checkbox-bg-color, #fff);
 }
 
 .divider {
   position: absolute;
   width: 147px;
   height: 1px;
-  background: var(--color-base-neutral-75, #E6E6E9);
+  background: var(--color-base-neutral-75, #e6e6e9);
   top: 114px;
   left: 24px;
 }
-
 
 /* Checkbox Group */
 .checkbox_group {
@@ -191,8 +195,8 @@
   align-items: center;
   /* vertical align */
   gap: 12px;
-  color: #2E2E38;
-  font-family: "Poppins";
+  color: #2e2e38;
+  font-family: var(--primary-font-family);
   font-size: 14px;
   font-weight: 400;
   white-space: nowrap;
@@ -205,11 +209,9 @@
   width: 20px;
   height: 20px;
   border-radius: 2px;
-  border: 1px solid #7F7F91;
-  background: #FFF;
+  border: 1px solid #7f7f91;
+  background: #fff;
 }
-
-
 
 /* Actions Toolbar */
 .actions_toolbar {
@@ -217,7 +219,7 @@
   width: 1026px;
   height: 50px;
   border-radius: 6px;
-  background-color: #FFF;
+  background-color: #fff;
   top: 23px;
   left: 20px;
   display: flex;
@@ -229,9 +231,12 @@
   left: 14px;
   top: 15px;
   width: 62px;
-  color: var(--Theme-Neutrals-Light-Theme-900, var(--color-base-neutral-900, #2E2E38));
+  color: var(
+    --Theme-Neutrals-Light-Theme-900,
+    var(--color-base-neutral-900, #2e2e38)
+  );
   text-align: center;
-  font-family: "Poppins";
+  font-family: var(--primary-font-family);
   font-size: 14px;
   font-style: normal;
   font-weight: 300;
@@ -253,7 +258,7 @@
 .action_btn {
   /* width: 34px;
   color: var(--Theme-Neutrals-Light-Theme-800, var(--color-base-neutral-750, #4D4D5C));
-  font-family: "Poppins";
+  font-family: var(--primary-font-family);
   font-size: 12px;
   font-style: normal;
   font-weight: 400;
@@ -274,7 +279,7 @@
 .icon {
   width: 20px;
   height: 20px;
-  background: var(--color-base-neutral-750, #4D4D5C);
+  background: var(--color-base-neutral-750, #4d4d5c);
 }
 
 /* Table */
@@ -291,9 +296,9 @@
 }
 
 .documents_table :global(.ant-table-thead > tr > th) {
-  background-color: #2E2E37;
-  color: #FFF;
-  font-family: "Poppins";
+  background-color: #2e2e37;
+  color: #fff;
+  font-family: var(--primary-font-family);
   font-size: 12px;
   font-style: normal;
   font-weight: 700;
@@ -301,7 +306,7 @@
 }
 
 .documents_table :global(.ant-table-tbody > tr) {
-  border-bottom: 1px solid #D7D7DC;
+  border-bottom: 1px solid #d7d7dc;
 }
 
 .documents_table :global(.ant-table-tbody > tr:hover) {
@@ -323,8 +328,11 @@
 }
 
 .document_name_column {
-  color: var(--Theme-Neutrals-Light-Theme-900, var(--color-base-neutral-900, #2E2E38));
-  font-family: "Poppins";
+  color: var(
+    --Theme-Neutrals-Light-Theme-900,
+    var(--color-base-neutral-900, #2e2e38)
+  );
+  font-family: var(--primary-font-family);
   font-size: 14px;
   font-style: normal;
   font-weight: var(--font-weight-regular, 400);
@@ -341,17 +349,17 @@
 
 .user_icon {
   font-size: 12px;
-  color: #2E2E38;
+  color: #2e2e38;
 }
 
 /* Action Button */
 .action_button {
-  color: #2E2E38 !important;
+  color: #2e2e38 !important;
   font-weight: 400;
   font-family: var(--font-family-primary, EYInterstate);
   font-size: var(--font-size-14, 14px);
   font-style: normal;
-  border: 1px solid #C3C3CB !important;
+  border: 1px solid #c3c3cb !important;
   padding: 4px 12px;
   border-radius: 8px;
   background-color: transparent;
@@ -392,7 +400,6 @@
   border-color: #000000 !important;
 }
 
-
 .dropdown_wrapper {
   position: absolute;
   display: flex;
@@ -407,7 +414,7 @@
 .dropdown_label {
   color: #656579;
   overflow: hidden;
-  font-family: 'Poppins', sans-serif;
+  font-family: "Poppins", sans-serif;
   font-size: 12px;
   font-style: normal;
   font-weight: 300;
@@ -421,17 +428,17 @@
   height: 44px;
   width: 166px;
   padding: 4px 14px;
-  border: 1px solid #C3C3CB;
+  border: 1px solid #c3c3cb;
   border-radius: 32px;
-  background-color: #FFFFFF;
+  background-color: #ffffff;
   cursor: pointer;
   flex: 1 0 0;
   box-sizing: border-box;
 }
 
-.dropdown_button:hover{
-  background-color: #E5E5E8;
-  border-color: #E5E5E8;
+.dropdown_button:hover {
+  background-color: #e5e5e8;
+  border-color: #e5e5e8;
 }
 
 .dropdown_text {
@@ -440,7 +447,7 @@
   -webkit-line-clamp: 1;
   flex: 1 0 0;
   overflow: hidden;
-  color: var(--select-input-filled-color, #2E2E38);
+  color: var(--select-input-filled-color, #2e2e38);
   text-overflow: ellipsis;
   font-family: Poppins;
   font-size: var(--font-size-14, 14px);

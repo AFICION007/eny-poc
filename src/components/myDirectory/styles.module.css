@@ -2,7 +2,7 @@
   height: 100vh;
   background-color: white;
   padding: 0;
-  border-top: 6px solid #cc1a1f;
+  border-top: 6px solid var(--primary-color);
 }
 
 /* Header Section */
@@ -16,7 +16,7 @@
   top: 30px;
   color: #000;
   margin: 0;
-  font-family: "Poppins";
+  font-family: var(--primary-font-family);
   font-size: 24px;
   font-style: normal;
   font-weight: 300;
@@ -24,15 +24,12 @@
   white-space: nowrap;
 }
 
-
 .header {
   position: relative;
   height: 188px;
   width: 1440px;
   /* background: var(--Grey-100, #F6F6FA); */
 }
-
-
 
 /* Search Container */
 .search_container {
@@ -49,8 +46,8 @@
   flex: 1;
   border-radius: 32px;
   background-color: #ffffff;
-  box-shadow:
-    0px 1px 4px 3px var(--shadow-colors-primary, rgba(35, 35, 47, 0.06)),
+  box-shadow: 0px 1px 4px 3px
+      var(--shadow-colors-primary, rgba(35, 35, 47, 0.06)),
     0px 6px 12px 0px rgba(101, 101, 120, 0.08);
 }
 
@@ -58,7 +55,7 @@
   color: var(--Grey-400, #747480);
   position: absolute;
   left: 10px;
-  font-family: "Poppins";
+  font-family: var(--primary-font-family);
   font-size: 14px;
   font-style: normal;
   font-weight: 500;
@@ -73,12 +70,12 @@
 }
 
 .search_input:hover {
-  border-color: #E5E5E8 !important;
+  border-color: #e5e5e8 !important;
 }
 
 .search_input:focus,
 .search_input.ant-input-focused {
-  border-color: #E5E5E8 !important;
+  border-color: #e5e5e8 !important;
   box-shadow: none !important;
 }
 
@@ -115,7 +112,7 @@
 .dropdown_label {
   color: #656579;
   /* overflow: hidden; */
-  font-family: 'Poppins', sans-serif;
+  font-family: "Poppins", sans-serif;
   font-size: 10px;
   font-style: normal;
   font-weight: 300;
@@ -128,10 +125,9 @@
   gap: 0;
   height: 44px;
   padding: 4px 14px;
-  border: 1px solid #C3C3CB;
+  border: 1px solid #c3c3cb;
   border-radius: 32px;
-  background: var(--select-input-hover-bg-color, #F3F3F5);
-  ;
+  background: var(--select-input-hover-bg-color, #f3f3f5);
   cursor: pointer;
   flex: 1 0 0;
   box-sizing: border-box;
@@ -139,8 +135,8 @@
 
 .dropdown_button:hover,
 :global(.ant-dropdown-open .dropdown_button) {
-  border-color: #E5E5E8 !important;
-  background-color: #E5E5E8 !important;
+  border-color: #e5e5e8 !important;
+  background-color: #e5e5e8 !important;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1) !important;
 }
 
@@ -151,7 +147,7 @@
   overflow: hidden;
   text-overflow: ellipsis;
   color: #595959;
-  font-family: 'Poppins', sans-serif;
+  font-family: "Poppins", sans-serif;
   font-size: 12px;
   font-style: normal;
   font-weight: 400;
@@ -193,9 +189,6 @@
   flex-direction: row;
   width: 358px;
 }
-
-
-
 
 .picture_section {
   position: absolute;

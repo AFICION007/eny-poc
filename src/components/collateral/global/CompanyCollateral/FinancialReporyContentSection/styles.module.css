@@ -27,32 +27,29 @@
   align-items: center;
   gap: 8px;
   border-radius: 4px;
-  border: 1px solid var(--Neutrals-Light-theme-300, #C3C3CB);
+  border: 1px solid var(--Neutrals-Light-theme-300, #c3c3cb);
 }
 
 .year_button:hover {
-  background-color: #E5E5E8 !important;
-  border-color: #C3C3CB !important;
+  background-color: #e5e5e8 !important;
+  border-color: #c3c3cb !important;
 }
-
 
 .selected_year {
-  border: #2E2E38 !important;
-  background-color: #E5E5E8 !important;
-  border: 1px solid var(--Neutrals-Light-theme-300, #C3C3CB) !important;
+  border: #2e2e38 !important;
+  background-color: #e5e5e8 !important;
+  border: 1px solid var(--Neutrals-Light-theme-300, #c3c3cb) !important;
 }
 
-
 .year_text {
-  color: var(--Neutrals-Light-theme-900, #2E2E38);
-  font-family: "Poppins";
+  color: var(--Neutrals-Light-theme-900, #2e2e38);
+  font-family: var(--primary-font-family);
   font-size: 14px;
   font-style: normal;
   font-weight: 400;
   line-height: 20px;
   /* 142.857% */
 }
-
 
 .date_picker {
   position: absolute;
@@ -63,30 +60,31 @@
   padding: 4px 14px;
   display: flex;
   border-radius: 32px;
-  border: var(--border-width-thin, 1px) solid var(--border-colors-default-secondary, #C3C3CB);
+  border: var(--border-width-thin, 1px) solid
+    var(--border-colors-default-secondary, #c3c3cb);
 }
 
 .date_picker :global(input::placeholder) {
   overflow: hidden;
-  color: var(--input-color, #2E2E38);
+  color: var(--input-color, #2e2e38);
   text-overflow: ellipsis;
-  font-family: "Poppins";
+  font-family: var(--primary-font-family);
   font-size: 12px;
   font-style: normal;
   font-weight: 500;
 }
 
 .date_picker:hover {
-  background-color: #E5E5E8 !important;
+  background-color: #e5e5e8 !important;
 }
 
 :global(.ant-picker) {
-  border-color: #C3C3CB !important;
+  border-color: #c3c3cb !important;
 }
 
 :global(.ant-picker:hover),
 :global(.ant-picker-focused) {
-  border-color: #C3C3CB !important;
+  border-color: #c3c3cb !important;
   box-shadow: none !important;
 }
 
@@ -101,13 +99,16 @@
 
 :global(.ant-picker-cell-range-start .ant-picker-cell-inner),
 :global(.ant-picker-cell-range-end .ant-picker-cell-inner) {
-  color: #2E2E38 !important;
+  color: #2e2e38 !important;
   font-weight: 500;
 }
 
 :global(.ant-picker-cell-range-start .ant-picker-cell-inner::after),
 :global(.ant-picker-cell-range-end .ant-picker-cell-inner::after),
-:global(.ant-picker-cell-range-start.ant-picker-cell-range-end .ant-picker-cell-inner::after) {
+:global(
+    .ant-picker-cell-range-start.ant-picker-cell-range-end
+      .ant-picker-cell-inner::after
+  ) {
   background-color: #d9d9d9 !important;
 }
 

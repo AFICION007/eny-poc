@@ -15,8 +15,8 @@
 }
 
 .title {
-  color: var(--Grey-500, #2E2E38);
-  font-family: "Poppins";
+  color: var(--Grey-500, #2e2e38);
+  font-family: var(--primary-font-family);
   font-size: 24px;
   font-style: normal;
   font-weight: 400;
@@ -36,11 +36,14 @@
   flex: 1;
   text-align: center;
   padding: 16px 0;
-  font-family: 'Poppins', sans-serif;
+  font-family: "Poppins", sans-serif;
   font-size: 14px;
   font-style: normal;
   font-weight: 400;
-  color: var(--Theme-Neutrals-Light-Theme-900, var(--color-base-neutral-900, #2E2E38));
+  color: var(
+    --Theme-Neutrals-Light-Theme-900,
+    var(--color-base-neutral-900, #2e2e38)
+  );
   position: relative;
   margin: 0;
   transition: color 0.3s ease;
@@ -60,17 +63,23 @@
 
 .tabs :global(.ant-tabs-tab.ant-tabs-tab-active),
 .tabs :global(.ant-tabs-tab.ant-tabs-tab-active .ant-tabs-tab-btn) {
-  color: var(--Theme-Neutrals-Light-Theme-900, var(--color-base-neutral-900, #2E2E38));
+  color: var(
+    --Theme-Neutrals-Light-Theme-900,
+    var(--color-base-neutral-900, #2e2e38)
+  );
 }
 
 .tabs :global(.ant-tabs-tab.ant-tabs-tab-active::after) {
-  content: '';
+  content: "";
   position: absolute;
   bottom: 0;
   left: 0;
   width: 100%;
   height: 2px;
-  background-color: var(--Theme-Neutrals-Light-Theme-900, var(--color-base-neutral-900, #2E2E38));
+  background-color: var(
+    --Theme-Neutrals-Light-Theme-900,
+    var(--color-base-neutral-900, #2e2e38)
+  );
 }
 
 .tabs :global(.ant-tabs-ink-bar),
@@ -78,7 +87,6 @@
 .tabs :global(.ant-tabs-nav-wrap) {
   display: none;
 }
-
 
 .filterSection {
   display: flex;
@@ -139,7 +147,9 @@
   background: white;
   border: 1px solid #f0f0f0;
   border-radius: 18px;
-  box-shadow: 0px 1px 4px 3px var(--shadow-colors-primary, rgba(35, 35, 47, 0.06)), 0px 6px 12px 0px rgba(101, 101, 120, 0.08);
+  box-shadow: 0px 1px 4px 3px
+      var(--shadow-colors-primary, rgba(35, 35, 47, 0.06)),
+    0px 6px 12px 0px rgba(101, 101, 120, 0.08);
   transition: all 0.2s ease;
 }
 
@@ -162,8 +172,8 @@
 }
 
 .reportName {
-    color: var(--Grey-450, #3A3A4A);
-  font-family: "Poppins";
+  color: var(--Grey-450, #3a3a4a);
+  font-family: var(--primary-font-family);
   font-size: 16px;
   font-style: normal;
   font-weight: 600;
@@ -173,7 +183,7 @@
   width: 40px;
   height: 40px;
   border-radius: 50%;
-  background: #D9D9D9;
+  background: #d9d9d9;
   border: none;
   display: flex;
   align-items: center;

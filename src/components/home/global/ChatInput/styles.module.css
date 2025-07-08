@@ -11,7 +11,7 @@
 
 .chat_box {
   font-size: 16px;
-  font-family: "Poppins";
+  font-family: var(--primary-font-family);
   font-weight: 400;
   line-height: 30px;
   color: #667085;
@@ -67,7 +67,7 @@
   :global(.ant-dropdown-menu-item-group-title) {
     margin-left: 8px;
     font-size: 13px;
-    font-family: "Poppins";
+    font-family: var(--primary-font-family);
     font-style: normal;
     font-weight: 600;
     line-height: 20px;
@@ -77,7 +77,7 @@
   :global(.ant-dropdown-menu-title-content) {
     margin-left: 10px;
     font-size: 16px;
-    font-family: "Poppins";
+    font-family: var(--primary-font-family);
     font-style: normal;
     font-weight: 400;
     line-height: 30px;

@@ -4,13 +4,12 @@
   position: relative;
   width: 1440px;
   height: 208px;
-  border-top: 6px solid #cc1a1f;
+  border-top: 6px solid var(--primary-color);
 }
-
 
 .title {
   color: #000;
-  font-family: "Poppins";
+  font-family: var(--primary-font-family);
   font-size: 24px;
   font-style: normal;
   font-weight: 300;
@@ -31,7 +30,6 @@
   top: 15px;
 }
 
-
 .bottom {
   display: flex;
   flex-direction: row;
@@ -41,7 +39,7 @@
 }
 
 .filters_container {
-  background-color: #F6F6FA;
+  background-color: #f6f6fa;
   padding: 5px 80px 30px;
   display: flex;
   align-items: center;
@@ -63,14 +61,13 @@
   border-radius: 32px;
   background: #ffffff;
   flex: 1;
-  box-shadow:
-    0px 1px 4px 3px rgba(35, 35, 47, 0.06),
+  box-shadow: 0px 1px 4px 3px rgba(35, 35, 47, 0.06),
     0px 6px 12px 0px rgba(101, 101, 120, 0.08);
 }
 
 .search_input input::placeholder {
-  color: #322F2F;
-  font-family: 'Poppins', sans-serif;
+  color: #322f2f;
+  font-family: "Poppins", sans-serif;
   font-size: 14px;
   font-style: normal;
   font-weight: 500;
@@ -85,17 +82,15 @@
 }
 /* When hovered */
 .search_input:hover {
-  border-color: #C3C3CB !important;
+  border-color: #c3c3cb !important;
 }
 
 /* When focused (keyboard or click) */
 .search_input:focus,
 .search_input.ant-input-focused {
-  border-color: #C3C3CB !important;
+  border-color: #c3c3cb !important;
   box-shadow: none !important;
 }
-
-
 
 .dropdown_wrapper {
   width: 180px;
@@ -114,7 +109,7 @@
 .dropdown_label {
   color: #656579;
   /* overflow: hidden; */
-  font-family: 'Poppins', sans-serif;
+  font-family: "Poppins", sans-serif;
   font-size: 10px;
   font-style: normal;
   font-weight: 300;
@@ -124,7 +119,7 @@
 
 .dropdown_label_company {
   color: var(--input-label-color, #656579);
-  font-family: "Poppins";
+  font-family: var(--primary-font-family);
   font-size: 12px;
   font-style: normal;
   font-weight: 300;
@@ -138,10 +133,9 @@
   gap: 0;
   height: 44px;
   padding: 4px 14px;
-  border: 1px solid #C3C3CB;
+  border: 1px solid #c3c3cb;
   border-radius: 32px;
-  background: var(--select-input-hover-bg-color, #F3F3F5);
-  ;
+  background: var(--select-input-hover-bg-color, #f3f3f5);
   cursor: pointer;
   flex: 1 0 0;
   box-sizing: border-box;
@@ -153,10 +147,9 @@
   gap: 0;
   height: 44px;
   padding: 4px 14px;
-  border: 1px solid #C3C3CB;
+  border: 1px solid #c3c3cb;
   border-radius: 32px;
   background: var(--select-input-hover-bg-color, #fff);
-  ;
   cursor: pointer;
   flex: 1 0 0;
   box-sizing: border-box;
@@ -164,15 +157,15 @@
 
 .dropdown_button:hover,
 :global(.ant-dropdown-open .dropdown_button) {
-  border-color: #E5E5E8 !important;
-  background-color: #E5E5E8 !important;
+  border-color: #e5e5e8 !important;
+  background-color: #e5e5e8 !important;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1) !important;
 }
 
 .dropdown_button_company:hover,
 :global(.ant-dropdown-open .dropdown_button) {
-  border-color: #E5E5E8 !important;
-  background-color: #E5E5E8 !important;
+  border-color: #e5e5e8 !important;
+  background-color: #e5e5e8 !important;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1) !important;
 }
 
@@ -183,7 +176,7 @@
   overflow: hidden;
   text-overflow: ellipsis;
   color: #595959;
-  font-family: 'Poppins', sans-serif;
+  font-family: "Poppins", sans-serif;
   font-size: 12px;
   font-style: normal;
   font-weight: 400;
@@ -197,7 +190,7 @@
   -webkit-line-clamp: 1;
   flex: 1 0 0;
   overflow: hidden;
-  color: var(--select-input-filled-color, #2E2E38);
+  color: var(--select-input-filled-color, #2e2e38);
   text-overflow: ellipsis;
   font-family: Poppins;
   font-size: var(--font-size-14, 14px);
@@ -250,7 +243,7 @@
 .report_message {
   color: #9b9ba0;
   font-size: 18px;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   text-align: center;
 }
 
@@ -272,13 +265,14 @@
   gap: 8px;
   flex-shrink: 0;
   border-radius: 32px;
-  border: var(--border-width-thin, 1px) solid var(--border-colors-default-secondary, #C3C3CB);
+  border: var(--border-width-thin, 1px) solid
+    var(--border-colors-default-secondary, #c3c3cb);
   box-sizing: border-box;
 }
 
-.curated_button:hover{
-  border-color: #E5E5E8 !important;
-  background-color: #E5E5E8 !important;
+.curated_button:hover {
+  border-color: #e5e5e8 !important;
+  background-color: #e5e5e8 !important;
 }
 
 .file_icon {
@@ -287,12 +281,14 @@
 }
 
 .button_text {
-  color: var(--Theme-Neutrals-Light-Theme-900, var(--color-base-neutral-900, #2E2E38));
-  font-family: "Poppins";
+  color: var(
+    --Theme-Neutrals-Light-Theme-900,
+    var(--color-base-neutral-900, #2e2e38)
+  );
+  font-family: var(--primary-font-family);
   font-size: 14px;
   font-style: normal;
   font-weight: var(--font-weight-regular, 400);
   line-height: 20px;
   /* 142.857% */
 }
-

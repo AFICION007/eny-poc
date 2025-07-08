@@ -5,8 +5,8 @@
   display: flex;
   flex-direction: column;
   width: 100%;
-  background-color: black;
-  /* border-bottom: 6px solid #cc1a1f; */
+  background-color: var(--secondary-color);
+  /* border-bottom: 6px solid var(--primary-color); */
 }
 
 .header_top {
@@ -14,9 +14,13 @@
   flex-direction: row;
   justify-content: space-between;
   width: 100%;
-  padding: 16px 70px;
+  padding-top: 16px;
+  padding-bottom: 16px;
+  padding-left: 48px;
+  padding-right: 70px;
   box-sizing: border-box;
-  padding-bottom: 5px;
+  padding-bottom: 16px;
+  /* border-bottom: 1px solid var(--border-color); */
 }
 
 .left {
@@ -27,7 +31,6 @@
 .avendus_logo {
   flex-shrink: 0;
   width: 160px;
-  height: 60px;
   margin-right: 42px;
   cursor: pointer;
 }
@@ -35,7 +38,7 @@
 .title {
   margin-right: 12px;
   font-size: 12px;
-  font-family: "Poppins";
+  font-family: var(--primary-font-family);
   font-style: normal;
   font-weight: 400;
   line-height: 16px;
@@ -103,20 +106,20 @@
   justify-content: space-between;
   gap: 100px;
   padding-top: 0;
-  padding-bottom: 10px;
+  padding-block: 5px;
   padding-left: 80px;
   padding-right: 80px;
+  border-bottom: 1px solid var(--border-color);
 }
 
 .nav_links a {
   text-decoration: none;
-  color: #fff;
   font-weight: 1000;
   font-size: 10px;
   border-radius: 8px;
 
-  color: #fff;
-  font-family: "Poppins";
+  color: var(--font-color);
+  font-family: var(--primary-font-family);
   font-size: 14px;
   font-style: normal;
   font-weight: 600;
@@ -125,5 +128,5 @@
 }
 
 .nav_links a:hover {
-  color: grey;
+  color: var(--font-color-hover);
 }

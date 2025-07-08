@@ -1,10 +1,9 @@
 .featureCard {
-
   /* box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06) !important; */
   transition: all 0.3s ease !important;
   border-radius: 18px;
-  border: 1px solid var(--Grey-250, #E1E1E6);
-  background: var(--Grey-100, #F6F6FA);
+  border: 1px solid var(--Grey-250, #e1e1e6);
+  background: var(--Grey-100, #f6f6fa);
   overflow: hidden !important;
 }
 
@@ -42,8 +41,8 @@
 }
 
 .title {
-  color: var(--Grey-500, #2E2E38);
-  font-family: "Poppins";
+  color: var(--Grey-500, #2e2e38);
+  font-family: var(--primary-font-family);
   font-size: 14px;
   font-style: normal;
   font-weight: 400;
@@ -54,7 +53,7 @@
 
 .description {
   color: #747480;
-  font-family: "Poppins";
+  font-family: var(--primary-font-family);
   font-size: 14px;
   font-style: normal;
   font-weight: 400;
