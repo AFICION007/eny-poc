@@ -15,8 +15,8 @@
 }
 
 .mainTitle {
-  color: #cc1a1f !important;
-  font-family: "Poppins" !important;
+  color: var(--primary-color) !important;
+  font-family: var(--primary-font-family) !important;
   font-size: 28px !important;
   font-style: normal !important;
   font-weight: 300 !important;

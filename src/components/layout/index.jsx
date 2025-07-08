@@ -76,10 +76,10 @@ const Layout = () => {
         </div>
         <div className={styles.nav_links}>
           <Link to="/home">HOME</Link>
-          {/* <Link to="/my-directory">MY DIRECTORY</Link>
+          {/* <Link to="/my-directory">MY DIRECTORY</Link> */}
           <Link to="/my-documents">MY DOCUMENTS</Link>
           <Link to="/collaterals">COLLATERALS</Link>
-          <Link to="/coverage-universe">COVERAGE UNIVERSE</Link> */}
+          <Link to="/coverage-universe">COVERAGE UNIVERSE</Link>
           {/* <Link to="/templates">TEMPLATES</Link>
           <Link to="/valuations">VALUATIONS</Link> */}
         </div>

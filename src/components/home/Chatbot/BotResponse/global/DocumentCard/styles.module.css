@@ -16,7 +16,7 @@
   font-style: normal;
   font-weight: 600;
   line-height: 28px;
-  color: #3a3a4a;
+  color: var(--card-title);
 }
 
 .subtitle {

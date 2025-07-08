@@ -15,7 +15,7 @@
 .title {
   margin: 0;
   width: 351px;
-  color: var(--Grey-450, #3a3a4a);
+  color: var(--card-title);
   font-family: var(--primary-font-family);
   font-size: 18px;
   font-style: normal;
@@ -97,7 +97,8 @@
 }
 
 .dark {
-  background-color: #2e2e38;
+  background-color: var(--primary-color);
+  border: 1px solid var(--primary-color-dark);
 }
 
 .icon {

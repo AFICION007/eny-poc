@@ -116,6 +116,9 @@
   position: absolute;
   top: 90px;
   left: 49.93px;
+  margin: 0;
+
+  color: var(--card-title);
 }
 
 .article_card_without_image .article_title {

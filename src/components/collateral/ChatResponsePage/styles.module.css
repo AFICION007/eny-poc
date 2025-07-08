@@ -29,8 +29,8 @@
 }
 
 .mainTitle {
-  color: #CC1A1F !important;
-  font-family: "Poppins" !important;
+  color: var(--primary-color) !important;
+  font-family: var(--primary-font-family) !important;
   font-size: 28px !important;
   font-style: normal !important;
   font-weight: 300 !important;
@@ -42,7 +42,9 @@
   margin: 0 auto;
   background: #fff;
   border-radius: 18px;
-  box-shadow: 0px 1px 4px 3px var(--shadow-colors-primary, rgba(35, 35, 47, 0.06)), 0px 6px 12px 0px rgba(101, 101, 120, 0.08);
+  box-shadow: 0px 1px 4px 3px
+      var(--shadow-colors-primary, rgba(35, 35, 47, 0.06)),
+    0px 6px 12px 0px rgba(101, 101, 120, 0.08);
   overflow: hidden;
   margin-bottom: 50px;
   margin-left: 0;
@@ -124,7 +126,7 @@
   background-color: #fafafa;
   position: relative;
   text-align: left !important;
-  font-family: "Poppins", sans-serif !important;
+  font-family: var(--primary-font-family), sans-serif !important;
   font-size: 14px !important;
 }
 
@@ -146,7 +148,7 @@
 
 /* Type-specific styles */
 .infoCard.section .sectionNumber {
-  color: #2E2E38 !important;
+  color: #2e2e38 !important;
 }
 
 .infoCard.section .sectionDescription {
@@ -154,7 +156,7 @@
 }
 
 .infoCard.info .sectionDescription {
-  color: #2E2E38 !important;
+  color: #2e2e38 !important;
 }
 
 .infoCard.info .sourceText {
@@ -162,7 +164,7 @@
 }
 
 .infoCard.bullet .bulletPoints {
-  color: #2E2E38 !important;
+  color: #2e2e38 !important;
 }
 
 .infoCard.bullet .sourceText {
@@ -189,8 +191,8 @@
 .viewDocButton {
   padding: 0;
   height: auto;
-  color: var(--text-link-color, #2E2E38) !important;
-  font-family: "Poppins" !important;
+  color: var(--text-link-color, #2e2e38) !important;
+  font-family: var(--primary-font-family) !important;
   font-size: var(--font-size-14, 14px) !important;
   font-style: normal !important;
   font-weight: var(--font-weight-regular, 400) !important;

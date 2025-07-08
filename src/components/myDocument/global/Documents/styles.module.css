@@ -414,7 +414,7 @@
 .dropdown_label {
   color: #656579;
   overflow: hidden;
-  font-family: "Poppins", sans-serif;
+  font-family: var(--primary-font-family), sans-serif;
   font-size: 12px;
   font-style: normal;
   font-weight: 300;
